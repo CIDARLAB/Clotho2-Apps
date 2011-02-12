@@ -22,6 +22,11 @@ ENHANCEMENTS, OR MODIFICATIONS..
  */
 package org.clothocore.widget.fabdash;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import javax.swing.SwingUtilities;
+import org.clothocore.api.core.Collector;
 import org.clothocore.api.plugin.ClothoWidget;
 
 /**
@@ -29,11 +34,30 @@ import org.clothocore.api.plugin.ClothoWidget;
  * @author J. Christopher Anderson
  * @author Douglas Densmore
  */
-public class Connect implements ClothoWidget {
+public class Connect implements ClothoWidget  {
 
-    @Override
-    public void launch() {
-        System.out.println("################################ FabDash Initiating");
+
+
+    private void redirectSystemStreams() {
+        OutputStream out = new OutputStream() {
+            String outputName = "out";
+            @Override
+            public void write(int i) throws IOException {
+                OutputHandler.output(outputName, String.valueOf((char) i));
+            }
+
+            @Override
+            public void write(byte[] bytes) throws IOException {
+                OutputHandler.output(outputName, new String(bytes));
+            }
+
+            @Override
+            public void write(byte[] bytes, int off, int len) throws IOException {
+                OutputHandler.output(outputName, new String(bytes, off, len));
+            }
+        };
+        System.setOut(new PrintStream(out, true));
+        System.setErr(new PrintStream(out, true));
     }
 
     @Override
@@ -44,6 +68,16 @@ public class Connect implements ClothoWidget {
     public void close() {
     }
 
+    @Override
+    public void launch() {
+        //redirectSystemStreams();
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                Collector.connectToDefault();
+            }
+        });
+    }
     ///////////////////////////////////////////////////////////////////
     ////                         private variables               ////
 
