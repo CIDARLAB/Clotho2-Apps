@@ -39,8 +39,6 @@ import org.openide.filesystems.Repository;
  */
 public class Connect implements ClothoWidget  {
 
-
-
     private void redirectSystemStreams() {
         OutputStream out = new OutputStream() {
             String outputName = "out";
@@ -86,7 +84,6 @@ public class Connect implements ClothoWidget  {
                 for(FileObject afile : kids) {
                     System.out.println("################ Filesystem has something called:  " + afile.getName());
                 }
-
             }
         });
     }
