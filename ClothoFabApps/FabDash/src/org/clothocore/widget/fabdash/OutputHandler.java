@@ -45,13 +45,13 @@ public final class OutputHandler {
         io.setFocusTaken(false);
         if (mess == null || mess.trim().isEmpty()) {
             if (listener == null) {
-                io.getOut().println(mess);
+                io.getOut().print(mess);
             } else {
                 try {
                     io.getOut().println(mess, listener);
                 } catch (IOException ex1) {
                     Logger.getLogger(OutputHandler.class.getSimpleName(), ex1.getMessage());
-                    io.getOut().println(mess);
+                    io.getOut().print(mess);
                 }
             }
         } else {
@@ -65,26 +65,26 @@ public final class OutputHandler {
                 } catch (IOException ex) {
                     Logger.getLogger(OutputHandler.class.getSimpleName(), ex.getMessage());
                     if (listener == null) {
-                        io.getOut().println(mess);
+                        io.getOut().print(mess);
                     } else {
                         try {
                             io.getOut().println(mess, listener);
                         } catch (IOException ex1) {
                             Logger.getLogger(OutputHandler.class.getSimpleName(), ex1.getMessage());
-                            io.getOut().println(mess);
+                            io.getOut().print(mess);
                         }
                     }
                 }
             } else {
                 //Just print in black as default
                 if (listener == null) {
-                    io.getOut().println(mess);
+                    io.getOut().print(mess);
                 } else {
                     try {
                         io.getOut().println(mess, listener);
                     } catch (IOException ex1) {
                         Logger.getLogger(OutputHandler.class.getSimpleName(), ex1.getMessage());
-                        io.getOut().println(mess);
+                        io.getOut().print(mess);
                     }
                 }
             }
