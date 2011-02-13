@@ -24,6 +24,7 @@ ENHANCEMENTS, OR MODIFICATIONS..
 
 package org.clothocore.widget.fabdash.browser;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -48,16 +49,17 @@ public class ObjTypeChooser extends JPanel {
 
     public ObjTypeChooser(TreeBrowseTopComponent tc) {
         _browser = tc;
-//        setPreferredSize(new Dimension(150,150));
-//        FlowLayout layouty = new FlowLayout();
-//        GridLayout layouty = new GridLayout(4,8, 2,2);
-//        layouty.setAlignment(FlowLayout.LEFT);
-//        setLayout(layouty);
+        setLayout(new BorderLayout());
+        setPreferredSize(new Dimension(200,62));
 
-        JScrollPane scroller = new JScrollPane();
-        JPanel buttonPanel = new JPanel();
-        scroller.setViewportView(buttonPanel);
-        add(scroller);
+        JScrollPane noteScroller = new JScrollPane();
+        ScrollablePanel CommentScrollPanel = new ScrollablePanel();
+        noteScroller.setViewportView(CommentScrollPanel);
+        noteScroller.setWheelScrollingEnabled(true);
+        CommentScrollPanel.setScrollableHeight(ScrollablePanel.ScrollableSizeHint.FIT);
+        CommentScrollPanel.setScrollableWidth(ScrollablePanel.ScrollableSizeHint.NONE);
+        add(noteScroller, BorderLayout.CENTER);
+
 
         Map<ObjType, ImageIcon> icons = ImageSource.getObjectIconSet(30);
         for(ObjType atype : ObjType.values()) {
@@ -72,7 +74,7 @@ public class ObjTypeChooser extends JPanel {
                 chosenButton = tb;
                 chosenButton.setExitAlpha(1.0f);
             }
-            buttonPanel.add(tb);
+            CommentScrollPanel.add(tb);
         }
     }
 
@@ -83,7 +85,7 @@ public class ObjTypeChooser extends JPanel {
         public typeButton(ImageIcon icon, ObjType atype) {
             super(icon);
             type = atype;
-            setEnterAlpha(0.8f);
+            setEnterAlpha(0.6f);
             setExitAlpha(0.2f);
             setToolTipText(atype.toString().toLowerCase());
             this.addMouseListener(new MouseAdapter() {
