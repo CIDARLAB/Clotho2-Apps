@@ -25,13 +25,9 @@ ENHANCEMENTS, OR MODIFICATIONS..
 package org.clothocore.widget.fabdash.browser;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.Map;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -66,7 +62,6 @@ public class ObjTypeChooser extends JPanel {
             if(atype.equals(ObjType.GRAMMAR) || atype.equals(ObjType.FLEX_FIELD) || atype.equals(ObjType.NUCSEQ) || atype.equals(ObjType.WIKITEXT)) {
                 continue;
             }
-            System.out.println(atype.toString());
             ImageIcon icon = icons.get(atype);
             typeButton tb = new typeButton(icon, atype);
 

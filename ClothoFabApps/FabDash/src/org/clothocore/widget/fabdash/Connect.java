@@ -28,6 +28,9 @@ import java.io.PrintStream;
 import javax.swing.SwingUtilities;
 import org.clothocore.api.core.Collector;
 import org.clothocore.api.plugin.ClothoWidget;
+import org.openide.filesystems.FileObject;
+import org.openide.filesystems.FileSystem;
+import org.openide.filesystems.Repository;
 
 /**
  *
@@ -75,6 +78,15 @@ public class Connect implements ClothoWidget  {
             @Override
             public void run() {
                 Collector.connectToDefault();
+
+                //Put in the Apps menu
+                FileSystem sfs = Repository.getDefault().getDefaultFileSystem();
+                FileObject dir = sfs.findResource("Menu");
+                FileObject[] kids = dir.getChildren();
+                for(FileObject afile : kids) {
+                    System.out.println("################ Filesystem has something called:  " + afile.getName());
+                }
+
             }
         });
     }
