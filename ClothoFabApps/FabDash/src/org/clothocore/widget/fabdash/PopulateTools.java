@@ -38,7 +38,7 @@ import org.openide.util.actions.Presenter;
  *
  * @author jcanderson_Home
  */
-public class MyAction extends AbstractAction implements Presenter.Menu {
+public class PopulateTools extends AbstractAction implements Presenter.Menu {
 
     @Override
     public JMenuItem getMenuPresenter() {
