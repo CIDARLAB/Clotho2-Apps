@@ -71,19 +71,11 @@ public class Connect implements ClothoWidget  {
 
     @Override
     public void launch() {
-        //redirectSystemStreams();
+        redirectSystemStreams();
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
                 Collector.connectToDefault();
-
-                //Put in the Apps menu
-                FileSystem sfs = Repository.getDefault().getDefaultFileSystem();
-                FileObject dir = sfs.findResource("Menu");
-                FileObject[] kids = dir.getChildren();
-                for(FileObject afile : kids) {
-                    System.out.println("################ Filesystem has something called:  " + afile.getName());
-                }
             }
         });
     }

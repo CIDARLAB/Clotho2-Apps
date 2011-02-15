@@ -16,6 +16,7 @@
                 <attr name="displayName" bundlevalue="org.clothocore.widget.fabdash.Bundle#CTL_TreeBrowseAction"/>
                 <attr name="instanceCreate" methodvalue="org.openide.windows.TopComponent.openAction"/>
             </file>
+            <file name="org-clothocore-widget-fabdash-MyAction.instance"/>
         </folder>
     </folder>
     <folder name="Menu">
@@ -28,6 +29,10 @@
             <attr name="position" intvalue="200"/>
             <file name="org-clothocore-widget-fabdash-BrowseApps.shadow">
                 <attr name="originalFile" stringvalue="Actions/Window/org-clothocore-widget-fabdash-BrowseApps.instance"/>
+            </file>
+            <file name="org-clothocore-widget-fabdash-MyAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Window/org-clothocore-widget-fabdash-MyAction.instance"/>
+                <attr name="position" intvalue="0"/>
             </file>
         </folder>
         <file name="Tools_hidden"/>
