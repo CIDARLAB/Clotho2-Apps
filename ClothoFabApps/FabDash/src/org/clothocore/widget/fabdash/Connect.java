@@ -28,9 +28,6 @@ import java.io.PrintStream;
 import javax.swing.SwingUtilities;
 import org.clothocore.api.core.Collector;
 import org.clothocore.api.plugin.ClothoWidget;
-import org.openide.filesystems.FileObject;
-import org.openide.filesystems.FileSystem;
-import org.openide.filesystems.Repository;
 
 /**
  *
