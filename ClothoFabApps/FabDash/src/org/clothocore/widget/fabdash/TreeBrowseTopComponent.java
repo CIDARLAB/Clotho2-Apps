@@ -125,6 +125,9 @@ public final class TreeBrowseTopComponent extends TopComponent {
     private void browseTreeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browseTreeMouseClicked
         if(evt.getClickCount()==2) {
             try {
+                if(browseTree.getSelectionPath()==null) {
+                    return;
+                }
                 Object[] selectedList = browseTree.getSelectionPath().getPath();
                 ObjBase obj = (ObjBase) selectedList[selectedList.length-1];
                 obj.launchDefaultViewer();
