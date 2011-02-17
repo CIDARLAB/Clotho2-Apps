@@ -29,7 +29,7 @@
     </folder>
     <folder name="plugins">
         <folder name="tools">
-            <file name="org-clothocad-tool-toolappbrowser-Connectasdasdfasdfaf.instance">
+            <file name="org-clothocad-tool-toolappbrowser-Connect.instance">
                 <attr name="instanceOf" stringvalue="org.clothocore.api.plugin.ClothoTool"/>
             </file>
         </folder>

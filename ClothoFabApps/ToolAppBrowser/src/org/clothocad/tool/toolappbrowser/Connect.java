@@ -32,7 +32,7 @@ import org.clothocore.api.plugin.ClothoTool;
  *
  * @author J. Christopher Anderson
  */
-public class Connectasdasdfasdfaf implements ClothoTool {
+public class Connect implements ClothoTool {
 
     @Override
     public void launch() {
