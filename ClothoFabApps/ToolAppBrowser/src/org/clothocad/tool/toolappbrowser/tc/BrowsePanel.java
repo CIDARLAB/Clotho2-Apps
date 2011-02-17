@@ -28,11 +28,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -57,6 +60,9 @@ public class BrowsePanel extends JScrollPane {
         GridLayout lay = new GridLayout(5,6,10,10);
 
         scrollingpanel.setLayout(lay);
+
+        scrollingpanel.setBackground(Color.WHITE);
+
         ArrayList<ToolWrapper> listy = Collator.getAllTools();
         for(ToolWrapper tw: listy) {
             ToolComponent button = new ToolComponent(tw);
@@ -64,21 +70,20 @@ public class BrowsePanel extends JScrollPane {
         }
     }
 
-    private class ToolComponent extends JPanel {
+    private class ToolComponent extends JComponent {
+
         public ToolComponent(final ToolWrapper tw) {
-            setLayout(null);
             setPreferredSize(new Dimension(200,150));
-            setBackground(Color.LIGHT_GRAY);
             ImageIcon img = tw.getIcon(120);
             TransparentButton button = new TransparentButton(img);
             button.setExitAlpha(1.0f);
             button.setEnterAlpha(0.7f);
-            int xpos = (200-img.getIconWidth())/2;
-            button.setBounds(xpos,7,img.getIconWidth(),img.getIconHeight());
+            int xpos = (190-img.getIconWidth())/2;
+            button.setBounds(xpos+10,7,img.getIconWidth(),img.getIconHeight());
             add(button);
 
             JLabel label = new JLabel(tw.getDisplayName());
-            label.setBounds(5,120,190,25);
+            label.setBounds(15,120,190,25);
             add(label);
 
             this.setToolTipText(tw.getDescription());
@@ -109,6 +114,17 @@ public class BrowsePanel extends JScrollPane {
                 public void mouseExited(MouseEvent e) {
                 }
             });
+        }
+
+        @Override
+        public void paintComponent(Graphics g) {
+            int fwidth = 190;
+            Graphics2D g2d = (Graphics2D) g;
+            g.setColor(Color.LIGHT_GRAY);
+            g.fillRoundRect(10, 0, fwidth, 145, 20, 20);
+            g.setColor(Color.GRAY);
+            g.drawRoundRect(10, 0, fwidth, 145, 20, 20);
+            super.paintComponent(g);
         }
     }
 
