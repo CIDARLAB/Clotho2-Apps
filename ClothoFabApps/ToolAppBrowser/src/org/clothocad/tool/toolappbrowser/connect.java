@@ -23,6 +23,8 @@
 
 package org.clothocad.tool.toolappbrowser;
 
+import javax.swing.SwingUtilities;
+import org.clothocad.tool.toolappbrowser.tc.BrowseTCTopComponent;
 import org.clothocore.api.data.ObjBase;
 import org.clothocore.api.plugin.ClothoTool;
 
@@ -34,7 +36,15 @@ public class Connect implements ClothoTool {
 
     @Override
     public void launch() {
-        
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                BrowseTCTopComponent btc = new BrowseTCTopComponent();
+                btc.open();
+                btc.requestActive();
+            }
+        });
+
     }
 
     @Override
