@@ -31,6 +31,8 @@ import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -42,6 +44,7 @@ import javax.swing.JScrollPane;
 import org.clothocore.api.core.Collator;
 import org.clothocore.api.core.wrapper.ToolWrapper;
 import org.clothocore.util.buttons.TransparentButton;
+import org.openide.util.ImageUtilities;
 
 /**
  *
@@ -82,9 +85,26 @@ public class BrowsePanel extends JScrollPane {
             button.setBounds(xpos+10,7,img.getIconWidth(),img.getIconHeight());
             add(button);
 
+            TransparentButton deleteMe = new TransparentButton(deletebtn);
+            deleteMe.setExitAlpha(0.5f);
+            deleteMe.setEnterAlpha(1.0f);
+            deleteMe.setLocation(177,5);
+            deleteMe.setToolTipText("Click to uninstall");
+            deleteMe.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    System.out.println("Uninstall requested for " + tw.getDisplayName());
+                    //THROW A WARNING DIALOG
+                    //CALL TW.UNINSTALL();
+                }
+            });
+            add(deleteMe);
+
             JLabel label = new JLabel(tw.getDisplayName());
             label.setBounds(15,120,190,25);
             add(label);
+
+
 
             this.setToolTipText(tw.getDescription());
 
@@ -120,9 +140,9 @@ public class BrowsePanel extends JScrollPane {
         public void paintComponent(Graphics g) {
             int fwidth = 190;
             Graphics2D g2d = (Graphics2D) g;
-            g.setColor(Color.LIGHT_GRAY);
+            g.setColor(offwhite);
             g.fillRoundRect(10, 0, fwidth, 145, 20, 20);
-            g.setColor(Color.GRAY);
+            g.setColor(Color.LIGHT_GRAY);
             g.drawRoundRect(10, 0, fwidth, 145, 20, 20);
             super.paintComponent(g);
         }
@@ -130,4 +150,6 @@ public class BrowsePanel extends JScrollPane {
 
     ///////////////////////////////////////////////////////////////////
     ////                      private variables                    ////
+    private static Color offwhite = new Color(240,240,218);
+    private static ImageIcon deletebtn = ImageUtilities.loadImageIcon("org/clothocad/tool/toolappbrowser/tc/deletebtn.png", false);
 }
