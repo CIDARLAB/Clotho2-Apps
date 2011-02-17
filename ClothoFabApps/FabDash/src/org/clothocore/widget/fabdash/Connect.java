@@ -68,7 +68,7 @@ public class Connect implements ClothoWidget  {
 
     @Override
     public void launch() {
-        redirectSystemStreams();
+        //redirectSystemStreams();
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
