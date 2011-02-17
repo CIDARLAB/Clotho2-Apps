@@ -24,15 +24,18 @@ ENHANCEMENTS, OR MODIFICATIONS..
 
 package org.clothocad.tool.toolappbrowser.tc;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import org.clothocore.api.core.Collator;
 import org.clothocore.api.core.wrapper.ToolWrapper;
 import org.clothocore.util.buttons.TransparentButton;
@@ -41,16 +44,23 @@ import org.clothocore.util.buttons.TransparentButton;
  *
  * @author jcanderson_Home
  */
-public class BrowsePanel extends JPanel {
+public class BrowsePanel extends JScrollPane {
 
     public BrowsePanel() {
-        FlowLayout lay = new FlowLayout();
-        lay.setAlignment(FlowLayout.LEFT);
-        setLayout(lay);
+        ScrollablePanel scrollingpanel = new ScrollablePanel();
+        setViewportView(scrollingpanel);
+        setWheelScrollingEnabled(true);
+        scrollingpanel.setScrollableWidth(ScrollablePanel.ScrollableSizeHint.FIT);
+        scrollingpanel.setScrollableHeight(ScrollablePanel.ScrollableSizeHint.STRETCH);
+        scrollingpanel.setAutoscrolls(true);
+
+        GridLayout lay = new GridLayout(5,6,10,10);
+
+        scrollingpanel.setLayout(lay);
         ArrayList<ToolWrapper> listy = Collator.getAllTools();
         for(ToolWrapper tw: listy) {
             ToolComponent button = new ToolComponent(tw);
-            add(button);
+            scrollingpanel.add(button);
         }
     }
 
