@@ -31,6 +31,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import org.clothocore.api.core.Collator;
 import org.clothocore.api.core.wrapper.ToolWrapper;
@@ -63,8 +64,15 @@ public class BrowsePanel extends JPanel {
             button.setExitAlpha(1.0f);
             button.setEnterAlpha(0.7f);
             int xpos = (200-img.getIconWidth())/2;
-            button.setBounds(30,15,img.getIconWidth(),img.getIconHeight());
+            button.setBounds(xpos,7,img.getIconWidth(),img.getIconHeight());
             add(button);
+
+            JLabel label = new JLabel(tw.getDisplayName());
+            label.setBounds(5,120,190,25);
+            add(label);
+
+            this.setToolTipText(tw.getDescription());
+
 
             button.addMouseListener(new MouseListener() {
 
