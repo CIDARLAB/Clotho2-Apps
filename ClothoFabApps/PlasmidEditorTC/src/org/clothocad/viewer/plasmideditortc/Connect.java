@@ -52,6 +52,7 @@ public class Connect implements ClothoViewer {
             public void run() {
                 EditorTopComponent ntc = new EditorTopComponent();
                 ntc.open();
+                ntc.setPlasmid(aplasmid);
                 ntc.requestActive();
                 ntc.setName(aplasmid.getName());
             }

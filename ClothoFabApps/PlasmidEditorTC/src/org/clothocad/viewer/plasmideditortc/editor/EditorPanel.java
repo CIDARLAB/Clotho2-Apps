@@ -30,6 +30,9 @@ ENHANCEMENTS, OR MODIFICATIONS..
 
 package org.clothocad.viewer.plasmideditortc.editor;
 
+import java.awt.BorderLayout;
+import org.clothocore.api.data.Plasmid;
+
 /**
  *
  * @author jcanderson_Home
@@ -38,7 +41,19 @@ public class EditorPanel extends javax.swing.JPanel {
 
     /** Creates new form EditorPanel */
     public EditorPanel() {
+
         initComponents();
+        ConstFileContainer.setLayout(new BorderLayout());
+
+    }
+
+    public void setPlasmid(Plasmid aplas) {
+        _plas = aplas;
+        ConstFileContainer.add(new ConstructionEditor(_plas));
+        nameField.setText(aplas.getName());
+        partField.setText(aplas.getPart().getName());
+        vectorField.setText(aplas.getVector().getName());
+        authorField.setText(aplas.getAuthor().getName());
     }
 
     /** This method is called from within the constructor to
@@ -59,9 +74,9 @@ public class EditorPanel extends javax.swing.JPanel {
         partField = new javax.swing.JTextField();
         vectorField = new javax.swing.JTextField();
         authorField = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        getSeqBtn = new javax.swing.JButton();
+        saveBtn = new javax.swing.JButton();
+        revertBtn = new javax.swing.JButton();
 
         ConstFileContainer.setBackground(new java.awt.Color(255, 153, 153));
 
@@ -73,7 +88,7 @@ public class EditorPanel extends javax.swing.JPanel {
         );
         ConstFileContainerLayout.setVerticalGroup(
             ConstFileContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 435, Short.MAX_VALUE)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
         nameField.setText(org.openide.util.NbBundle.getMessage(EditorPanel.class, "EditorPanel.nameField.text")); // NOI18N
@@ -91,17 +106,22 @@ public class EditorPanel extends javax.swing.JPanel {
         vectorField.setText(org.openide.util.NbBundle.getMessage(EditorPanel.class, "EditorPanel.vectorField.text")); // NOI18N
 
         authorField.setText(org.openide.util.NbBundle.getMessage(EditorPanel.class, "EditorPanel.authorField.text")); // NOI18N
-        authorField.addActionListener(new java.awt.event.ActionListener() {
+
+        getSeqBtn.setText(org.openide.util.NbBundle.getMessage(EditorPanel.class, "EditorPanel.getSeqBtn.text")); // NOI18N
+
+        saveBtn.setText(org.openide.util.NbBundle.getMessage(EditorPanel.class, "EditorPanel.saveBtn.text")); // NOI18N
+        saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                authorFieldActionPerformed(evt);
+                saveBtnActionPerformed(evt);
             }
         });
 
-        jButton1.setText(org.openide.util.NbBundle.getMessage(EditorPanel.class, "EditorPanel.jButton1.text")); // NOI18N
-
-        jButton2.setText(org.openide.util.NbBundle.getMessage(EditorPanel.class, "EditorPanel.jButton2.text")); // NOI18N
-
-        jButton3.setText(org.openide.util.NbBundle.getMessage(EditorPanel.class, "EditorPanel.jButton3.text")); // NOI18N
+        revertBtn.setText(org.openide.util.NbBundle.getMessage(EditorPanel.class, "EditorPanel.revertBtn.text")); // NOI18N
+        revertBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                revertBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -121,11 +141,11 @@ public class EditorPanel extends javax.swing.JPanel {
                     .addComponent(partField, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
                     .addComponent(nameField, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jButton1)
+                .addComponent(getSeqBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(revertBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2))
+                .addComponent(saveBtn))
             .addComponent(ConstFileContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -149,32 +169,36 @@ public class EditorPanel extends javax.swing.JPanel {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ConstFileContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)))
+                    .addComponent(getSeqBtn)
+                    .addComponent(saveBtn)
+                    .addComponent(revertBtn)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void authorFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_authorFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_authorFieldActionPerformed
+    private void revertBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revertBtnActionPerformed
+        _plas.revert();
+    }//GEN-LAST:event_revertBtnActionPerformed
+
+    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+        _plas.saveDefault();
+    }//GEN-LAST:event_saveBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ConstFileContainer;
     private javax.swing.JTextField authorField;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton getSeqBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField partField;
+    private javax.swing.JButton revertBtn;
+    private javax.swing.JButton saveBtn;
     private javax.swing.JTextField vectorField;
     // End of variables declaration//GEN-END:variables
-
+    private Plasmid _plas;
 }

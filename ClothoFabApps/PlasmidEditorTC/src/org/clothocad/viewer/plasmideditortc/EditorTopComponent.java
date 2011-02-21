@@ -26,6 +26,7 @@ package org.clothocad.viewer.plasmideditortc;
 import java.awt.BorderLayout;
 import java.util.logging.Logger;
 import org.clothocad.viewer.plasmideditortc.editor.EditorPanel;
+import org.clothocore.api.data.Plasmid;
 import org.openide.util.NbBundle;
 import org.openide.windows.TopComponent;
 import org.openide.windows.WindowManager;
@@ -47,10 +48,9 @@ public final class EditorTopComponent extends TopComponent {
     public EditorTopComponent() {
         initComponents();
 
-
         //Put in the panel
-        EditorPanel bp = new EditorPanel();
-        add(bp, BorderLayout.CENTER);
+        _editPanel = new EditorPanel();
+        add(_editPanel, BorderLayout.CENTER);
 
         setName(NbBundle.getMessage(EditorTopComponent.class, "CTL_EditorTopComponent"));
         setToolTipText(NbBundle.getMessage(EditorTopComponent.class, "HINT_EditorTopComponent"));
@@ -58,6 +58,9 @@ public final class EditorTopComponent extends TopComponent {
 
     }
 
+    void setPlasmid(Plasmid aplasmid) {
+        _editPanel.setPlasmid(aplasmid);
+    }
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -104,7 +107,7 @@ public final class EditorTopComponent extends TopComponent {
 
     @Override
     public int getPersistenceType() {
-        return TopComponent.PERSISTENCE_ALWAYS;
+        return TopComponent.PERSISTENCE_NEVER;
     }
 
     @Override
@@ -141,4 +144,10 @@ public final class EditorTopComponent extends TopComponent {
     protected String preferredID() {
         return PREFERRED_ID;
     }
+
+
+/*-----------------
+     variables
+ -----------------*/
+    EditorPanel _editPanel;
 }

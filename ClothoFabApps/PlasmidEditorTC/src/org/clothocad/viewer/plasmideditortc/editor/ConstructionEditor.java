@@ -1,4 +1,5 @@
-# 
+/*
+ * 
 Copyright (c) 2010 The Regents of the University of California.
 All rights reserved.
 Permission is hereby granted, without written agreement and without
@@ -19,14 +20,38 @@ MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE
 PROVIDED HEREUNDER IS ON AN "AS IS" BASIS, AND THE UNIVERSITY OF
 CALIFORNIA HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,
 ENHANCEMENTS, OR MODIFICATIONS..
-EditorPanel.jLabel1.text=Name
-EditorPanel.jLabel2.text=Part
-EditorPanel.jLabel3.text=Vector
-EditorPanel.jLabel4.text=Author
-EditorPanel.nameField.text=
-EditorPanel.partField.text=
-EditorPanel.vectorField.text=
-EditorPanel.authorField.text=
-EditorPanel.revertBtn.text=Revert Changes
-EditorPanel.saveBtn.text=Save Changes
-EditorPanel.getSeqBtn.text=Get Sequence
+ */
+
+package org.clothocad.viewer.plasmideditortc.editor;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import javax.swing.JPanel;
+import org.clothocore.api.data.Plasmid;
+
+/**
+ *
+ * @author jcanderson_Home
+ */
+public class ConstructionEditor extends JPanel {
+
+    public ConstructionEditor(Plasmid aplas) {
+        setLayout(new BorderLayout());
+        setBackground(Color.LIGHT_GRAY);
+    }
+
+
+    /* GETTERS
+     * */
+
+
+
+    /* SETTERS
+     * */
+
+
+
+    ///////////////////////////////////////////////////////////////////
+    ////                      private variables                    ////
+    private Plasmid _plas;
+}
