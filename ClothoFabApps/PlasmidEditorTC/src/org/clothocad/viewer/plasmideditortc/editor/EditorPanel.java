@@ -108,6 +108,11 @@ public class EditorPanel extends javax.swing.JPanel {
         authorField.setText(org.openide.util.NbBundle.getMessage(EditorPanel.class, "EditorPanel.authorField.text")); // NOI18N
 
         getSeqBtn.setText(org.openide.util.NbBundle.getMessage(EditorPanel.class, "EditorPanel.getSeqBtn.text")); // NOI18N
+        getSeqBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                getSeqBtnActionPerformed(evt);
+            }
+        });
 
         saveBtn.setText(org.openide.util.NbBundle.getMessage(EditorPanel.class, "EditorPanel.saveBtn.text")); // NOI18N
         saveBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -184,6 +189,10 @@ public class EditorPanel extends javax.swing.JPanel {
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         _plas.saveDefault();
     }//GEN-LAST:event_saveBtnActionPerformed
+
+    private void getSeqBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getSeqBtnActionPerformed
+        _plas.launchDefaultViewer();
+    }//GEN-LAST:event_getSeqBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -26,7 +26,13 @@ package org.clothocad.viewer.plasmideditortc.editor;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
+import java.util.List;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import org.clothocore.api.data.Plasmid;
 
 /**
@@ -36,9 +42,37 @@ import org.clothocore.api.data.Plasmid;
 public class ConstructionEditor extends JPanel {
 
     public ConstructionEditor(Plasmid aplas) {
+        _plas= aplas;
         setLayout(new BorderLayout());
-        setBackground(Color.LIGHT_GRAY);
+        setBackground(new Color(240,240,240));
+
+        Box topPanel = new Box(BoxLayout.X_AXIS);
+        add(topPanel, BorderLayout.NORTH);
+
+        JButton addPCR = new JButton("Add PCR");
+        topPanel.add(addPCR);
+
+        JButton addDigest = new JButton("Add Digest");
+        topPanel.add(addDigest);
+
+        JButton addLig = new JButton("Add Ligation");
+        topPanel.add(addLig);
+
+        JTextArea midArea = new JTextArea();
+        midArea.setLineWrap(true);
+        midArea.setWrapStyleWord(true);
+        midArea.setEditable(false);
+        midArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
+        add(midArea, BorderLayout.CENTER);
+
+        System.out.println(_plas.getConstructionFileAsString());
+        
+        //Construct acon = ConstructionParser.parseOut(_plas.getConstructionFileAsString());
+        //midArea.setText(acon.getXML());
+
     }
+
+
 
 
     /* GETTERS
