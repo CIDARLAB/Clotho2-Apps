@@ -6,7 +6,10 @@
 package org.clothocad.viewer.plateeditortc.guis;
 
 import java.awt.Color;
+import java.awt.GridLayout;
+import javax.swing.JButton;
 import javax.swing.JPanel;
+import org.clothocore.api.data.Container;
 import org.clothocore.api.data.Plate;
 
 /**
@@ -16,7 +19,15 @@ import org.clothocore.api.data.Plate;
 public class PlatePanel extends JPanel {
 
     public PlatePanel(Plate aplate) {
-        setBackground(Color.RED);
+        setLayout(new GridLayout(aplate.getNumRows(),aplate.getNumCols() ));
+
+        for(int row = 0; row<aplate.getNumRows(); row++) {
+            for(int col = 0; col<aplate.getNumCols(); col++) {
+                Container acon = aplate.getContainerAt(row, col);
+                WellPanel awell = new WellPanel(acon);
+                add(awell);
+            }
+        }
     }
 
 }
