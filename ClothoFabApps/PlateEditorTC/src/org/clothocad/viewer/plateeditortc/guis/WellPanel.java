@@ -5,7 +5,9 @@
 
 package org.clothocad.viewer.plateeditortc.guis;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -16,6 +18,9 @@ import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 import org.clothocore.api.data.Container;
 import org.clothocore.api.data.ObjBase;
+import org.clothocore.api.data.Oligo;
+import org.clothocore.api.data.OligoSample;
+import org.clothocore.api.data.Person;
 import org.clothocore.api.data.Sample;
 import org.clothocore.api.dnd.ObjBaseObserver;
 import org.clothocore.api.dnd.RefreshEvent;
@@ -25,10 +30,11 @@ import org.clothocore.util.basic.ObjBasePopup;
  *
  * @author jcanderson
  */
-class WellPanel extends JPanel {
+public class WellPanel extends JPanel {
 
     WellPanel(Container acon) {
         setBorder(raisedetched);
+        setLayout(new BorderLayout());
         addMouseListener(new MouseListener() {
 
             @Override
@@ -119,8 +125,10 @@ class WellPanel extends JPanel {
         repaint();
         int quality = _sam.getQuality();
         setBackground(colors[quality]);
+        JLabel well = new JLabel(_con.getWell());
+        add(well, BorderLayout.NORTH);
         JLabel label = new JLabel(_sam.getName());
-        add(label);
+        add(label, BorderLayout.CENTER);
         validate();
         repaint();
     }
@@ -155,7 +163,34 @@ class WellPanel extends JPanel {
     }
 
     private void createSample() {
-        System.out.println("Create a new sample called");
+        AddSampleDialog asd = new AddSampleDialog(this);
+        asd.setVisible(true);
+    }
+
+
+    void receiveSample(AddSampleDialog asd) {
+        if(asd.canceled) {
+            return;
+        }
+        Oligo anoligo = Oligo.retrieveByName(asd.oligoName);
+        if(anoligo==null) {
+            return;
+        }
+        Double vol;
+        try {
+            vol = Double.parseDouble(asd.volume);
+        }catch(Exception e) {
+            return;
+        }
+        Person auth = Person.retrieveByName(asd.authorName);
+        if(auth==null) {
+            return;
+        }
+        Sample asam = OligoSample.generateOligoSample( anoligo, _con, vol, auth );
+        if(asam!=null) {
+            _sam = asam;
+        }
+        init();
     }
     
     private void mouseEnteredEvent(Point point) {
@@ -198,4 +233,5 @@ class WellPanel extends JPanel {
         colors[3] = new Color(156,206,110);
         colors[4] = new Color(156,206,110);
     }
+
 }

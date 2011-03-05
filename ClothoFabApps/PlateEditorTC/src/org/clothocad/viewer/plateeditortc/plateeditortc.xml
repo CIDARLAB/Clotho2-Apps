@@ -18,7 +18,7 @@
 <classname>org-clothocad-viewer-plateeditortc-Connect</classname>
 <description>View and edit contents of a plate</description>
 <displayname>Plate Editor</displayname>
-<uuid>org.clothocad.viewer.toolappbrowser</uuid>
+<uuid>org.clothocad.viewer.plateeditortc</uuid>
 <screenshotpath>org/clothocad/viewer/plateeditortc/screenshot.png</screenshotpath>
 <author>J. Christopher Anderson</author>
 <viewer>PLATE</viewer>
