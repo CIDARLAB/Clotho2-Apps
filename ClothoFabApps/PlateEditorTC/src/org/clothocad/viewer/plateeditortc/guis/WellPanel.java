@@ -64,20 +64,41 @@ class WellPanel extends JPanel {
         });
 
         _con = acon;
+
+        preinit();
         init();
 
     }
 
-    private void init() {
-        System.out.println("WellPanel init called");
-        _obo = new ObjBaseObserver() {
+    private void preinit() {
+        //Observe the Container
+        _conobo = new ObjBaseObserver() {
             @Override
             public void update(ObjBase obj, RefreshEvent evt) {
                 init();
             }
         };
+        _con.isObservedBy(_conobo);
+        _sam = _con.getSample();
+        if(_sam==null) {
+            return;
+        }
+
+        //Observe the Sample
+        _samobo = new ObjBaseObserver() {
+            @Override
+            public void update(ObjBase obj, RefreshEvent evt) {
+                init();
+            }
+        };
+        _sam.isObservedBy(_samobo);
+    }
+
+    private void init() {
+        System.out.println("WellPanel init called");
+
         if(_con==null) {
-            setBackground(Color.RED);
+            setBackground(Color.WHITE);
             return;
         }
 
@@ -87,14 +108,15 @@ class WellPanel extends JPanel {
             validate();
             repaint();
             setBackground(Color.gray);
-            _con.isObservedBy(_obo);
             return;
         }
-        _sam.isObservedBy(_obo);
         fillInWell();
     }
 
     private void fillInWell() {
+        removeAll();
+        validate();
+        repaint();
         int quality = _sam.getQuality();
         setBackground(colors[quality]);
         JLabel label = new JLabel(_sam.getName());
@@ -163,7 +185,8 @@ class WellPanel extends JPanel {
 ////                      private variables                    ////
     private Container _con;
     private Sample _sam;
-    private ObjBaseObserver _obo;
+    private ObjBaseObserver _conobo;
+    private ObjBaseObserver _samobo;
 
     private static Color[] colors = new Color[5];
     private static Border raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED);
