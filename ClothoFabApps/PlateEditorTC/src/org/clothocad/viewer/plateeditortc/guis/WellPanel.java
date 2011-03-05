@@ -118,16 +118,23 @@ class WellPanel extends JPanel {
     }
     
     private void doubleClickPressed() {
-        ObjBase ob = null;
         if(_con==null) {
+            createContainer();
             return;
         } else if(_sam==null) {
-            ob = _con;
+            createSample();
+            return;
         } else {
-            ob = _sam;
+            _sam.launchDefaultViewer();
         }
+    }
 
-        ob.launchDefaultViewer();
+    private void createContainer() {
+        System.out.println("Create a new container called");
+    }
+
+    private void createSample() {
+        System.out.println("Create a new sample called");
     }
     
     private void mouseEnteredEvent(Point point) {
