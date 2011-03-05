@@ -69,12 +69,11 @@ class WellPanel extends JPanel {
     }
 
     private void init() {
+        System.out.println("WellPanel init called");
         _obo = new ObjBaseObserver() {
             @Override
             public void update(ObjBase obj, RefreshEvent evt) {
-                if(evt.getCondition().equals(RefreshEvent.Condition.SAMPLE_TO_CONTAINER)) {
-                    init();
-                }
+                init();
             }
         };
         if(_con==null) {
