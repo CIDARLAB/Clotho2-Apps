@@ -7,6 +7,7 @@ package org.clothocad.viewer.plateeditortc;
 
 import java.awt.BorderLayout;
 import javax.swing.SwingUtilities;
+import org.clothocad.viewer.plateeditortc.guis.HeaderPanel;
 import org.clothocad.viewer.plateeditortc.guis.PlatePanel;
 import org.clothocore.api.data.ObjBase;
 import org.clothocore.api.data.ObjType;
@@ -32,6 +33,10 @@ public class Connect implements ClothoViewer {
                 PlateTopComponent ptc = new PlateTopComponent();
                 PlatePanel pp = new PlatePanel(aplate);
                 ptc.add(pp, BorderLayout.CENTER);
+
+                HeaderPanel hp = new HeaderPanel(aplate);
+                ptc.add(hp, BorderLayout.NORTH);
+
                 ptc.open();
                 ptc.requestActive();
             }
