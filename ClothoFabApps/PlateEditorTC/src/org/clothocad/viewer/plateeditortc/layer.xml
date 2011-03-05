@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
 <filesystem>
-    <folder name="Actions">
-        <folder name="Window">
-            <file name="org-clothocad-viewer-plateeditortc-PlateAction.instance">
-                <attr name="component" methodvalue="org.clothocad.viewer.plateeditortc.PlateTopComponent.findInstance"/>
-                <attr name="displayName" bundlevalue="org.clothocad.viewer.plateeditortc.Bundle#CTL_PlateAction"/>
-                <attr name="instanceCreate" methodvalue="org.openide.windows.TopComponent.openAction"/>
-            </file>
-        </folder>
-    </folder>
-    <folder name="Menu">
-        <folder name="Window">
-            <file name="PlateAction.shadow">
-                <attr name="originalFile" stringvalue="Actions/Window/org-clothocad-viewer-plateeditortc-PlateAction.instance"/>
-            </file>
-        </folder>
-    </folder>
-    <folder name="Windows2">
-        <folder name="Components">
-            <file name="PlateTopComponent.settings" url="PlateTopComponentSettings.xml"/>
-        </folder>
-        <folder name="Modes">
-            <folder name="editor">
-                <file name="PlateTopComponent.wstcref" url="PlateTopComponentWstcref.xml"/>
-            </folder>
-        </folder>
-    </folder>
     <folder name="plugins">
         <folder name="viewers">
             <file name="org-clothocad-viewer-plateeditortc-Connect.instance">

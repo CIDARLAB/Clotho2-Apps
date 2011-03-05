@@ -31,6 +31,7 @@ public class Connect implements ClothoViewer {
             @Override
             public void run() {
                 PlateTopComponent ptc = new PlateTopComponent();
+                ptc.setName("Plate: " + aplate.getName());
                 PlatePanel pp = new PlatePanel(aplate);
                 ptc.add(pp, BorderLayout.CENTER);
 
