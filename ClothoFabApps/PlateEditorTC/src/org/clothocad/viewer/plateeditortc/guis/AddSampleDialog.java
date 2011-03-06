@@ -262,7 +262,7 @@ public class AddSampleDialog extends javax.swing.JDialog {
         }
 
         _myWell._sam = asam;
-        _myWell.init();
+        _myWell.preinit();
         _myWell._con.saveDefault();
     }
 
@@ -302,7 +302,7 @@ public class AddSampleDialog extends javax.swing.JDialog {
         }
 
         _myWell._sam = asam;
-        _myWell.init();
+        _myWell.preinit();
         _myWell._con.saveDefault();
     }
 
@@ -342,7 +342,7 @@ public class AddSampleDialog extends javax.swing.JDialog {
         }
 
         _myWell._sam = asam;
-        _myWell.init();
+        _myWell.preinit();
         _myWell._con.saveDefault();
     }
 

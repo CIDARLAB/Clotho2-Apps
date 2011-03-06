@@ -72,7 +72,7 @@ public class WellPanel extends JPanel {
 
     }
 
-    private void preinit() {
+    final void preinit() {
         //Observe the Container
         _conobo = new ObjBaseObserver() {
             @Override
@@ -96,7 +96,7 @@ public class WellPanel extends JPanel {
         _sam.isObservedBy(_samobo);
     }
 
-    void init() {
+    final void init() {
         System.out.println("WellPanel init called");
 
         if(_con==null) {
