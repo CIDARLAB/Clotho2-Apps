@@ -100,7 +100,7 @@ public class WellPanel extends JPanel {
         _sam.isObservedBy(_samobo);
     }
 
-    private void init() {
+    void init() {
         System.out.println("WellPanel init called");
 
         if(_con==null) {
@@ -114,6 +114,10 @@ public class WellPanel extends JPanel {
             validate();
             repaint();
             setBackground(Color.gray);
+            JLabel label = new JLabel("(Double Click)");
+            add(label, BorderLayout.CENTER);
+            validate();
+            repaint();
             return;
         }
         fillInWell();
@@ -166,32 +170,6 @@ public class WellPanel extends JPanel {
         AddSampleDialog asd = new AddSampleDialog(this);
         asd.setVisible(true);
     }
-
-
-    void receiveSample(AddSampleDialog asd) {
-        if(asd.canceled) {
-            return;
-        }
-        Oligo anoligo = Oligo.retrieveByName(asd.oligoName);
-        if(anoligo==null) {
-            return;
-        }
-        Double vol;
-        try {
-            vol = Double.parseDouble(asd.volume);
-        }catch(Exception e) {
-            return;
-        }
-        Person auth = Person.retrieveByName(asd.authorName);
-        if(auth==null) {
-            return;
-        }
-        Sample asam = OligoSample.generateOligoSample( anoligo, _con, vol, auth );
-        if(asam!=null) {
-            _sam = asam;
-        }
-        init();
-    }
     
     private void mouseEnteredEvent(Point point) {
         ObjBase ob = null;
@@ -218,8 +196,8 @@ public class WellPanel extends JPanel {
     }
 ///////////////////////////////////////////////////////////////////
 ////                      private variables                    ////
-    private Container _con;
-    private Sample _sam;
+    Container _con;
+    Sample _sam;
     private ObjBaseObserver _conobo;
     private ObjBaseObserver _samobo;
 

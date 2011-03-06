@@ -31,7 +31,9 @@ ENHANCEMENTS, OR MODIFICATIONS..
 package org.clothocad.viewer.plateeditortc.guis;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import org.clothocore.api.core.Collector;
+import org.clothocore.api.data.*;
 
 /**
  *
@@ -45,6 +47,7 @@ public class AddSampleDialog extends javax.swing.JDialog {
         initComponents();
         _myWell = aThis;
         authorField.setText(Collector.getCurrentUser().getName());
+        typeChooserActionPerformed(null);
     }
 
     /** This method is called from within the constructor to
@@ -58,14 +61,16 @@ public class AddSampleDialog extends javax.swing.JDialog {
 
         jLabel1 = new javax.swing.JLabel();
         typeChooser = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
-        oligoField = new javax.swing.JTextField();
+        typeLabel = new javax.swing.JLabel();
+        primaryField = new javax.swing.JTextField();
         createBtn = new javax.swing.JButton();
         cancelBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         authorField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         volumeField = new javax.swing.JTextField();
+        secondaryLabel = new javax.swing.JLabel();
+        secondaryField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -78,9 +83,9 @@ public class AddSampleDialog extends javax.swing.JDialog {
             }
         });
 
-        jLabel2.setText(org.openide.util.NbBundle.getMessage(AddSampleDialog.class, "AddSampleDialog.jLabel2.text")); // NOI18N
+        typeLabel.setText(org.openide.util.NbBundle.getMessage(AddSampleDialog.class, "AddSampleDialog.typeLabel.text")); // NOI18N
 
-        oligoField.setText(org.openide.util.NbBundle.getMessage(AddSampleDialog.class, "AddSampleDialog.oligoField.text")); // NOI18N
+        primaryField.setText(org.openide.util.NbBundle.getMessage(AddSampleDialog.class, "AddSampleDialog.primaryField.text")); // NOI18N
 
         createBtn.setText(org.openide.util.NbBundle.getMessage(AddSampleDialog.class, "AddSampleDialog.createBtn.text")); // NOI18N
         createBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +109,10 @@ public class AddSampleDialog extends javax.swing.JDialog {
 
         volumeField.setText(org.openide.util.NbBundle.getMessage(AddSampleDialog.class, "AddSampleDialog.volumeField.text")); // NOI18N
 
+        secondaryLabel.setText(org.openide.util.NbBundle.getMessage(AddSampleDialog.class, "AddSampleDialog.secondaryLabel.text")); // NOI18N
+
+        secondaryField.setText(org.openide.util.NbBundle.getMessage(AddSampleDialog.class, "AddSampleDialog.secondaryField.text")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,19 +123,17 @@ public class AddSampleDialog extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(26, 26, 26)
+                            .addComponent(typeLabel)
+                            .addComponent(secondaryLabel)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(typeChooser, 0, 175, Short.MAX_VALUE)
-                            .addComponent(oligoField, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(authorField, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(volumeField, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))
+                            .addComponent(authorField, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                            .addComponent(primaryField, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                            .addComponent(typeChooser, 0, 172, Short.MAX_VALUE)
+                            .addComponent(volumeField, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                            .addComponent(secondaryField, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(cancelBtn)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -136,15 +143,19 @@ public class AddSampleDialog extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(typeChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(oligoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(typeLabel)
+                    .addComponent(primaryField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(secondaryLabel)
+                    .addComponent(secondaryField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(authorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -152,53 +163,203 @@ public class AddSampleDialog extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(volumeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(createBtn)
                     .addComponent(cancelBtn))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(15, 15, 15))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void typeChooserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeChooserActionPerformed
-        // TODO add your handling code here:
+        switch(typeChooser.getSelectedIndex()) {
+            case 0:
+                typeLabel.setText("Plasmid");
+                secondaryLabel.setVisible(true);
+                secondaryField.setVisible(true);
+                break;
+            case 1:
+                typeLabel.setText("Oligo");
+                secondaryLabel.setVisible(false);
+                secondaryField.setVisible(false);
+                break;
+            case 2:
+                typeLabel.setText("Strain");
+                secondaryLabel.setVisible(false);
+                secondaryField.setVisible(false);
+                break;
+            default:
+                return;
+        }
     }//GEN-LAST:event_typeChooserActionPerformed
 
     private void cancelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelBtnActionPerformed
-        canceled = true;
         setVisible(false);
     }//GEN-LAST:event_cancelBtnActionPerformed
 
     private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
-        canceled = false;
-        oligoName = oligoField.getText();
-        authorName = authorField.getText();
-        volume = volumeField.getText();
-        type = (String) typeChooser.getSelectedItem();
-        setVisible(false);
-        _myWell.receiveSample(this);
-    }//GEN-LAST:event_createBtnActionPerformed
+        switch(typeChooser.getSelectedIndex()) {
+            case 0:
+                createPlasmidSample();
+                break;
+            case 1:
+                createOligoSample();
+                break;
+            case 2:
+                createStrainSample();
+                break;
+            default:
+                return;
+        }
 
+
+
+    }//GEN-LAST:event_createBtnActionPerformed
+    
+    private void createPlasmidSample() {
+        String plasmidName = primaryField.getText();
+        String strainName = secondaryField.getText();
+        String authorName = authorField.getText();
+        String volume = volumeField.getText();
+        String type = (String) typeChooser.getSelectedItem();
+        setVisible(false);
+
+        //Get the Plasmid
+        Plasmid aplas = Plasmid.retrieveByName(plasmidName);
+        if(aplas==null) {
+            JOptionPane.showMessageDialog(null, "The Plasmid you entered does not exist", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        //Get the Strain
+        Strain astrain = Strain.retrieveByName(strainName);
+        if(astrain==null) {
+            JOptionPane.showMessageDialog(null, "The Strain you entered does not exist", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        //Set other information
+        Double vol;
+        try {
+            vol = Double.parseDouble(volume);
+        }catch(Exception e) {
+            JOptionPane.showMessageDialog(null, "You didn't put a real number in for the volume", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        Person auth = Person.retrieveByName(authorName);
+        if(auth==null) {
+            JOptionPane.showMessageDialog(null, "Your author does not exist", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        //Create the Sample
+        Sample asam = PlasmidSample.generatePlasmidSample( aplas, astrain, _myWell._con, vol, auth);
+        if(asam==null) {
+            JOptionPane.showMessageDialog(null, "Something went wrong with creating your sample", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        _myWell._sam = asam;
+        _myWell.init();
+        _myWell._con.saveDefault();
+    }
+
+    private void createOligoSample() {
+        String oligoName = primaryField.getText();
+        String authorName = authorField.getText();
+        String volume = volumeField.getText();
+        String type = (String) typeChooser.getSelectedItem();
+        setVisible(false);
+
+        //Fetch the Oligo
+        Oligo anoligo = Oligo.retrieveByName(oligoName);
+        if(anoligo==null) {
+            JOptionPane.showMessageDialog(null, "The Oligo you entered does not exist", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        //Set other information
+        Double vol;
+        try {
+            vol = Double.parseDouble(volume);
+        }catch(Exception e) {
+            JOptionPane.showMessageDialog(null, "You didn't put a real number in for the volume", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        Person auth = Person.retrieveByName(authorName);
+        if(auth==null) {
+            JOptionPane.showMessageDialog(null, "Your author does not exist", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        //Create the sample
+        Sample asam = OligoSample.generateOligoSample( anoligo, _myWell._con, vol, auth );
+        if(asam==null) {
+            JOptionPane.showMessageDialog(null, "Something went wrong with creating your sample", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        _myWell._sam = asam;
+        _myWell.init();
+        _myWell._con.saveDefault();
+    }
+
+    private void createStrainSample() {
+        String strainName = primaryField.getText();
+        String authorName = authorField.getText();
+        String volume = volumeField.getText();
+        String type = (String) typeChooser.getSelectedItem();
+        setVisible(false);
+
+        //Get the Strain
+        Strain astrain = Strain.retrieveByName(strainName);
+        if(astrain==null) {
+            JOptionPane.showMessageDialog(null, "The Strain you entered does not exist", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        //Set other information
+        Double vol;
+        try {
+            vol = Double.parseDouble(volume);
+        }catch(Exception e) {
+            JOptionPane.showMessageDialog(null, "You didn't put a real number in for the volume", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        Person auth = Person.retrieveByName(authorName);
+        if(auth==null) {
+            JOptionPane.showMessageDialog(null, "Your author does not exist", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        //Create the Sample
+        Sample asam = StrainSample.generateStrainSample(astrain, _myWell._con, vol, auth);
+        if(asam==null) {
+            JOptionPane.showMessageDialog(null, "Something went wrong with creating your sample", "Sample Creation Failed", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        _myWell._sam = asam;
+        _myWell.init();
+        _myWell._con.saveDefault();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField authorField;
     private javax.swing.JButton cancelBtn;
     private javax.swing.JButton createBtn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField oligoField;
+    private javax.swing.JTextField primaryField;
+    private javax.swing.JTextField secondaryField;
+    private javax.swing.JLabel secondaryLabel;
     private javax.swing.JComboBox typeChooser;
+    private javax.swing.JLabel typeLabel;
     private javax.swing.JTextField volumeField;
     // End of variables declaration//GEN-END:variables
-    String oligoName;
-    String authorName;
-    String volume;
-    String type;
-    boolean canceled = false;
 
     private WellPanel _myWell;
 }
