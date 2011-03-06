@@ -7,7 +7,6 @@ package org.clothocad.viewer.plateeditortc.guis;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -18,9 +17,6 @@ import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 import org.clothocore.api.data.Container;
 import org.clothocore.api.data.ObjBase;
-import org.clothocore.api.data.Oligo;
-import org.clothocore.api.data.OligoSample;
-import org.clothocore.api.data.Person;
 import org.clothocore.api.data.Sample;
 import org.clothocore.api.dnd.ObjBaseObserver;
 import org.clothocore.api.dnd.RefreshEvent;
@@ -208,8 +204,8 @@ public class WellPanel extends JPanel {
         colors[0] = new Color(226,113,135);
         colors[1] = new Color(132,162,175);
         colors[2] = new Color(226,221,118);
-        colors[3] = new Color(156,206,110);
-        colors[4] = new Color(156,206,110);
+        colors[3] = new Color(163,174,97);
+        colors[4] = new Color(108,190,69);
     }
 
 }
