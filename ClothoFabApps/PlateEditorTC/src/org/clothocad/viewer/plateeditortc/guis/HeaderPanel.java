@@ -24,9 +24,16 @@ ENHANCEMENTS, OR MODIFICATIONS..
 
 package org.clothocad.viewer.plateeditortc.guis;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import org.clothocore.api.data.ObjBase;
 import org.clothocore.api.data.Plate;
+import org.clothocore.api.dnd.ObjBaseObserver;
+import org.clothocore.api.dnd.RefreshEvent;
+import org.clothocore.util.basic.ObjBasePopup;
 
 /**
  *
@@ -35,9 +42,47 @@ import org.clothocore.api.data.Plate;
 public class HeaderPanel extends JPanel {
 
     public HeaderPanel(Plate aplate) {
-        JTextField jtf = new JTextField();
-        add(jtf);
-        jtf.setText(aplate.getName());
+        _plate = aplate;
+        fname = new JTextField();
+        add(fname);
+        fname.setText(aplate.getName());
+
+        fbar = new JTextField();
+        add(fbar);
+        fbar.setText(aplate.getBarcode());
+
+        JButton cancelbtn = new JButton("Cancel Changes");
+        add(cancelbtn);
+        cancelbtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    fbar.setText(_plate.getBarcode());
+                    fname.setText(_plate.getName());
+                } catch(Exception err) {
+                }
+            }
+        });
+
+        JButton btn = new JButton("Save Changes");
+        add(btn);
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String name = fname.getText();
+                    _plate.changeName(name);
+                    String bar = fbar.getText();
+                    _plate.changeBarcode(bar);
+                } catch(Exception err) {
+                    err.printStackTrace();
+                }
+            }
+        });
+
+        _obo = new plateObserver();
+        _plate.isRepresentedBy(_obo, this);
+        ObjBasePopup obp = new ObjBasePopup(this, aplate);
     }
 
 
@@ -50,8 +95,21 @@ public class HeaderPanel extends JPanel {
     /* SETTERS
      * */
 
+    private class plateObserver implements ObjBaseObserver {
+        @Override
+        public void update(ObjBase obj, RefreshEvent evt) {
+            if(evt.isCondition(RefreshEvent.Condition.NAME_CHANGED)) {
+                fbar.setText(_plate.getBarcode());
+                fname.setText(_plate.getName());
+            }
+        }
+    }
 
 
     ///////////////////////////////////////////////////////////////////
     ////                      private variables                    ////
+        JTextField fname;
+        JTextField fbar;
+        Plate _plate;
+        plateObserver _obo;
 }
