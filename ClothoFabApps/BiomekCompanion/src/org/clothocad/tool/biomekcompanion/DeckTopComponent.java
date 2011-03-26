@@ -23,7 +23,10 @@ ENHANCEMENTS, OR MODIFICATIONS..
  */
 package org.clothocad.tool.biomekcompanion;
 
+import java.awt.BorderLayout;
 import java.util.logging.Logger;
+import javax.swing.JComponent;
+import org.clothocore.api.data.Collection;
 import org.openide.util.NbBundle;
 import org.openide.windows.TopComponent;
 import org.openide.windows.WindowManager;
@@ -48,6 +51,11 @@ public final class DeckTopComponent extends TopComponent {
         setToolTipText(NbBundle.getMessage(DeckTopComponent.class, "HINT_DeckTopComponent"));
 //        setIcon(ImageUtilities.loadImage(ICON_PATH, true));
 
+        VisualScene scene = new VisualScene();
+        myView = scene.createView();
+        scroller.setViewportView(myView);
+
+        scene.getCollection().isDropListenedBy(myView);
     }
 
     /** This method is called from within the constructor to
@@ -58,19 +66,14 @@ public final class DeckTopComponent extends TopComponent {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        scroller = new javax.swing.JScrollPane();
+
+        setLayout(new java.awt.BorderLayout());
+        add(scroller, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane scroller;
     // End of variables declaration//GEN-END:variables
     /**
      * Gets default instance. Do not use directly: reserved for *.settings files only,
@@ -142,4 +145,8 @@ public final class DeckTopComponent extends TopComponent {
     protected String preferredID() {
         return PREFERRED_ID;
     }
+
+
+
+    private JComponent myView;
 }
