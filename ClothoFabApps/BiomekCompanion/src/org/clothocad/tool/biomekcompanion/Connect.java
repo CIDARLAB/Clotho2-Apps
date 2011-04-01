@@ -40,9 +40,12 @@ public class Connect implements ClothoTool {
 
     @Override
     public void launch() {
+        System.out.println("Launched called for biomek companion");
+//        new CherryPicker().setVisible(true);
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
+
                 DeckTopComponent ptc = new DeckTopComponent();
                 ptc.setName("Biomek 3000 Deck");
                 ptc.open();

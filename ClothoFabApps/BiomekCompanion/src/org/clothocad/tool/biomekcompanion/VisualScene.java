@@ -27,6 +27,7 @@ package org.clothocad.tool.biomekcompanion;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.datatransfer.Transferable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -41,7 +42,9 @@ import org.clothocore.api.data.ObjType;
 import org.clothocore.api.data.Plate;
 import org.clothocore.api.dnd.ObjBaseObserver;
 import org.clothocore.api.dnd.RefreshEvent;
+import org.netbeans.api.visual.action.AcceptProvider;
 import org.netbeans.api.visual.action.ActionFactory;
+import org.netbeans.api.visual.action.ConnectorState;
 import org.netbeans.api.visual.action.PopupMenuProvider;
 import org.netbeans.api.visual.action.TwoStateHoverProvider;
 import org.netbeans.api.visual.action.WidgetAction;
@@ -82,7 +85,7 @@ public class VisualScene extends GraphScene {
                 widget.setPreferredLocation (new Point (200*col+10, 150*row+10));
                 widget.setLabel(pos);
                 layer.addChild (widget);
-                widget.getActions().addAction (hoverAction);
+                widget.getActions().addAction(ActionFactory.createAcceptAction(new DropListener()));
                 widget.getActions().addAction (popupMenuAction);
             }
         }
@@ -120,12 +123,32 @@ public class VisualScene extends GraphScene {
                     nextAvailable.x+=200;
                     nextAvailable.y+=100;
                 }
+                VisualScene.this.validate();
+                VisualScene.this.repaint();
             }
         };
         _coll.isObservedBy(_obo);
 
+        _coll.addObject(Collector.getPlate("409db53b40d1484d856353318111f533"));
     }
 
+    private class DropListener implements AcceptProvider {
+        @Override
+        public ConnectorState isAcceptable(Widget widget, Point point, Transferable t) {
+            System.out.println("isacceptable called");
+            return ConnectorState.ACCEPT;
+        }
+
+        @Override
+        public void accept(Widget widget, Point point, Transferable t) {
+            try {
+                PlateWidget pw = (PlateWidget) widget;
+                System.out.println(pw.name);
+            }catch(Exception err) {
+                System.out.println("It's not a platewidget");
+            }
+        }
+    }
     private class DeckPosition extends IconNodeWidget {
         //VARIABLES//
         String position;
@@ -167,6 +190,7 @@ public class VisualScene extends GraphScene {
             Image img = ImageUtilities.loadImage("org/clothocad/tool/biomekcompanion/plate.png", true);
             setImage(img);
             getActions().addAction (ActionFactory.createMoveAction ());
+            getActions().addAction(ActionFactory.createAcceptAction(new DropListener()));
             setLabel(aplate.getName());
         }
     }
@@ -197,7 +221,7 @@ public class VisualScene extends GraphScene {
         @Override
         public JPopupMenu getPopupMenu(Widget widget, Point localLocation) {
             JPopupMenu menu = new JPopupMenu ();
-            DeckPosition dp = (DeckPosition) widget;
+            final DeckPosition dp = (DeckPosition) widget;
             if(dp.obj==null) {
                 JMenuItem addPlateItem = new JMenuItem("Add Plate");
                 addPlateItem.addActionListener(new ActionListener() {
@@ -215,6 +239,11 @@ public class VisualScene extends GraphScene {
                             if(link!=null) {
                                 Plate chosen = Collector.getPlate(link.uuid);
                                 System.out.println("adding plate " + chosen.getName());
+                                PlateWidget pw = new PlateWidget(chosen);
+                                dp.addChild(pw);
+                                dp.obj = pw;
+                                validate();
+                                repaint();
                             }
                         } catch(Exception err) {
                             err.printStackTrace();
