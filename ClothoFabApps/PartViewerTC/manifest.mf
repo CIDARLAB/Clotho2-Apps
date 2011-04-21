@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.clothocad.viewer.partviewertc
+OpenIDE-Module-Layer: org/clothocad/viewer/partviewertc/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/clothocad/viewer/partviewertc/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
