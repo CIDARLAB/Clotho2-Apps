@@ -6,6 +6,10 @@
 package org.clothocad.viewer.partviewertc.panels;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 import org.clothocore.api.data.Part;
 
@@ -16,7 +20,44 @@ import org.clothocore.api.data.Part;
 public class PartImagePanel extends JPanel {
 
     public PartImagePanel(Part apart) {
-        setBackground(Color.RED);
+        _part = apart;
     }
+
+    private void drawBasicPart() {
+        Rectangle rect = new Rectangle(100,100,200,25);
+        g2d.fill(rect);
+    }
+
+    private void drawCompositePart() {
+        ArrayList<Part> composition = _part.getCompositeParts();
+        int size = composition.size();
+        int width = 500/size;
+        int offset = 20;
+        System.out.println("width " + width + "size " + size);
+
+        //Draw a square for each part
+        for(int i=0; i<composition.size(); i++) {
+            Rectangle rect = new Rectangle(offset+i*width,100,width-2,35);
+            g2d.fill(rect);
+        }
+
+
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        System.out.println("Painting window");
+        g2d = (Graphics2D) g;
+        if(_part.getPartType().equals(Part.partType.Basic)) {
+            drawBasicPart();
+        } else {
+            drawCompositePart();
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////////
+    ////                         private variables               ////
+    private Part _part;
+    private Graphics2D g2d;
 
 }
