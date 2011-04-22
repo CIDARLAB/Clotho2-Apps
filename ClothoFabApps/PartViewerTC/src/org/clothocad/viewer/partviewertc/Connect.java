@@ -12,6 +12,8 @@ import org.clothocore.api.data.ObjBase;
 import org.clothocore.api.data.ObjType;
 import org.clothocore.api.data.Part;
 import org.clothocore.api.plugin.ClothoViewer;
+import org.openide.windows.Mode;
+import org.openide.windows.WindowManager;
 
 /**
  *
@@ -25,20 +27,32 @@ public class Connect implements ClothoViewer {
             return;
         }
         final Part apart = (Part) o;
+        final PartImagePanel pp = new PartImagePanel(apart);
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                ImageWindowTopComponent ptc = new ImageWindowTopComponent();
-                ptc.setName("Part: " + apart.getName());
-                PartImagePanel pp = new PartImagePanel(apart);
-                ptc.add(pp, BorderLayout.CENTER);
+                if(_stc==null) {
+                    _stc = new ImageWindowTopComponent();
+                    Mode m = WindowManager.getDefault().findMode("properties");
+                    if(m!=null) {
+                        m.dockInto(_stc);
+                    }
+                    _stc.setName("Part: " + apart.getName());
+                    _stc.add(pp, BorderLayout.CENTER);
+                    _stc.open();
+                    _stc.requestActive();
+                } else {
+                    _stc.setName("Part: " + apart.getName());
+                    _stc.removeAll();
+                    _stc.add(pp, BorderLayout.CENTER);
+                    _stc.validate();
+                    _stc.open();
+                    _stc.requestActive();
+                }
 
-//                HeaderPanel hp = new HeaderPanel(aplate);
-//                ptc.add(hp, BorderLayout.NORTH);
-
-                ptc.open();
-                ptc.requestActive();
+                _stc.open();
+                _stc.requestActive();
             }
         });
 
@@ -52,4 +66,5 @@ public class Connect implements ClothoViewer {
     public void init() {
     }
 
+    ImageWindowTopComponent _stc;
 }

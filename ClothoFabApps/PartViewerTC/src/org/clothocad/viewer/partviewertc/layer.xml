@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
 <filesystem>
-    <folder name="Actions">
-        <folder name="Window">
-            <file name="org-clothocad-viewer-partviewertc-ImageWindowAction.instance">
-                <attr name="component" methodvalue="org.clothocad.viewer.partviewertc.ImageWindowTopComponent.findInstance"/>
-                <attr name="displayName" bundlevalue="org.clothocad.viewer.partviewertc.Bundle#CTL_ImageWindowAction"/>
-                <attr name="instanceCreate" methodvalue="org.openide.windows.TopComponent.openAction"/>
-            </file>
-        </folder>
-    </folder>
-    <folder name="Menu">
-        <folder name="Window">
-            <file name="ImageWindowAction.shadow">
-                <attr name="originalFile" stringvalue="Actions/Window/org-clothocad-viewer-partviewertc-ImageWindowAction.instance"/>
-            </file>
-        </folder>
-    </folder>
-    <folder name="Windows2">
-        <folder name="Components">
-            <file name="ImageWindowTopComponent.settings" url="ImageWindowTopComponentSettings.xml"/>
-        </folder>
-        <folder name="Modes">
-            <folder name="editor">
-                <file name="ImageWindowTopComponent.wstcref" url="ImageWindowTopComponentWstcref.xml"/>
-            </folder>
-        </folder>
-    </folder>
     <folder name="plugins">
         <folder name="viewers">
             <file name="org-clothocad-viewer-partviewertc-Connect.instance">
