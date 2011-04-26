@@ -6,8 +6,13 @@
 package org.clothocad.viewer.partviewertc;
 
 import java.awt.BorderLayout;
+import java.lang.ref.WeakReference;
+import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
+import org.clothocad.viewer.commonviewtc.HubTopComponent;
 import org.clothocad.viewer.partviewertc.panels.PartImagePanel;
+import org.clothocad.viewer.partviewertc.panels.PartInfoPanel;
+import org.clothocad.viewer.partviewertc.panels.VisualScene;
 import org.clothocore.api.data.ObjBase;
 import org.clothocore.api.data.ObjType;
 import org.clothocore.api.data.Part;
@@ -27,35 +32,36 @@ public class Connect implements ClothoViewer {
             return;
         }
         final Part apart = (Part) o;
-        final PartImagePanel pp = new PartImagePanel(apart);
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                if(_stc==null) {
-                    _stc = new ImageWindowTopComponent();
+                ImageWindowTopComponent iwtc = _stcwr.get();
+                if(iwtc==null) {
+                    iwtc = new ImageWindowTopComponent();
                     Mode m = WindowManager.getDefault().findMode("properties");
                     if(m!=null) {
-                        m.dockInto(_stc);
+                        m.dockInto(iwtc);
                     }
-                    _stc.setName("Part: " + apart.getName());
-                    _stc.add(pp, BorderLayout.CENTER);
-                    _stc.open();
-                    _stc.requestActive();
+                     _stcwr = new WeakReference(iwtc);
                 } else {
-                    _stc.setName("Part: " + apart.getName());
-                    _stc.removeAll();
-                    _stc.add(pp, BorderLayout.CENTER);
-                    _stc.validate();
-                    _stc.open();
-                    _stc.requestActive();
+                    iwtc.getScroller().removeAll();
                 }
 
-                _stc.open();
-                _stc.requestActive();
+                VisualScene scene = new VisualScene(apart);
+                JComponent myView = scene.createView();
+                scene.getPart().isDropListenedBy(myView);
+
+                iwtc.getScroller().setViewportView(myView);
+                iwtc.setName("Part: " + apart.getName());
+                iwtc.open();
+                iwtc.requestActive();
+                iwtc.validate();
+                iwtc.repaint();
             }
         });
 
+        HubTopComponent.show(new PartInfoPanel(apart), "Part: " + apart.getName());
     }
 
     @Override
@@ -66,5 +72,5 @@ public class Connect implements ClothoViewer {
     public void init() {
     }
 
-    ImageWindowTopComponent _stc;
+    WeakReference<ImageWindowTopComponent> _stcwr = new WeakReference(null);
 }

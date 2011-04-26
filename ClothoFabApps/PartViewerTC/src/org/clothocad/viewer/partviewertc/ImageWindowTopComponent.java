@@ -5,6 +5,9 @@
 package org.clothocad.viewer.partviewertc;
 
 import java.util.logging.Logger;
+import javax.swing.JComponent;
+import javax.swing.JScrollPane;
+import org.clothocad.viewer.partviewertc.panels.VisualScene;
 import org.openide.util.NbBundle;
 import org.openide.windows.TopComponent;
 import org.openide.windows.WindowManager;
@@ -28,7 +31,6 @@ public final class ImageWindowTopComponent extends TopComponent {
         setName(NbBundle.getMessage(ImageWindowTopComponent.class, "CTL_ImageWindowTopComponent"));
         setToolTipText(NbBundle.getMessage(ImageWindowTopComponent.class, "HINT_ImageWindowTopComponent"));
 //        setIcon(ImageUtilities.loadImage(ICON_PATH, true));
-
     }
 
     /** This method is called from within the constructor to
@@ -39,10 +41,14 @@ public final class ImageWindowTopComponent extends TopComponent {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        scroller = new javax.swing.JScrollPane();
+
         setLayout(new java.awt.BorderLayout());
+        add(scroller, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane scroller;
     // End of variables declaration//GEN-END:variables
     /**
      * Gets default instance. Do not use directly: reserved for *.settings files only,
@@ -56,6 +62,9 @@ public final class ImageWindowTopComponent extends TopComponent {
         return instance;
     }
 
+    public JScrollPane getScroller() {
+        return scroller;
+    }
     /**
      * Obtain the ImageWindowTopComponent instance. Never call {@link #getDefault} directly!
      */
@@ -114,4 +123,6 @@ public final class ImageWindowTopComponent extends TopComponent {
     protected String preferredID() {
         return PREFERRED_ID;
     }
+
+    private JComponent myView;
 }
