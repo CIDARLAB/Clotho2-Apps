@@ -4,10 +4,14 @@
  */
 package org.clothocad.viewer.partviewertc;
 
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.util.logging.Logger;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-import org.clothocad.viewer.partviewertc.panels.VisualScene;
+import org.clothocad.viewer.commonviewtc.HubTopComponent;
+import org.clothocad.viewer.partviewertc.panels.PartInfoPanel;
+import org.clothocore.api.data.Part;
 import org.openide.util.NbBundle;
 import org.openide.windows.TopComponent;
 import org.openide.windows.WindowManager;
@@ -21,16 +25,22 @@ import org.netbeans.api.settings.ConvertAsProperties;
 autostore = false)
 public final class ImageWindowTopComponent extends TopComponent {
 
-    private static ImageWindowTopComponent instance;
-    /** path to the icon used by the component and its open action */
-//    static final String ICON_PATH = "SET/PATH/TO/ICON/HERE";
-    private static final String PREFERRED_ID = "ImageWindowTopComponent";
 
     public ImageWindowTopComponent() {
+
+    }
+
+    public ImageWindowTopComponent(final PartInfoPanel pip, final Part apart) {
+        _part = apart;
+        _pip = pip;
         initComponents();
         setName(NbBundle.getMessage(ImageWindowTopComponent.class, "CTL_ImageWindowTopComponent"));
         setToolTipText(NbBundle.getMessage(ImageWindowTopComponent.class, "HINT_ImageWindowTopComponent"));
-//        setIcon(ImageUtilities.loadImage(ICON_PATH, true));
+    }
+
+    @Override
+    public void componentActivated() {
+        HubTopComponent.show(_pip, "Part: " + _part.getName());
     }
 
     /** This method is called from within the constructor to
@@ -124,5 +134,10 @@ public final class ImageWindowTopComponent extends TopComponent {
         return PREFERRED_ID;
     }
 
+    private static ImageWindowTopComponent instance;
+    private static final String PREFERRED_ID = "ImageWindowTopComponent";
+
     private JComponent myView;
+    private Part _part;
+    private PartInfoPanel _pip;
 }

@@ -36,17 +36,9 @@ public class Connect implements ClothoViewer {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                ImageWindowTopComponent iwtc = _stcwr.get();
-                if(iwtc==null) {
-                    iwtc = new ImageWindowTopComponent();
-                    Mode m = WindowManager.getDefault().findMode("properties");
-                    if(m!=null) {
-                        m.dockInto(iwtc);
-                    }
-                     _stcwr = new WeakReference(iwtc);
-                } else {
-                    iwtc.getScroller().removeAll();
-                }
+                PartInfoPanel pip = new PartInfoPanel(apart);
+                HubTopComponent.show(pip, "Part: " + apart.getName());
+                ImageWindowTopComponent iwtc = new ImageWindowTopComponent(pip, apart);
 
                 VisualScene scene = new VisualScene(apart);
                 JComponent myView = scene.createView();
@@ -61,7 +53,7 @@ public class Connect implements ClothoViewer {
             }
         });
 
-        HubTopComponent.show(new PartInfoPanel(apart), "Part: " + apart.getName());
+        
     }
 
     @Override
@@ -72,5 +64,4 @@ public class Connect implements ClothoViewer {
     public void init() {
     }
 
-    WeakReference<ImageWindowTopComponent> _stcwr = new WeakReference(null);
 }
