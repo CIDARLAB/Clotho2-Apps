@@ -8,6 +8,7 @@ package org.clothocad.viewer.sampleeditortc;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import org.clothocad.sharedwindowtc.SharedTopComponent;
 import org.clothocad.viewer.sampleeditortc.guis.OligoSamplePanel;
 import org.clothocad.viewer.sampleeditortc.guis.PlasmidSamplePanel;
 import org.clothocad.viewer.sampleeditortc.guis.StrainSamplePanel;
@@ -52,24 +53,7 @@ public class Connect implements ClothoViewer {
                         return;
                 }
 
-                if(_stc==null) {
-                    _stc = new SampleTopComponent();
-                    Mode m = WindowManager.getDefault().findMode("properties");
-                    if(m!=null) {
-                        m.dockInto(_stc);
-                    }
-                    _stc.setName("Sample: " + asam.getName());
-                    _stc.add(pp, BorderLayout.CENTER);
-                    _stc.open();
-                    _stc.requestActive();
-                } else {
-                    _stc.setName("Sample: " + asam.getName());
-                    _stc.removeAll();
-                    _stc.add(pp, BorderLayout.CENTER);
-                    _stc.validate();
-                    _stc.open();
-                    _stc.requestActive();
-                }
+                SharedTopComponent.setPanel("Sample: " + asam.getName(), pp);
             }
         });
 
@@ -84,6 +68,4 @@ public class Connect implements ClothoViewer {
     }
 ///////////////////////////////////////////////////////////////////
 ////                      private variables                    ////
-    SampleTopComponent _stc;
-
 }
