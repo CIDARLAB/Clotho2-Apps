@@ -24,8 +24,10 @@ ENHANCEMENTS, OR MODIFICATIONS..
 package org.clothocad.sharedwindowtc;
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import org.openide.util.NbBundle;
 import org.openide.windows.TopComponent;
 //import org.openide.util.ImageUtilities;
@@ -54,7 +56,7 @@ public final class SharedTopComponent extends TopComponent {
     }
 
     private void setPanelRedirect(String title, JPanel panel) {
-        setName("Sample: " + title);
+        setName(title);
         removeAll();
         add(panel, BorderLayout.CENTER);
         validate();
@@ -62,21 +64,31 @@ public final class SharedTopComponent extends TopComponent {
         requestActive();
     }
 
-    public static void setPanel(String title, JPanel panel) {
+    public static void setPanel(final String title, final JPanel panel, final int priority) {
         if(panel==null) {
             System.out.println("Shared topcomponent received a null panel to display");
             return;
         }
+        SwingUtilities.invokeLater(new Runnable() {
 
-        if(_stc==null) {
-            _stc = new SharedTopComponent();
-            Mode m = WindowManager.getDefault().findMode("properties");
-            if(m!=null) {
-                m.dockInto(_stc);
+            @Override
+            public void run() {
+                SharedTopComponent _stc = null;
+                if(_stcList.size()>=priority+1) {
+                    _stc = _stcList.get(priority);
+                } else {
+                    _stc = new SharedTopComponent();
+                    Mode m = WindowManager.getDefault().findMode("properties");
+                    if(m!=null) {
+                        m.dockInto(_stc);
+                    }
+                    _stcList.add(_stc);
+                }
+
+                _stc.setPanelRedirect( title,  panel);
             }
-        }
+        });
 
-        _stc.setPanelRedirect( title,  panel);
     }
     
     /** This method is called from within the constructor to
@@ -165,5 +177,5 @@ public final class SharedTopComponent extends TopComponent {
 
 ///////////////////////////////////////////////////////////////////
 ////                      private variables                    ////
-    private static SharedTopComponent _stc;
+    private static ArrayList<SharedTopComponent> _stcList = new ArrayList<SharedTopComponent>();
 }
