@@ -53,7 +53,7 @@ public class Connect implements ClothoViewer {
                         return;
                 }
 
-                SharedTopComponent.setPanel( asam.getName(), pp);
+                SharedTopComponent.setPanel("Sample: " + asam.getName(), pp, 0);
             }
         });
 
