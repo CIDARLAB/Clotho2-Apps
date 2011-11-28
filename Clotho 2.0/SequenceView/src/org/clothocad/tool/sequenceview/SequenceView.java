@@ -3372,14 +3372,16 @@ public class SequenceView implements ObjBaseDropTarget {
     // Takes a nucseq, and returns all its annotated features 
     // in a string, ready for output to a genbank file.
     public String dumpFeaturesToGenbank(NucSeq ns) {
-        String out = new String("FEATURES\n");
+        String out = new String("FEATURES             Location/Qualifiers\n");
         HashSet<Annotation> h = ns.getAnnotations();
         Iterator<Annotation> hIter = h.iterator();
         
         while (hIter.hasNext()) {
             Annotation a = hIter.next();
-            System.out.println("Annotation " + a.getName() + " from " + a.getStart() + " to " + a.getEnd());
-            out += "CDS\t\t" + a.getStart() + ".." + a.getEnd() + "\n" + "\t\t/note=\""+ a.getName() + "\"\n";
+            System.out.println("mooAnnotation " + a.getName() + " from " + a.getStart() + " to " + a.getEnd());
+//            out += "\tCDS\t\t" + a.getStart() + ".." + a.getEnd() + "\n" + "\t\t/note=\""+ a.getName() + "\"\n";
+            out += "     CDS          " + a.getStart() + ".." + a.getEnd() + "\n" + "                     /note=\""+ a.getName() + "\"\n";
+
         }
         
         return out;
