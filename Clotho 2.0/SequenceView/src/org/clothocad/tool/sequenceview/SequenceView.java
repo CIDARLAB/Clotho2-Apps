@@ -43,6 +43,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator; // sbhatia
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JCheckBox;
@@ -3303,6 +3304,12 @@ public class SequenceView implements ObjBaseDropTarget {
                 }
                 toFile = toFile + "COMMENT     " + "." + "\n";
 
+                // sbhatia :  Dump all feature annotations into the genbank file
+                // BEGIN
+                toFile += dumpFeaturesToGenbank(_sequence);
+                // sbhatia :  Dump all feature annotations into the genbank file
+                // END
+                
                 // ORIGIN Lines and Sequence Data
                 toFile = toFile + "ORIGIN     \n";
 
@@ -3360,6 +3367,28 @@ public class SequenceView implements ObjBaseDropTarget {
         _sequenceview.requestFocus();
     }
 
+    // sbhatia BEGIN
+    
+    // Takes a nucseq, and returns all its annotated features 
+    // in a string, ready for output to a genbank file.
+    public String dumpFeaturesToGenbank(NucSeq ns) {
+        String out = new String("FEATURES\n");
+        HashSet<Annotation> h = ns.getAnnotations();
+        Iterator<Annotation> hIter = h.iterator();
+        
+        while (hIter.hasNext()) {
+            Annotation a = hIter.next();
+            System.out.println("Annotation " + a.getName() + " from " + a.getStart() + " to " + a.getEnd());
+            out += "CDS\t\t" + a.getStart() + ".." + a.getEnd() + "\n" + "\t\t/note=\""+ a.getName() + "\"\n";
+        }
+        
+        return out;
+    }
+    
+    // sbhatia END
+    
+    
+    
     /**
      * Notifies relevant processes that the contents of the sequence view
      * have changed.
