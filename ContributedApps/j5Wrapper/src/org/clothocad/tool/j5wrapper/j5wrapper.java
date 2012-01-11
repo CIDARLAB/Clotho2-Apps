@@ -1,6 +1,8 @@
 package org.clothocad.tool.j5wrapper;
 
+import java.io.FileNotFoundException;
 import org.clothocore.api.data.ObjBase;
+import org.openide.util.Exceptions;
 import org.openide.windows.TopComponent;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -14,7 +16,11 @@ import java.awt.event.FocusEvent;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.io.StringReader;
 import org.apache.ws.commons.util.Base64.DecodingException;
 import org.xml.sax.ContentHandler;
@@ -43,6 +49,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.border.BevelBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 import org.apache.commons.csv.CSVParser;
 import org.apache.xmlrpc.XmlRpcException;
@@ -63,6 +70,8 @@ import org.apache.xmlrpc.serializer.XmlRpcWriter;
 import org.xml.sax.SAXException;
 import org.apache.ws.commons.util.Base64;
 import org.clothocore.api.data.Collection;
+import org.clothocore.util.chooser.ClothoOpenChooser;
+
 /**
  *
  * @author Avi Robinson-Mosher
@@ -82,6 +91,7 @@ public class j5wrapper extends javax.swing.JFrame implements ObjBaseDropTarget {
     private void initComponents() {
         j5password="";
         j5username="";
+        _fileOpenerInstantiated=false;
         getContentPane().setBackground(navyblue);
         setLayout(new BorderLayout());
         Box headerPanel = new Box(BoxLayout.X_AXIS);
@@ -190,7 +200,6 @@ public class j5wrapper extends javax.swing.JFrame implements ObjBaseDropTarget {
         JButton goButton = new JButton("Request design from j5");
         goButton.setPreferredSize(new Dimension(100,23));
         goButton.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -199,7 +208,16 @@ public class j5wrapper extends javax.swing.JFrame implements ObjBaseDropTarget {
                     Logger.getLogger(j5wrapper.class.getName()).log(Level.SEVERE, null, ex);
                 }
             } });
-            leftpanel.add(goButton);
+        leftpanel.add(goButton);
+
+        JButton oligoButton = new JButton("Add j5 oligos to collection");
+        oligoButton.setPreferredSize(new Dimension(100,23));
+        oligoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addOligosFromFile();
+            } });
+        leftpanel.add(oligoButton);
 
         pack();
         //setVisible(true);
@@ -216,6 +234,30 @@ public class j5wrapper extends javax.swing.JFrame implements ObjBaseDropTarget {
         String decodedDesignString=new String(decodedDesign);
         System.out.println(decodedDesignString);
         return decodedDesignString;
+    }
+    
+    private void addOligosFromFile() {
+        FileNameExtensionFilter csvFilter = new FileNameExtensionFilter("CSV Oligo File", "csv");
+        if (!_fileOpenerInstantiated) {
+            _fileOpener = new ClothoOpenChooser("Load j5 Oligos");
+            _fileOpener.getFileChooser().addChoosableFileFilter(csvFilter);
+            _fileOpener.getFileChooser().setFileFilter(_fileOpener.getFileChooser().getAcceptAllFileFilter());
+            //_fileOpener.getFileChooser().setCurrentDirectory(_filePath);
+            _fileOpener.setTitle("Open a j5 oligo file...");
+            _fileOpenerInstantiated = true;
+        }
+        _fileOpener.open_Window();
+
+        if (_fileOpener.fileSelected) {
+            FileReader inFile=null;
+            try {
+                inFile = new FileReader(_fileOpener.getFile());
+            } catch (FileNotFoundException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+            addCsvToCollection(inFile);
+        }
+
     }
     
     private void runCalc() throws SAXException {
@@ -341,40 +383,9 @@ public class j5wrapper extends javax.swing.JFrame implements ObjBaseDropTarget {
                     String entryString=null;
                     while((zipEntry=zipInput.getNextEntry())!=null){
                         entryString=zipEntry.toString();
-                        int size=zipInput.available();
-                        byte data[]=new byte[1024];
-                        String entryData="";
-                        int count;
-                        while((count=zipInput.read(data,0,1024))!=-1){
-                            String tempString=new String(data,0,count);
-                            entryData=entryData.concat(tempString);
-                        }
                         System.out.println(entryString);
                         if("j5_oligos_0.csv".equals(entryString)){
-                            // certainly a more efficient way to do this:
-                            ArrayList<Oligo> allOligos = (ArrayList<Oligo>)_Collection.getAll(ObjType.OLIGO);
-                            HashSet<String> oligoNames=new HashSet<String>();
-                            Iterator<Oligo> oligoIterator=allOligos.iterator();
-                            while(oligoIterator.hasNext()){
-                                Oligo oligo=oligoIterator.next();
-                                oligoNames.add(oligo.getName());
-                            }
-                            
-                            // add oligos to collection
-                            // parse entryData as csv
-                            BufferedReader reader=new BufferedReader(new StringReader(entryData));
-                            CSVParser csvParser=new CSVParser(reader);
-                            String[] parsedHeaders=csvParser.getLine();
-                            String[] line;
-                            while((line=csvParser.getLine())!=null){
-                                String name=line[0];
-                                if(oligoNames.contains(name)){
-                                    continue;
-                                }
-                                Oligo newOligo=new Oligo(name,name,_Collection.getAuthor(),line[4]);
-                                _Collection.addObject(newOligo);
-                            }
-                            _Collection.saveDefault();
+                            addCsvToCollection(new InputStreamReader(zipInput));
                         }
                     }
                 } catch (IOException ex) {
@@ -390,6 +401,37 @@ public class j5wrapper extends javax.swing.JFrame implements ObjBaseDropTarget {
             }
         } catch (XmlRpcException ex) {
             Logger.getLogger(j5wrapper.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void addCsvToCollection(Reader csvReader){
+        try {
+            // certainly a more efficient way to do this:
+//            ArrayList<Oligo> allOligos = (ArrayList<Oligo>)_Collection.getAll(ObjType.OLIGO);
+//            HashSet<String> oligoNames=new HashSet<String>();
+//            Iterator<Oligo> oligoIterator=allOligos.iterator();
+//            while(oligoIterator.hasNext()){
+//                Oligo oligo=oligoIterator.next();
+//                oligoNames.add(oligo.getName());
+//            }
+
+            // add oligos to collection
+            // parse entryData as csv
+            BufferedReader reader=new BufferedReader(csvReader);
+            CSVParser csvParser=new CSVParser(reader);
+            String[] parsedHeaders=csvParser.getLine();
+            String[] line;
+            while((line=csvParser.getLine())!=null){
+                String name=line[0];
+                if(Oligo.retrieveByName(name)!=null){
+                    continue;
+                }
+                Oligo newOligo=new Oligo(name,name,_Collection.getAuthor(),line[4]);
+                _Collection.addObject(newOligo);
+            }
+            _Collection.saveDefault();
+        } catch (IOException ex) {
+            Exceptions.printStackTrace(ex);
         }
     }
 
@@ -558,4 +600,7 @@ public class j5wrapper extends javax.swing.JFrame implements ObjBaseDropTarget {
 
     String j5username;
     String j5password;
+    private ClothoOpenChooser _fileOpener;
+    boolean _fileOpenerInstantiated;
+
 }
