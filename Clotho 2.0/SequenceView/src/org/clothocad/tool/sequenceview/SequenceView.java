@@ -1673,14 +1673,13 @@ public class SequenceView implements ObjBaseDropTarget {
      */
     public boolean parseForGenbankFeatures(String sequence, ObjLink collectionLink, ArrayList<String> inputLines) throws Exception {
 
-        System.out.println("Input lines>" + inputLines.toString() + "<end of inputlines");
         //Collection coll = Collector.getCollection(collectionLink.uuid); // sbhatia commented out
         Collection coll = new Collection();
         coll.setTransient();
         int size = inputLines.size();
         if (size > 0) {
             for (int i = 0; i < size; i++) {
-                if (inputLines.get(i).substring(inputLines.get(i).length() - 1).matches("\\d") && !inputLines.get(i).startsWith("/")) { // sbhatia -- original
+                if (inputLines.get(i).substring(inputLines.get(i).length() - 1).matches("\\d") && !inputLines.get(i).startsWith("/")) { 
                     String[] tokens = inputLines.get(i).split("[\\s[\\p{Punct}]]+");
 
                     String seq = sequence.substring(Integer.parseInt(tokens[tokens.length - 2]) - 1, Integer.parseInt(tokens[tokens.length - 1]));
@@ -4100,7 +4099,6 @@ public class SequenceView implements ObjBaseDropTarget {
             if (!an.getFeature().getSearchTags().contains("restriction enzyme")) {
                 try {
                     _h.addHighlight(an.getStart(), an.getEnd(), new FeaturePainter(an.getColor())); // sbhatia commented this out
-                    //_h.addHighlight(an.getStart(), an.getEnd()+1, new FeaturePainter(an.getColor())); // sbhatia added this
                 } catch (BadLocationException ex) {
                     System.out.println("error highlighting features");
                     Exceptions.printStackTrace(ex);
