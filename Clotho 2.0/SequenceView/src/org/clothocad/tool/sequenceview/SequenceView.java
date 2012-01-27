@@ -365,7 +365,7 @@ public class SequenceView implements ObjBaseDropTarget {
     /**
      * Changes the case (UPPER <-> lower) of any text selected in the Sequence
      * View according to the given parameters
-     * 
+     *
      * @param toUpper True if the text should be capitalized, false if it is
      *                being sent to lower case
      */
@@ -500,7 +500,7 @@ public class SequenceView implements ObjBaseDropTarget {
 
     /**
      * Highlights an Open Reading Frame in the SequenceView
-     * 
+     *
      * @param start Int that specifies
      * @param forward True if it's a forward ORF, false for a reverse ORF
      */
@@ -563,12 +563,12 @@ public class SequenceView implements ObjBaseDropTarget {
                 //commented
                 /*
                 ClothoHighlightData highlighter;
-                
+
                 orfIndex[0][0] = start;
                 orfIndex[1][0] = end;
                 highlighter = new ClothoHighlightData(name + " " + start + " to " + end);
                 highlighter.setHighlightData(orfIndex, col, name, seq.substring(start, end));
-                
+
                 highlighterArray = new ClothoHighlightData[1];
                 highlighterArray[0] = highlighter;
                  *
@@ -580,17 +580,17 @@ public class SequenceView implements ObjBaseDropTarget {
                 String orfSeq = seq.substring(start, len) + seq.substring(0, end);
                 ClothoHighlightData highlighterEnd;
                 ClothoHighlightData highlighterStart;
-                
+
                 orfIndex[0][0] = start;
                 orfIndex[1][0] = len;
                 highlighterEnd = new ClothoHighlightData(name + " " + start + " to " + end);
                 highlighterEnd.setHighlightData(orfIndex, col, name, orfSeq);
-                
+
                 orfIndex2[0][0] = 0;
                 orfIndex2[1][0] = end;
                 highlighterStart = new ClothoHighlightData(name + " " + start + " to " + end);
                 highlighterStart.setHighlightData(orfIndex2, col, name, orfSeq);
-                
+
                 highlighterArray = new ClothoHighlightData[2];
                 highlighterArray[0] = highlighterEnd;
                 highlighterArray[1] = highlighterStart;
@@ -616,7 +616,7 @@ public class SequenceView implements ObjBaseDropTarget {
             for (int i = 0; i < highlighterArray.length; i++) {
             newUnderliner(_sequenceview.get_TextArea(), highlighterArray[i].color);
             underlineText(highlighterArray[i].search);
-            } 
+            }
              *
              */
 
@@ -1233,7 +1233,7 @@ public class SequenceView implements ObjBaseDropTarget {
 
     /**
      * Returns _backspaceKeyPressed.
-     * @return _backspaceKeyPressed  
+     * @return _backspaceKeyPressed
      */
     public boolean get_backspaceKeyPressed() {
         return _backspaceKeyPressed;
@@ -1672,13 +1672,21 @@ public class SequenceView implements ObjBaseDropTarget {
      * @param collectionLink an ObjLink that represents the collection that the new features will be saved to
      */
     public boolean parseForGenbankFeatures(String sequence, ObjLink collectionLink, ArrayList<String> inputLines) throws Exception {
-        Collection coll = Collector.getCollection(collectionLink.uuid);
+
+        System.out.println("Input lines>" + inputLines.toString() + "<end of inputlines");
+        //Collection coll = Collector.getCollection(collectionLink.uuid); // sbhatia commented out
+        Collection coll = new Collection();
+        coll.setTransient();
         int size = inputLines.size();
         if (size > 0) {
             for (int i = 0; i < size; i++) {
-                if (inputLines.get(i).substring(inputLines.get(i).length() - 1).matches("\\d") && !inputLines.get(i).startsWith("/")) {
+                if (inputLines.get(i).substring(inputLines.get(i).length() - 1).matches("\\d") && !inputLines.get(i).startsWith("/")) { // sbhatia -- original
                     String[] tokens = inputLines.get(i).split("[\\s[\\p{Punct}]]+");
-                    String seq = sequence.substring(Integer.parseInt(tokens[tokens.length - 2]) - 1, Integer.parseInt(tokens[tokens.length - 1]) - 1);
+
+                    String seq = sequence.substring(Integer.parseInt(tokens[tokens.length - 2]) - 1, Integer.parseInt(tokens[tokens.length - 1]));
+                    // the substring method takes an inclusive start index and an EXCLUSIVE end index. Hence no -1 is necessary for the end index.
+                    // The -1s are for converting from a 1-based genbank indexing system to a 0-based java indexing system. --sbhatia
+
                     if (!tokens[0].equalsIgnoreCase("source")) {//source is a feature that is the entire sequence. useless to retrieve this
                         i++;
                         while (!inputLines.get(i).contains("\"")) {
@@ -1690,8 +1698,9 @@ public class SequenceView implements ObjBaseDropTarget {
                         if (newFeature != null) {
                             Collector.add(newFeature);
                             coll.addObject(newFeature);
-                            newFeature.saveDefault();
-                            coll.saveDefault();
+                            coll.changeName("Genbank import: TEMPORARY collection of features");
+                            //newFeature.saveDefault(); // sbhatia commented this out
+                            // coll.saveDefault(); // sbhatia commented this out
 
                         }
                     }
@@ -1700,6 +1709,7 @@ public class SequenceView implements ObjBaseDropTarget {
 
         }
         javax.swing.JOptionPane.showMessageDialog(null, "Finished importing features!", "Sequence View Import", JOptionPane.INFORMATION_MESSAGE);
+        coll.launchDefaultViewer();
         return true;
     }
 
@@ -1914,26 +1924,26 @@ public class SequenceView implements ObjBaseDropTarget {
     public void packagePartOpen() {
         /*
         SequenceViewPartExport svpe = new SequenceViewPartExport(this);
-        
+
         svpe.getLibraries().removeAllItems();
         svpe.getFields().removeAllItems();
-        
+
         //set the connections to the currently available connections
         ClothoData d = new ClothoData();
         d.set_sender(this.get_description());
         d.set_recipient("Connect to mySQL");
         d.set_operation(ClothoOperationEnum.operationGetConnections);
         d.set_use_code(ClothoDataUseEnum.communicationData);
-        
+
         ClothomySQLDataObject dataObj = new ClothomySQLDataObject();
         dataObj.setMisc(svpe);
         d.set_payloadInfo(dataObj);
         this.get_hub().get_core().process_data_in_connection(d.get_recipient(), d);
-        
+
         //svpe.getLibraries().setSelectedIndex(0);
-        
-        
-        
+
+
+
         //svpe.setVisible(true);
          */
     }
@@ -1948,24 +1958,24 @@ public class SequenceView implements ObjBaseDropTarget {
         d.set_use_code(ClothoDataUseEnum.communicationData);
         d.set_sender(this.get_description());
         d.set_recipient("Parts Navigator");
-        
-        
-        
+
+
+
         ClothomySQLDataObject info = new ClothomySQLDataObject();
         info.setName("packagedPart"); //was mySQLConnection
-        
+
         //database name
         info.setDb(_database);
         //table name
         info.setTable(_table);
-        
+
         //the hash key
         info.setStatementKey(svpe.getLibraries().getSelectedItem().toString());
-        
+
         d.set_payloadInfo(info);
-        
+
         ArrayList payload_arrays = new ArrayList(0);
-        
+
         //need the table field names
         ArrayList fieldnames = new ArrayList(0);
         for(int i = 0; i<svpe.getFields().getItemCount(); i++){
@@ -1973,7 +1983,7 @@ public class SequenceView implements ObjBaseDropTarget {
         //System.out.print("Adding field " + svpe.getFields().getItemAt(i).toString() + "\n");
         }
         payload_arrays.add(fieldnames);
-        
+
         //need the data to add to the table
         //System.out.print("Number of fields " + svpe.getFields().getItemCount() + "\n");
         ArrayList payload_array_data = new ArrayList();
@@ -1990,12 +2000,12 @@ public class SequenceView implements ObjBaseDropTarget {
         }
         }
         payload_arrays.add(payload_array_data);
-        
+
         d.set_payload(payload_arrays);
         this.get_hub().get_core().process_data_in_connection(d.get_recipient(), d);
         svpe.dispose();
         }
-        
+
         else
         {
         ClothoDialogBox db = new ClothoDialogBox("Clotho: Packager", "Select a connection!");
@@ -2086,7 +2096,7 @@ public class SequenceView implements ObjBaseDropTarget {
     }
 
     /**
-     * Provides information about highlighted sequence data in the sequence view. 
+     * Provides information about highlighted sequence data in the sequence view.
      * This also causes various JLabels to become visible or invisible.
      * @param evt
      * @param pane
@@ -2279,32 +2289,32 @@ public class SequenceView implements ObjBaseDropTarget {
     //public void process_data(ClothoData d) {
        /*
     if(d.get_use_code() == ClothoDataUseEnum.triggerData){
-    
+
     // Creates a new Sequence View and returns its address to the
     // connection it was called from
     if (d.get_op() == ClothoOperationEnum.operationNewWindow) {
     int address = createNewWindow();
-    
+
     ClothoData pm = new ClothoData();
     pm.set_payload(address);
     pm.set_sender(get_description());
     pm.set_recipient(d.get_sender());
     pm.set_use_code(ClothoDataUseEnum.communicationData);
     pm.set_operation(ClothoOperationEnum.operationPopulateView);
-    
+
     this.get_hub().get_core().process_data_in_connection(pm.get_recipient(), pm);
-    
+
     }
-    
+
     else {
     openWindow();
-    
+
     //populate the export connections drop down
     setup_export_connections();
     }
-    
+
     }
-    
+
     if(d.get_use_code() == ClothoDataUseEnum.exportData)
     {
     String importdata = (String) d.get_payload();
@@ -2319,7 +2329,7 @@ public class SequenceView implements ObjBaseDropTarget {
     _sequenceview.get_TextArea().replaceSelection(importdata);
     refreshHighlightData(0);
     refreshHighlightData(1);
-    
+
     }
     else if (chosen == 1) {
     _sequenceview.get_TextArea().setCaretPosition(0);
@@ -2343,15 +2353,15 @@ public class SequenceView implements ObjBaseDropTarget {
     refreshHighlightData(2);
     _sequenceview.get_TextArea().setText(importdata);
     }
-    
+
     }
-    
+
     else if (d.get_op() == ClothoOperationEnum.operationClearHighlight) {
     resetHighlight(_sequenceview.get_TextArea());
     _highlightData = new ArrayList();
     }
-    
-    
+
+
     else if(d.get_op() == ClothoOperationEnum.operationGetConnections)
     {
     ClothomySQLDataObject dataObj = (ClothomySQLDataObject)d.get_payloadInfo();
@@ -2364,7 +2374,7 @@ public class SequenceView implements ObjBaseDropTarget {
     svpe.getLibraries().addItem((String) connection.getElementAt(i));
     }
     if(connection.getSize() > 1)
-    
+
     {
     svpe.setVisibleFlag(true);
     svpe.setVisible(true);
@@ -2375,7 +2385,7 @@ public class SequenceView implements ObjBaseDropTarget {
     db.show_Dialog(javax.swing.JOptionPane.ERROR_MESSAGE);
     }
     }
-    
+
     else if(d.get_op() == ClothoOperationEnum.operationGetFields)
     {
     ClothomySQLDataObject info = (ClothomySQLDataObject) d.get_payloadInfo();
@@ -2383,31 +2393,31 @@ public class SequenceView implements ObjBaseDropTarget {
     _database = info.getDb();
     _table = info.getTable();
     svpe.getFields().removeAllItems();
-    
-    
-    
+
+
+
     ArrayList fields = (ArrayList) d.get_payload();
     for (int i = 0; i < fields.size(); i++)
     {
     svpe.getFields().addItem((String) fields.get(i));
     }
     }
-    
+
     else if (d.get_op() == ClothoOperationEnum.operationGetHashRef) {
     _PoBoLHashRef = (java.util.Hashtable) d.get_payload();
     }
-    
+
     else if (d.get_op() == ClothoOperationEnum.operationDispose) {
     _sequenceview.dispose();
     }
     }
-    
+
     if (d.get_use_code() == ClothoDataUseEnum.stringSeqViewData) {
     String outputText = (String) d.get_payload();
     clearOutputWindow();
     writeToOutput(outputText);
     }
-    
+
     }
      */
     @Deprecated
@@ -2463,7 +2473,7 @@ public class SequenceView implements ObjBaseDropTarget {
         //SET ClothoOperationEnum here for each case....
         if (s.equalsIgnoreCase("findNextButton")) {
             String findFieldText = _findField.getText();
-            //If rev-comp checked, send rev-comp of ReplaceFindField to 
+            //If rev-comp checked, send rev-comp of ReplaceFindField to
             // SearchHelper.
             if (_sequenceviewtools.get_RevCompCheckBox().isSelected()) {
                 _revCompSequence = revComp_String(findFieldText);
@@ -2479,15 +2489,15 @@ public class SequenceView implements ObjBaseDropTarget {
 
             }
 
-            //if the sequence contains degeneracies or the sequenceview contains 
+            //if the sequence contains degeneracies or the sequenceview contains
             //  degeneracies then turn findText into a regular expression
             if (_sequenceArea.getText().matches("[a-zA-Z]*?[BDHKMNRSVWY][a-zA-Z]*?")
                     || findFieldText.matches("[a-zA-Z]*?[BDHKMNRSVWY][a-zA-Z]*?")) {
                 findFieldText = grab_RegExp(findFieldText);
             }
 
-            // it is possible to make this more efficient by instantiating 
-            // ClothoSearchHelper only when the findField or sequenceview are 
+            // it is possible to make this more efficient by instantiating
+            // ClothoSearchHelper only when the findField or sequenceview are
             // changed. For later.
             //uncommented
             _searcher = new ClothoSearchUtil(findFieldText,
@@ -2512,7 +2522,7 @@ public class SequenceView implements ObjBaseDropTarget {
             selectHit(_sequenceArea);
         } else if (s.equalsIgnoreCase("findPrevButton")) {
             String findFieldText = _findField.getText();
-            //If rev-comp checked, send rev-comp of ReplaceFindField to 
+            //If rev-comp checked, send rev-comp of ReplaceFindField to
             // SearchHelper.
             if (_sequenceviewtools.get_RevCompCheckBox().isSelected()) {
                 //comment   _revCompSequence = revComp_String(findFieldText, _dnaType);
@@ -2528,15 +2538,15 @@ public class SequenceView implements ObjBaseDropTarget {
                 findFieldText = findFieldText.concat("|" + _revCompSequence);
             }
 
-            //if the sequence contains degeneracies or the sequenceview contains 
+            //if the sequence contains degeneracies or the sequenceview contains
             //  degeneracies then turn findText into a regular expression
             if (_sequenceArea.getText().matches("[a-zA-Z]*?[BDHKMNRSVWY][a-zA-Z]*?")
                     || findFieldText.matches("[a-zA-Z]*?[BDHKMNRSVWY][a-zA-Z]*?")) {
                 findFieldText = grab_RegExp(findFieldText);
             }
 
-            // it is possible to make this more efficient by instantiating 
-            // ClothoSearchHelper only when the findField or sequenceview are 
+            // it is possible to make this more efficient by instantiating
+            // ClothoSearchHelper only when the findField or sequenceview are
             // changed. For later.
             //uncommented
             _searcher = new ClothoSearchUtil(findFieldText,
@@ -2630,7 +2640,7 @@ public class SequenceView implements ObjBaseDropTarget {
             _sequenceviewtools.toFront();
         } else if (s.equalsIgnoreCase("replaceNextButton")) {
             String replaceFindFieldText = _replaceFindField.getText();
-            //If rev-comp checked, send rev-comp of ReplaceFindField to 
+            //If rev-comp checked, send rev-comp of ReplaceFindField to
             // SearchHelper.
             if (_sequenceviewtools.get_RevCompCheckBox().isSelected()) {
                 //comment   _revCompSequence = revComp_String(replaceFindFieldText, _dnaType);
@@ -2647,15 +2657,15 @@ public class SequenceView implements ObjBaseDropTarget {
                 replaceFindFieldText = replaceFindFieldText.concat("|" + _revCompSequence);
             }
 
-            //if the sequence contains degeneracies or the sequenceview contains 
+            //if the sequence contains degeneracies or the sequenceview contains
             //  degeneracies then turn findText into a regular expression
             if (_sequenceArea.getText().matches("[a-zA-Z]*?[BDHKMNRSVWY][a-zA-Z]*?")
                     || replaceFindFieldText.matches("[a-zA-Z]*?[BDHKMNRSVWY][a-zA-Z]*?")) {
                 replaceFindFieldText = grab_RegExp(replaceFindFieldText);
             }
 
-            // it is possible to make this more efficient by instantiating 
-            // ClothoSearchHelper only when the findField or sequenceview are 
+            // it is possible to make this more efficient by instantiating
+            // ClothoSearchHelper only when the findField or sequenceview are
             // changed. For later.
             //uncommented
             _searcher = new ClothoSearchUtil(replaceFindFieldText,
@@ -2670,7 +2680,7 @@ public class SequenceView implements ObjBaseDropTarget {
             selectHit(_sequenceArea);
         } else if (s.equalsIgnoreCase("replacePrevButton")) {
             String replaceFindFieldText = _replaceFindField.getText();
-            //If rev-comp checked, send rev-comp of ReplaceFindField to 
+            //If rev-comp checked, send rev-comp of ReplaceFindField to
             // SearchHelper.
             if (_sequenceviewtools.get_RevCompCheckBox().isSelected()) {
                 _revCompSequence = revComp_String(replaceFindFieldText);
@@ -2687,15 +2697,15 @@ public class SequenceView implements ObjBaseDropTarget {
                 replaceFindFieldText = replaceFindFieldText.concat("|" + _revCompSequence);
             }
 
-            //if the sequence contains degeneracies or the sequenceview contains 
+            //if the sequence contains degeneracies or the sequenceview contains
             //  degeneracies then turn findText into a regular expression
             if (_sequenceArea.getText().matches("[a-zA-Z]*?[BDHKMNRSVWY][a-zA-Z]*?")
                     || replaceFindFieldText.matches("[a-zA-Z]*?[BDHKMNRSVWY][a-zA-Z]*?")) {
                 replaceFindFieldText = grab_RegExp(replaceFindFieldText);
             }
 
-            // it is possible to make this more efficient by instantiating 
-            // ClothoSearchHelper only when the findField or sequenceview are 
+            // it is possible to make this more efficient by instantiating
+            // ClothoSearchHelper only when the findField or sequenceview are
             // changed. For later.
             //uncommented
             _searcher = new ClothoSearchUtil(replaceFindFieldText,
@@ -2719,7 +2729,7 @@ public class SequenceView implements ObjBaseDropTarget {
             String replaceFindFieldText = _sequenceviewtools.get_ReplaceFindField().getText();
 
             //DUPLICATED with setSearch
-            //If rev-comp checked, send rev-comp of ReplaceFindField to 
+            //If rev-comp checked, send rev-comp of ReplaceFindField to
             // SearchHelper.
             if (_sequenceviewtools.get_RevCompCheckBox().isSelected()) {
                 _revCompSequence = revComp_String(replaceFindFieldText);
@@ -2734,7 +2744,7 @@ public class SequenceView implements ObjBaseDropTarget {
                 replaceFindFieldText = replaceFindFieldText.concat("|" + _revCompSequence);
             }
 
-            //if the sequence contains degeneracies or the sequenceview contains 
+            //if the sequence contains degeneracies or the sequenceview contains
             //  degeneracies then turn findText into a regular expression
             if (_sequenceArea.getText().matches("[a-zA-Z]*?[BDHKMNRSVWY][a-zA-Z]*?")
                     || replaceFindFieldText.matches("[a-zA-Z]*?[BDHKMNRSVWY][a-zA-Z]*?")) {
@@ -2834,7 +2844,7 @@ public class SequenceView implements ObjBaseDropTarget {
             selectHit(_sequenceArea);
         } else if (s.equalsIgnoreCase("replaceAllButton")) {
             String replaceFindFieldText = _sequenceviewtools.get_ReplaceFindField().getText();
-            //If rev-comp checked, send rev-comp of ReplaceFindField to 
+            //If rev-comp checked, send rev-comp of ReplaceFindField to
             // SearchHelper.
             if (_sequenceviewtools.get_RevCompCheckBox().isSelected()) {
                 _revCompSequence = revComp_String(replaceFindFieldText);
@@ -3058,7 +3068,7 @@ public class SequenceView implements ObjBaseDropTarget {
 
     /**
      * Replaces the text selected in the SequenceView
-     * 
+     *
      * @param replacement String that replaces the selected text
      */
     public void replaceTextAtSelection(String replacement) {
@@ -3309,7 +3319,7 @@ public class SequenceView implements ObjBaseDropTarget {
                 toFile += dumpFeaturesToGenbank(_sequence);
                 // sbhatia :  Dump all feature annotations into the genbank file
                 // END
-                
+
                 // ORIGIN Lines and Sequence Data
                 toFile = toFile + "ORIGIN     \n";
 
@@ -3368,29 +3378,36 @@ public class SequenceView implements ObjBaseDropTarget {
     }
 
     // sbhatia BEGIN
-    
-    // Takes a nucseq, and returns all its annotated features 
+
+    // Takes a nucseq, and returns all its annotated features
     // in a string, ready for output to a genbank file.
     public String dumpFeaturesToGenbank(NucSeq ns) {
         String out = new String("FEATURES             Location/Qualifiers\n");
         HashSet<Annotation> h = ns.getAnnotations();
         Iterator<Annotation> hIter = h.iterator();
-        
+
         while (hIter.hasNext()) {
             Annotation a = hIter.next();
             System.out.println("mooAnnotation " + a.getName() + " from " + a.getStart() + " to " + a.getEnd());
 //            out += "\tCDS\t\t" + a.getStart() + ".." + a.getEnd() + "\n" + "\t\t/note=\""+ a.getName() + "\"\n";
-            out += "     CDS          " + a.getStart() + ".." + a.getEnd() + "\n" + "                     /note=\""+ a.getName() + "\"\n";
+
+            // HACK <-- FIXME later: to sidestep annotation bug --sbhatia
+            if (a.getStart()==0) {
+                out += "     CDS          " + a.getStart() + ".." + a.getEnd() + "\n" + "                     /note=\""+ a.getName() + "\"\n";
+            } else {
+                int tmp = a.getStart() + 1;
+                out += "     CDS          " + tmp + ".." + a.getEnd() + "\n" + "                     /note=\""+ a.getName() + "\"\n";
+            }
 
         }
-        
+
         return out;
     }
-    
+
     // sbhatia END
-    
-    
-    
+
+
+
     /**
      * Notifies relevant processes that the contents of the sequence view
      * have changed.
@@ -3629,7 +3646,7 @@ public class SequenceView implements ObjBaseDropTarget {
             try{
             _h.addHighlight(search[0][i], search[1][i], _underlinePainter);
             }
-            
+
             catch (javax.swing.text.BadLocationException ble) {
             ClothoCore.getCore().log(ble.toString(), LogLevel.ERROR);
             }
@@ -3680,7 +3697,7 @@ public class SequenceView implements ObjBaseDropTarget {
         }
         /*if (evt.getStateChange() == ItemEvent.DESELECTED) {
         //commented
-        
+
         //ClothoCore.getCore().log("Circular Deselected\n", LogLevel.MESSAGE);
         _circular = false;
         } else {
@@ -3758,12 +3775,12 @@ public class SequenceView implements ObjBaseDropTarget {
     d.set_recipient("Connect to mySQL");
     d.set_operation(ClothoOperationEnum.operationGetFields);
     d.set_use_code(ClothoDataUseEnum.communicationData);
-    
+
     ClothomySQLDataObject dataObj = new ClothomySQLDataObject();
     dataObj.setMisc(svpe);
-    
-    
-    
+
+
+
     ArrayList payload_array = new ArrayList(0);
     //sets the string to use in a hashable
     if(svpe.getLibraries().getItemCount() > 0)
@@ -3772,7 +3789,7 @@ public class SequenceView implements ObjBaseDropTarget {
     d.set_payload(payload_array);
     dataObj.setStatementKey(svpe.getLibraries().getSelectedItem().toString());
     d.set_payloadInfo(dataObj);
-    
+
     this.get_hub().get_core().process_data_in_connection(d.get_recipient(), d);
      * */
     //}
@@ -3899,7 +3916,7 @@ public class SequenceView implements ObjBaseDropTarget {
     }
 
     /**
-     * Used to validate key strokes. If key is invalid (i.e. not a 
+     * Used to validate key strokes. If key is invalid (i.e. not a
      * A, G, C, T/U, etc.) then the event will be consumed
      * @param evt KeyEvent
      */
@@ -4082,7 +4099,8 @@ public class SequenceView implements ObjBaseDropTarget {
         for (Annotation an : _annotations) {
             if (!an.getFeature().getSearchTags().contains("restriction enzyme")) {
                 try {
-                    _h.addHighlight(an.getStart(), an.getEnd(), new FeaturePainter(an.getColor()));
+                    _h.addHighlight(an.getStart(), an.getEnd(), new FeaturePainter(an.getColor())); // sbhatia commented this out
+                    //_h.addHighlight(an.getStart(), an.getEnd()+1, new FeaturePainter(an.getColor())); // sbhatia added this
                 } catch (BadLocationException ex) {
                     System.out.println("error highlighting features");
                     Exceptions.printStackTrace(ex);
