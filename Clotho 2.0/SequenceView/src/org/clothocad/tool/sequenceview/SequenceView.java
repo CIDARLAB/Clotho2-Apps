@@ -41,6 +41,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator; // sbhatia
@@ -1679,7 +1680,7 @@ public class SequenceView implements ObjBaseDropTarget {
         int size = inputLines.size();
         if (size > 0) {
             for (int i = 0; i < size; i++) {
-                if (inputLines.get(i).substring(inputLines.get(i).length() - 1).matches("\\d") && !inputLines.get(i).startsWith("/")) { 
+                if (inputLines.get(i).substring(inputLines.get(i).length() - 1).matches("\\d") && !inputLines.get(i).startsWith("/")) {
                     String[] tokens = inputLines.get(i).split("[\\s[\\p{Punct}]]+");
 
                     String seq = sequence.substring(Integer.parseInt(tokens[tokens.length - 2]) - 1, Integer.parseInt(tokens[tokens.length - 1]));
@@ -3385,18 +3386,12 @@ public class SequenceView implements ObjBaseDropTarget {
         HashSet<Annotation> h = ns.getAnnotations();
         Iterator<Annotation> hIter = h.iterator();
 
+        // TODO Sort annotations in order of start and end.
         while (hIter.hasNext()) {
             Annotation a = hIter.next();
-            System.out.println("mooAnnotation " + a.getName() + " from " + a.getStart() + " to " + a.getEnd());
-//            out += "\tCDS\t\t" + a.getStart() + ".." + a.getEnd() + "\n" + "\t\t/note=\""+ a.getName() + "\"\n";
 
-            // HACK <-- FIXME later: to sidestep annotation bug --sbhatia
-            if (a.getStart()==0) {
-                out += "     CDS          " + a.getStart() + ".." + a.getEnd() + "\n" + "                     /note=\""+ a.getName() + "\"\n";
-            } else {
-                int tmp = a.getStart() + 1;
-                out += "     CDS          " + tmp + ".." + a.getEnd() + "\n" + "                     /note=\""+ a.getName() + "\"\n";
-            }
+            int tmp = a.getStart() + 1;
+            out += "     CDS          " + tmp + ".." + a.getEnd() + "\n" + "                     /note=\"" + a.getName() + "\"\n";
 
         }
 
