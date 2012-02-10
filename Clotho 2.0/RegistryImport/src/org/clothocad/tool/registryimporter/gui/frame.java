@@ -38,6 +38,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingWorker;
 import org.clothocore.api.core.Collector;
 import org.clothocore.api.data.Part;
+import org.clothocore.api.data.Collection;
 ;
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
@@ -161,8 +162,13 @@ public class frame extends JFrame {
                         registryPart rp = new registryPart(textin, Collector.getFormat("org-clothocad-format-rfc10-connect"), jcb.isSelected());
                         glass.setVisible(false);
                         Part newpart = rp.getPart();
+                        // sbhatia added this BEGIN
+                        Collection cDefault = Collector.getCurrentUser().getHerCollection();
+                        // sbhatia added this END
                         if(newpart!=null) {
-                            newpart.launchDefaultViewer();
+                            cDefault.addObject(newpart); // sbhatia added this
+                            cDefault.launchDefaultViewer(); // sbhatia added this
+                            //newpart.launchDefaultViewer(); // sbhatia commented this
                         }
                         return null;
                     }
@@ -187,7 +193,7 @@ public class frame extends JFrame {
 
 
 
-        
+
         pack();
         setVisible(true);
     }
