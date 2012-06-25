@@ -63,7 +63,8 @@ public class connect implements ClothoFormat {
     @Override
     public boolean checkComposite(ArrayList<Part> composition, Object additionalRequirements) {
         //Can't composite freeform
-        return false;
+        //return false; // commented out by sbhatia
+        return true; // sbhatia added this
     }
 
     @Override
@@ -78,7 +79,17 @@ public class connect implements ClothoFormat {
     @Override
     public NucSeq generateCompositeSequence(ArrayList<Part> composition, Object additionalRequirements) {
         //Can't composite freeform
-        return null;
+        // return null; // commented out by sbhatia
+        // sbhatia start
+        StringBuffer sb = new StringBuffer();
+        for(Part p: composition) {
+            sb.append(p.getSeq().getSeq());
+        }
+        NucSeq outnuc = new NucSeq(sb.toString());
+        //outnuc.setTransient();
+        return outnuc;
+        // sbhatia end
+
     }
 
     @Override
