@@ -55,8 +55,8 @@ public final class InventoryTopComponent extends TopComponent {
         initComponents();
 
         if (Collator.getPreference("preferredConnection").equals("configurable")) {
-            localRadioButton.setSelected(true);
-            configurableRadioButton.setSelected(false);
+            localRadioButton.setSelected(false);
+            configurableRadioButton.setSelected(true);
         } else if (Collator.getPreference("preferredConnection").equals("local")) {
             localRadioButton.setSelected(true);
             configurableRadioButton.setSelected(false);

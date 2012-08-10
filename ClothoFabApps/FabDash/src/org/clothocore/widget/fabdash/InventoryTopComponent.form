@@ -34,7 +34,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="connectionPanel" alignment="0" pref="317" max="32767" attributes="3"/>
+              <Component id="connectionPanel" alignment="0" pref="319" max="32767" attributes="3"/>
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel2" min="-2" pref="307" max="-2" attributes="1"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -79,20 +79,20 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel1" min="-2" pref="85" max="-2" attributes="2"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="currentUserLabel" pref="124" max="32767" attributes="2"/>
+                              <Component id="currentUserLabel" pref="132" max="32767" attributes="2"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel1" min="-2" pref="205" max="-2" attributes="2"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="6" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="changeButton" linkSize="10" min="-2" max="-2" attributes="1"/>
                           <Component id="connectButton" linkSize="10" min="-2" max="-2" attributes="1"/>
                           <Component id="configureButton" linkSize="10" min="-2" max="-2" attributes="1"/>
                       </Group>
-                      <EmptySpace pref="13" max="32767" attributes="0"/>
+                      <EmptySpace pref="21" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -214,7 +214,7 @@
                                   <Component id="autoCheckbox" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="32" max="32767" attributes="0"/>
+                          <EmptySpace pref="24" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
