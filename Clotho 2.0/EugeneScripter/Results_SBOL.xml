@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Collection description="A collection of Clotho Outputs" name="Results" displayId="Results" uri="Results_URI">
+    <component description="pBetI" name="pBetI" displayId="pBetI" uri="http://clotho.org/Part:pBetI">
+        <sequence uri="8c1681d4df2e4ed1b2557d5ea6b17fb1">
+            <nucleotides>ataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagc</nucleotides>
+        </sequence>
+    </component>
+    <component description="DefaultShortDescription" name="siteE" displayId="siteE" uri="http://clotho.org/Part:siteE">
+        <sequence uri="914a9bd5d2a54384b411902184940823">
+            <nucleotides>cctg</nucleotides>
+        </sequence>
+    </component>
+    <component description="DefaultShortDescription" name="siteF" displayId="siteF" uri="http://clotho.org/Part:siteF">
+        <sequence uri="d7ff00dec3de49a4b2e66a8033023fe4">
+            <nucleotides>ttac</nucleotides>
+        </sequence>
+    </component>
+    <component description="DefaultShortDescription" name="siteC" displayId="siteC" uri="http://clotho.org/Part:siteC">
+        <sequence uri="fdc37a6b2eca487e92f5c329aea63998">
+            <nucleotides>aatg</nucleotides>
+        </sequence>
+    </component>
+    <component description="DefaultShortDescription" name="siteD" displayId="siteD" uri="http://clotho.org/Part:siteD">
+        <sequence uri="1b94347d5d734911a1849af2d6546e4f">
+            <nucleotides>ttgc</nucleotides>
+        </sequence>
+    </component>
+    <component description="DefaultShortDescription" name="siteA" displayId="siteA" uri="http://clotho.org/Part:siteA">
+        <sequence uri="c79d9973ea1f48bcb1af4e9398fc5eba">
+            <nucleotides>tctg</nucleotides>
+        </sequence>
+    </component>
+    <component description="DefaultShortDescription" name="BBa_j23110" displayId="BBa_j23110" uri="http://clotho.org/Part:BBa_j23110">
+        <sequence uri="a018d0c7a07840caa5203cbb1b9d5307">
+            <nucleotides>tttacggctagctcagtcctaggtacaatgctagc</nucleotides>
+        </sequence>
+    </component>
+    <component description="DefaultShortDescription" name="siteB" displayId="siteB" uri="http://clotho.org/Part:siteB">
+        <sequence uri="a61d2686e7e74c94a806f175ab21df70">
+            <nucleotides>tgac</nucleotides>
+        </sequence>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_33" displayId="MoProm_33" uri="http://clotho.org/Part:MoProm_33">
+        <sequence uri="786799e4a65048fbb05ab3da65e7f56f">
+            <nucleotides>aatgtttacggctagctcagtcctaggtacaatgctagcttgc</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_32" displayId="MoProm_32" uri="http://clotho.org/Part:MoProm_32">
+        <sequence uri="f83bb88845614ade9a7351af4fff5cb3">
+            <nucleotides>ttactttacggctagctcagtcctaggtacaatgctagcttgc</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_35" displayId="MoProm_35" uri="http://clotho.org/Part:MoProm_35">
+        <sequence uri="56391abc4a4f401980da6eb5408c0d21">
+            <nucleotides>tgactttacggctagctcagtcctaggtacaatgctagcttgc</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_34" displayId="MoProm_34" uri="http://clotho.org/Part:MoProm_34">
+        <sequence uri="1e6e6688bf3a48f1a0576f39c8fd1c75">
+            <nucleotides>tctgtttacggctagctcagtcctaggtacaatgctagcttgc</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_31" displayId="MoProm_31" uri="http://clotho.org/Part:MoProm_31">
+        <sequence uri="b02675b614244e01862f680bfaca7d0b">
+            <nucleotides>cctgtttacggctagctcagtcctaggtacaatgctagcttgc</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_30" displayId="MoProm_30" uri="http://clotho.org/Part:MoProm_30">
+        <sequence uri="db79ebbacca54bef989bacedf23bcf94">
+            <nucleotides>tgacataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcaatg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_29" displayId="MoProm_29" uri="http://clotho.org/Part:MoProm_29">
+        <sequence uri="c5e6e4c5757c420f957aa8343a8ead80">
+            <nucleotides>tctgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcaatg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_25" displayId="MoProm_25" uri="http://clotho.org/Part:MoProm_25">
+        <sequence uri="a58e4969110345a7828123ff5709093b">
+            <nucleotides>tgactttacggctagctcagtcctaggtacaatgctagcaatg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_26" displayId="MoProm_26" uri="http://clotho.org/Part:MoProm_26">
+        <sequence uri="b5720e2c379b4e5a964b0d285f996792">
+            <nucleotides>cctgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcaatg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_27" displayId="MoProm_27" uri="http://clotho.org/Part:MoProm_27">
+        <sequence uri="0b90f1d236454fe3b48de6b8dfeb05e9">
+            <nucleotides>ttacataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcaatg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_28" displayId="MoProm_28" uri="http://clotho.org/Part:MoProm_28">
+        <sequence uri="cbfe3697a7fb469799701037e6362a06">
+            <nucleotides>ttgcataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcaatg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_6" displayId="MoProm_6" uri="http://clotho.org/Part:MoProm_6">
+        <sequence uri="05181b5a47c94dbea282e328edbd45e0">
+            <nucleotides>ttacataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagccctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_5" displayId="MoProm_5" uri="http://clotho.org/Part:MoProm_5">
+        <sequence uri="2034cabe687d4c84bf526fb139572b7e">
+            <nucleotides>tgactttacggctagctcagtcctaggtacaatgctagccctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_8" displayId="MoProm_8" uri="http://clotho.org/Part:MoProm_8">
+        <sequence uri="a27fc26672354428b79896391c151838">
+            <nucleotides>ttgcataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagccctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_7" displayId="MoProm_7" uri="http://clotho.org/Part:MoProm_7">
+        <sequence uri="0c46daf9fab34680b62b898a1233d1a6">
+            <nucleotides>aatgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagccctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_9" displayId="MoProm_9" uri="http://clotho.org/Part:MoProm_9">
+        <sequence uri="6e5f5ef0f6fd4c4ca740437b7e4e14c0">
+            <nucleotides>tctgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagccctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_24" displayId="MoProm_24" uri="http://clotho.org/Part:MoProm_24">
+        <sequence uri="2e25f8d758104051ad2b2ed8954c09c1">
+            <nucleotides>tctgtttacggctagctcagtcctaggtacaatgctagcaatg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_60" displayId="MoProm_60" uri="http://clotho.org/Part:MoProm_60">
+        <sequence uri="d265f6a88762490ead73b2f4141b5d0f">
+            <nucleotides>tctgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagctgac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_23" displayId="MoProm_23" uri="http://clotho.org/Part:MoProm_23">
+        <sequence uri="56557a60489d41699b832211fc8ac923">
+            <nucleotides>ttgctttacggctagctcagtcctaggtacaatgctagcaatg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_22" displayId="MoProm_22" uri="http://clotho.org/Part:MoProm_22">
+        <sequence uri="742fdf3b65084cffaa0b193f85dd00f0">
+            <nucleotides>ttactttacggctagctcagtcctaggtacaatgctagcaatg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_21" displayId="MoProm_21" uri="http://clotho.org/Part:MoProm_21">
+        <sequence uri="369c81971e5143b2a0a4cf795ff12fc2">
+            <nucleotides>cctgtttacggctagctcagtcctaggtacaatgctagcaatg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_20" displayId="MoProm_20" uri="http://clotho.org/Part:MoProm_20">
+        <sequence uri="815dd0d91f0249fe9d091036d2c8448f">
+            <nucleotides>tgacataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcttac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_2" displayId="MoProm_2" uri="http://clotho.org/Part:MoProm_2">
+        <sequence uri="bea49703274a47b28ceb4b58b8a2eb7e">
+            <nucleotides>aatgtttacggctagctcagtcctaggtacaatgctagccctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_1" displayId="MoProm_1" uri="http://clotho.org/Part:MoProm_1">
+        <sequence uri="062bc68e5fb141f3b0acba70292d4617">
+            <nucleotides>ttactttacggctagctcagtcctaggtacaatgctagccctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_4" displayId="MoProm_4" uri="http://clotho.org/Part:MoProm_4">
+        <sequence uri="5fcc5623932d4beda5e1952b5d92e91b">
+            <nucleotides>tctgtttacggctagctcagtcctaggtacaatgctagccctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_3" displayId="MoProm_3" uri="http://clotho.org/Part:MoProm_3">
+        <sequence uri="354c8735fadc456bae3035fe951bbfff">
+            <nucleotides>ttgctttacggctagctcagtcctaggtacaatgctagccctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_18" displayId="MoProm_18" uri="http://clotho.org/Part:MoProm_18">
+        <sequence uri="e59ff4fe074f4f7eb09e048cf72dc255">
+            <nucleotides>ttgcataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcttac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_19" displayId="MoProm_19" uri="http://clotho.org/Part:MoProm_19">
+        <sequence uri="4308877cb18f4defada274ae75511417">
+            <nucleotides>tctgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcttac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_16" displayId="MoProm_16" uri="http://clotho.org/Part:MoProm_16">
+        <sequence uri="16f5d1e0fb514d7e846d8366860e38c0">
+            <nucleotides>cctgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcttac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_17" displayId="MoProm_17" uri="http://clotho.org/Part:MoProm_17">
+        <sequence uri="525f6b52f20f4d4a842dda988c0dce30">
+            <nucleotides>aatgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcttac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_14" displayId="MoProm_14" uri="http://clotho.org/Part:MoProm_14">
+        <sequence uri="443e4505a86a416c9c7209cbafec300b">
+            <nucleotides>tctgtttacggctagctcagtcctaggtacaatgctagcttac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_15" displayId="MoProm_15" uri="http://clotho.org/Part:MoProm_15">
+        <sequence uri="1f5ed293cdb84441ac56e19ae5a6dd90">
+            <nucleotides>tgactttacggctagctcagtcctaggtacaatgctagcttac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_59" displayId="MoProm_59" uri="http://clotho.org/Part:MoProm_59">
+        <sequence uri="10118d40075842b5b99257a8eae7ab14">
+            <nucleotides>ttgcataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagctgac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_58" displayId="MoProm_58" uri="http://clotho.org/Part:MoProm_58">
+        <sequence uri="11f8261b9e7f4bc689b49965a66b2a0c">
+            <nucleotides>aatgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagctgac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_50" displayId="MoProm_50" uri="http://clotho.org/Part:MoProm_50">
+        <sequence uri="f388512f8e4f4c0a961dd17434184716">
+            <nucleotides>tgacataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagctctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_51" displayId="MoProm_51" uri="http://clotho.org/Part:MoProm_51">
+        <sequence uri="6aca9db81bbb46af910d8807599f9b9b">
+            <nucleotides>cctgtttacggctagctcagtcctaggtacaatgctagctgac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_52" displayId="MoProm_52" uri="http://clotho.org/Part:MoProm_52">
+        <sequence uri="18dc589010bc4805880b954a9402e20e">
+            <nucleotides>ttactttacggctagctcagtcctaggtacaatgctagctgac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_53" displayId="MoProm_53" uri="http://clotho.org/Part:MoProm_53">
+        <sequence uri="343d42d9ec08403caefde1f424057f8f">
+            <nucleotides>aatgtttacggctagctcagtcctaggtacaatgctagctgac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_54" displayId="MoProm_54" uri="http://clotho.org/Part:MoProm_54">
+        <sequence uri="11a96216bca74f13a14241989e81f9d9">
+            <nucleotides>ttgctttacggctagctcagtcctaggtacaatgctagctgac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_55" displayId="MoProm_55" uri="http://clotho.org/Part:MoProm_55">
+        <sequence uri="c2d95d515449477ea4290f54dee1c07a">
+            <nucleotides>tctgtttacggctagctcagtcctaggtacaatgctagctgac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_56" displayId="MoProm_56" uri="http://clotho.org/Part:MoProm_56">
+        <sequence uri="b09f862c21834250a70e8809fd0c7dba">
+            <nucleotides>cctgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagctgac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_57" displayId="MoProm_57" uri="http://clotho.org/Part:MoProm_57">
+        <sequence uri="80d3c7f0300a40e089c98c60f6bdc3d2">
+            <nucleotides>ttacataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagctgac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_11" displayId="MoProm_11" uri="http://clotho.org/Part:MoProm_11">
+        <sequence uri="1dd9d9d9be324cd4af364e19317f99e9">
+            <nucleotides>cctgtttacggctagctcagtcctaggtacaatgctagcttac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_10" displayId="MoProm_10" uri="http://clotho.org/Part:MoProm_10">
+        <sequence uri="80648daf57e84ca0a8700e6751f8d214">
+            <nucleotides>tgacataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagccctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_13" displayId="MoProm_13" uri="http://clotho.org/Part:MoProm_13">
+        <sequence uri="e4a7aabb22644eb5aa99c20fb17eb283">
+            <nucleotides>ttgctttacggctagctcagtcctaggtacaatgctagcttac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_12" displayId="MoProm_12" uri="http://clotho.org/Part:MoProm_12">
+        <sequence uri="6fe3190c96ee45ae90dfa6a0b157f19f">
+            <nucleotides>aatgtttacggctagctcagtcctaggtacaatgctagcttac</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_48" displayId="MoProm_48" uri="http://clotho.org/Part:MoProm_48">
+        <sequence uri="809f4f9d2d1f420a9e0264bb1d7fa2a9">
+            <nucleotides>aatgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagctctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_47" displayId="MoProm_47" uri="http://clotho.org/Part:MoProm_47">
+        <sequence uri="fcda40460323459fa047354771bbba58">
+            <nucleotides>ttacataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagctctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_49" displayId="MoProm_49" uri="http://clotho.org/Part:MoProm_49">
+        <sequence uri="208398e2989c40838fc14014c52e5959">
+            <nucleotides>ttgcataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagctctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_41" displayId="MoProm_41" uri="http://clotho.org/Part:MoProm_41">
+        <sequence uri="4dc4465adc8c48f2adc18d7b07f3f757">
+            <nucleotides>cctgtttacggctagctcagtcctaggtacaatgctagctctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_42" displayId="MoProm_42" uri="http://clotho.org/Part:MoProm_42">
+        <sequence uri="2fd0ef8214904a0e91dab9be925070d4">
+            <nucleotides>ttactttacggctagctcagtcctaggtacaatgctagctctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_40" displayId="MoProm_40" uri="http://clotho.org/Part:MoProm_40">
+        <sequence uri="10fdbb327a8d4a85a88ece38bd54083a">
+            <nucleotides>tgacataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcttgc</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_45" displayId="MoProm_45" uri="http://clotho.org/Part:MoProm_45">
+        <sequence uri="774c36f35b2f4e9baa526da984e6fbc1">
+            <nucleotides>tgactttacggctagctcagtcctaggtacaatgctagctctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteB" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_46" displayId="MoProm_46" uri="http://clotho.org/Part:MoProm_46">
+        <sequence uri="6f78251690694ca39832de21f2fec47f">
+            <nucleotides>cctgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagctctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_43" displayId="MoProm_43" uri="http://clotho.org/Part:MoProm_43">
+        <sequence uri="7e11dd6e2fa84bf2bfef287fa1bd02b4">
+            <nucleotides>aatgtttacggctagctcagtcctaggtacaatgctagctctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.DefaultShortDescription" name="MoProm_44" displayId="MoProm_44" uri="http://clotho.org/Part:MoProm_44">
+        <sequence uri="8c70d2e03f2c407b9d1b12ae79c99147">
+            <nucleotides>ttgctttacggctagctcagtcctaggtacaatgctagctctg</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:BBa_j23110" bioEnd="39" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="43" bioStart="40" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_39" displayId="MoProm_39" uri="http://clotho.org/Part:MoProm_39">
+        <sequence uri="5535b2996a184f2f9b7dcaa751c89130">
+            <nucleotides>tctgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcttgc</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteA" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_38" displayId="MoProm_38" uri="http://clotho.org/Part:MoProm_38">
+        <sequence uri="1e4c692d528848d8b3e1b3eb7d4f4169">
+            <nucleotides>aatgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcttgc</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteC" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_37" displayId="MoProm_37" uri="http://clotho.org/Part:MoProm_37">
+        <sequence uri="49be60e800e54e4480be46e7be5012a7">
+            <nucleotides>ttacataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcttgc</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteF" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+    <component description="DefaultShortDescription.pBetI" name="MoProm_36" displayId="MoProm_36" uri="http://clotho.org/Part:MoProm_36">
+        <sequence uri="f6d495c81d644c93931a33dc9d77175f">
+            <nucleotides>cctgataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcttgc</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:siteE" bioEnd="4" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="67" bioStart="5" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:siteD" bioEnd="71" bioStart="68" uri="Sequence_Annotation_2"/>
+    </component>
+</Collection>

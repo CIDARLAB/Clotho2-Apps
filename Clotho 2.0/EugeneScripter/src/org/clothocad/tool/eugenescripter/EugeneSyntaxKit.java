@@ -6,7 +6,7 @@ import jsyntaxpane.Lexer;
 public class EugeneSyntaxKit extends DefaultSyntaxKit {
 
     public EugeneSyntaxKit() {
-        super(new EugeneLexer());
+        super(new EugeneSyntax());
     }
 
     EugeneSyntaxKit(Lexer lexer) {

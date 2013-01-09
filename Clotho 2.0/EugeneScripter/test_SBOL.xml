@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Collection description="A collection of Clotho Outputs" name="test" displayId="test" uri="Results_URI">
+    <component description="pBM3R1" name="pBM3R1" displayId="pBM3R1" uri="http://clotho.org/Part:pBM3R1">
+        <sequence uri="1ff8ca7c2ebc47cb891f4988b15774c2">
+            <nucleotides>cgacgtacggtggaatctgattcgttaccaattgacggaatgaacgttcattccgataatgctagc</nucleotides>
+        </sequence>
+    </component>
+    <component description="pMcbR" name="pMcbR" displayId="pMcbR" uri="http://clotho.org/Part:pMcbR">
+        <sequence uri="902819f3199540b28649b3a23273cde9">
+            <nucleotides>cgacgtacggtggaagattcgttaccaattgacagcttgaacagcttggtctataatgctagc</nucleotides>
+        </sequence>
+    </component>
+    <component description="TarA repressor" name="TarA repressor" displayId="TarA repressor" uri="http://clotho.org/Part:TarA_repressor">
+        <sequence uri="bfead9f797a54bf5a3dead7e56ffe4c9">
+            <nucleotides>gccatgccattggcttactagagaaagaggagaaatactagatatggcacagcaggatcgtgcagttcgtacccgtcgtgcagttctgcgtgcagcagcagcagtttttgcagaacgtggttatgcagcagcaaccattagcgaaattctgaaacgtgccggtgttaccaaaggtgcactgtattttcactttgatagcaaagcagcactggcacagggtgttctgcaagaacagctgacaccggaatatcatctgcctcgtgaactgaaactgcaagaatgggttgatgcaggtatgaccctggcacgtcgtctgccacgtgaaccgtttctgctggcaggcgttcgtattagcgcagatcgtccgggtcgtgaagttctgggtagcgcatggcctgcatggtcacgtctgaccagccatgttctgaccgaagcaaaaaaacgtggtgaagttctgccgcatgttgttccggaagaaaccgcacaggtttttctgggtgcatgggttggtgcacagtttgttagccagaccctggcaggttgggaagatctggatgatcgtaccgcagcactgtatagccatctgctgggtgcaattgcagcaccgcctgttctgacccgtctggataccgcaccggatcgtggtgcacgtgttattgcagaagcacgtcgtcgtagcggtgatctgagcggtattgcatgttaaaacatacaagtggac</nucleotides>
+        </sequence>
+    </component>
+    <component description="pBetI" name="pBetI" displayId="pBetI" uri="http://clotho.org/Part:pBetI">
+        <sequence uri="8c1681d4df2e4ed1b2557d5ea6b17fb1">
+            <nucleotides>ataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagc</nucleotides>
+        </sequence>
+    </component>
+    <component description="PhlF repressor" name="PhlF repressor" displayId="PhlF repressor" uri="http://clotho.org/Part:PhlF_repressor">
+        <sequence uri="c30e7c8fc57d45f2a1432dbfec8add06">
+            <nucleotides>ctatggactatgtttgaaagggagaaatactagatggcacgtaccccgagccgtagcagcattggtagcctgcgtagtccgcatacccataaagcaattctgaccagcaccattgaaatcctgaaagaatgtggttatagcggtctgagcattgaaagcgttgcacgtcgtgccggtgcaagcaaaccgaccatttatcgttggtggaccaataaagcagcactgattgccgaagtgtatgaaaatgaaagcgaacaggtgcgtaaatttccggatctgggtagctttaaagccgatctggattttctgctgcgtaatctgtggaaagtttggcgtgaaaccatttgtggtgaagcatttcgttgtgttattgcagaagcacagctggaccctgcaaccctgacccagctgaaagatcagtttatggaacgtcgtcgtgagatgccgaaaaaactggttgaaaatgccattagcaatggtgaactgccgaaagataccaatcgtgaactgctgctggatatgatttttggtttttgttggtatcgcctgctgaccgaacagctgaccgttgaacaggatattgaagaatttaccttcctgctgattaatggtgtttgtccgggtacacagcgttaactagggcccataccc</nucleotides>
+        </sequence>
+    </component>
+    <component description="pPhlF" name="pPhlF" displayId="pPhlF" uri="http://clotho.org/Part:pPhlF">
+        <sequence uri="aa29cbca49c448babf58f96075274a51">
+            <nucleotides>cgacgtacggtggaatctgattcgttaccaattgacatgatacgaaacgtaccgtatcgttaaggt</nucleotides>
+        </sequence>
+    </component>
+    <component description="pLmrA" name="pLmrA" displayId="pLmrA" uri="http://clotho.org/Part:pLmrA">
+        <sequence uri="cfc074bcbd61498083d35d6bfad20d05">
+            <nucleotides>tctgattcgttaccaattgacaactggtggtcgaatcaagataatagaccagtcactatattt</nucleotides>
+        </sequence>
+    </component>
+    <component description="MtrR repressor" name="MtrR repressor" displayId="MtrR repressor" uri="http://clotho.org/Part:MtrR_repressor">
+        <sequence uri="6ae71a19c13947bc8abe84fb6a8530af">
+            <nucleotides>gccatgccattggcttactagagaaagaggagaaatactagatatgcgtaaaaccaaaaccgaagccctgaaaaccaaagaacatctgatgctggcagcactggaaaccttttatcgtaaaggtattgcacgtaccagcctgaatgaaattgcacaggcagccggtgttacccgtggtgcactgtattggcactttaaaaacaaagaggacctgtttgacgcactgtttcagcgtatttgtgatgatatcgaaaactgtattgcacaggatgcagcagatgcagaaggtggtagctggaccgtttttcgtcataccctgctgcatttttttgaacgtctgcagagcaacgacatccactataaattccacaacatcctgtttctgaaatgcgaacacaccgaacagaatgcagcagttattgcaattgcacgtaaacatcaggcaatttggcgtgaaaaaatcaccgcagttctgaccgaagcagttgaaaatcaggatctggcagatgatctggataaagaaaccgcagtgatctttatcaaaagcaccctggatggtctgatttggcgttggtttagcagcggtgaatcatttgatctgggtaaaaccgcaccgcgtattattggtattatgatggataacctggaaaatcatccgtgtctgcgtcgtaaataaaacatacaagtggac</nucleotides>
+        </sequence>
+    </component>
+    <component description="pAmtR" name="pAmtR" displayId="pAmtR" uri="http://clotho.org/Part:pAmtR">
+        <sequence uri="1581d1c7d3814792910df898ee7439c4">
+            <nucleotides>cgacgtacggtggaagattcgttaccaattgacagtttctatcgatctatagataatgctagc</nucleotides>
+        </sequence>
+    </component>
+    <component description="pcI" name="pcI" displayId="pcI" uri="http://clotho.org/Part:pcI">
+        <sequence uri="83367be3ba8d46ea87d5b662fa71704f">
+            <nucleotides>cgacgtacggtggaatgattcgttaccaattgacagctatcaccgcgggtgatataatgctagc</nucleotides>
+        </sequence>
+    </component>
+    <component description="McbR repressor" name="McbR repressor" displayId="McbR repressor" uri="http://clotho.org/Part:McbR_repressor">
+        <sequence uri="14ce6fc8d1334b3c95c87c7fa76d2e93">
+            <nucleotides>ctatggactatgtaggagaaatactagatggcagcaagcgcaagcggtaaaagcaaaaccagtgccggtgcaaatcgtcgtcgtaatcgtccgagtccgcgtcagcgtctgctggatagcgcaaccaacctgtttaccaccgaaggtattcgtgtgattggtattgatcgtattctgcgtgaagcagatgttgcaaaagcaagcctgtatagcctgtttggtagcaaagatgcactggttattgcctatctggaaaatctggatcagctgtggcgtgaagcatggcgtgaacgtaccgttggtatgaaagatccggaagataaaatcattgcgttctttgatcagtgcatcgaagaagaaccggaaaaagattttcgcggtagccattttcagaatgcagcaagcgaatatccgcgtccggaaaccgatagcgaaaaaggtattgttgcagcagttctggaacatcgtgaatggtgtcataaaaccctgaccgatctgctgaccgaaaaaaatggttatccgggtacaacccaggcaaatcagctgctggtttttctggatggtggtctggcaggtagccgtctggttcataacattagtccgctggaaaccgcacgtgatctggcacgtcagctgctgagcgcaccgcctgcagattatagcatttaactagggcccataccc</nucleotides>
+        </sequence>
+    </component>
+    <component description="heat shock K338001" name="promoterC" displayId="promoterC" uri="http://clotho.org/Part:promoterC">
+        <sequence uri="95ce4510d3084f79bcd946c1423db300">
+            <nucleotides>ccgaggtccttgttgcgaagattgatgacaatgtgagtgcttcccttgaaaccctgaaactgatccccataataagcgaagttagcgagatgaatgcg</nucleotides>
+        </sequence>
+    </component>
+    <component description="pTarA" name="pTarA" displayId="pTarA" uri="http://clotho.org/Part:pTarA">
+        <sequence uri="29ce5640b3c648059ceb98e489e8e8ff">
+            <nucleotides>gcctctaatacatccgattcgttaccaattgacatcaaaagaaccggttggtatgtatctagc</nucleotides>
+        </sequence>
+    </component>
+    <component description="LmrA repressor" name="LmrA repressor" displayId="LmrA repressor" uri="http://clotho.org/Part:LmrA_repressor">
+        <sequence uri="d37c21fadf8947d9aefb41d27940e207">
+            <nucleotides>ctatggactatgttttcacacaggaaagggctcgatgagctatggtgatagccgtgaaaaaattctgagcgcagcaacccgtctgtttcagctgcagggttattatggcaccggtctgaatcagattatcaaagaaagcggtgcaccgaaaggtagcctgtattatcattttccgggtggtaaagaacagctggcaattgaagcagtgaacgaaatgaaagaatatatccgccagaaaatcgccgattgtatggaagcatgtaccgatccggcagaaggtattcaggcatttctgaaagaactgagctgtcagtttagctgtaccgaagatattgaaggtctgccggttggtctgctggcagcagaaaccagcctgaaaagcgaaccgctgcgtgaagcatgtcatgaagcatataaagaatgggccagcgtgtatgaagaaaaactgcgtcagaccggttgtagcgaaagccgtgcaaaagaagcaagcaccgttgttaatgcaatgattgaaggtggtattctgctgagcctgaccgcaaaaaatagcacaccgctgctgcatattagcagctgtattccggatctgctgaaacgttaactagggcccataccc</nucleotides>
+        </sequence>
+    </component>
+    <component description="IcaRE repressor" name="IcaRE repressor" displayId="IcaRE repressor" uri="http://clotho.org/Part:IcaRE_repressor">
+        <sequence uri="a022e3342f6744f4a0839bd306c1e368">
+            <nucleotides>gcgtcaggtaggctatactagagaaagaggagaaatactagatgaaagacaaaattatcgataacgccatcaccctgtttagcgaaaaaggttatgacggcaccaccctggatgatattagcaaaagcgtgaacatcaaaaaagccagcctgtattatcactacgataacaaagaagagatctaccgtaaaagcgtggaaaactgcttcaactactttatcgattttctgctgcgcaaccacgatgataactatagcattgatggcctgtatcagttcctgttcaaatttatcttcgatgtggatgagcgctatatcaaactgtatgttcagctgagcagcgcaccggaagcactgaatagcgaaattaaacatcatctgcaagagattaacaccacgctgcatgatgaactgatcaaatattacgatccgacccatattgccctgaacaaagaagatttcatcaacctgatcctgctgtttctggaaacctggtattttcgtgccagctttagccagaaatttggtgttatcgaggatagcaaaaaccgctttaaagatcaggtttatagcctgctgaacgtgttcctgaagaaataaagccagtctcgcagt</nucleotides>
+        </sequence>
+    </component>
+    <component description="pLux K091156" name="promoterB" displayId="promoterB" uri="http://clotho.org/Part:promoterB">
+        <sequence uri="b9868480837b47ceaac246e3a6a268ee">
+            <nucleotides>acctgtaggatcgtacaggtttaatcaagaaaatggtttgttatagtcgaataaa</nucleotides>
+        </sequence>
+    </component>
+    <component description="cI repressor" name="cI repressor" displayId="cI repressor" uri="http://clotho.org/Part:cI_repressor">
+        <sequence uri="1bc296efb5b74ed2894f2b98b995e455">
+            <nucleotides>ctatggactatgttttcacacaggaaaggcctcgatgagcacaaaaaagaaaccattaacacaagagcagcttgaggacgcacgtcgccttaaagcaatttatgaaaaaaagaaaaatgaacttggcttatcccaggaatctgtcgcagacaagatggggatggggcagtcaggcgttggtgctttatttaatggcatcaatgcattaaatgcttataacgccgcattgcttgcaaaaattctcaaagttagcgttgaagaatttagcccttcaatcgccagagaaatctacgagatgtatgaagcggttagtatgcagccgtcacttagaagtgagtatgagtaccctgttttttctcatgttcaggcagggatgttctcacctgagcttagaacctttaccaaaggtgatgcggagagatgggtaagcacaaccaaaaaagccagtgattctgcattctggcttgaggttgaaggtaattccatgaccgcaccaacaggctccaagccaagctttcctgacggaatgttaattctcgttgaccctgagcaggctgttgagccaggtgatttctgcatagccagacttgggggtgatgagtttaccttcaagaaactgatcagggatagcggtcaggtgtttttacaaccactaaacccacagtacccaatgatcccatgcaatgagagttgttccgttgtggggaaagttatcgctagtcagtggcctgaagagacgtttggcgctgcaaacgacgaaaactacgctttagtagcttaactagggcccataccc</nucleotides>
+        </sequence>
+    </component>
+    <component description="pIcaRE" name="pIcaRE" displayId="pIcaRE" uri="http://clotho.org/Part:pIcaRE">
+        <sequence uri="d7613c7403014ee98f335c4ec5ffe44a">
+            <nucleotides>aacgctcatcagctatctgattcgttaccaattgacaattcacctacctttcgttaggttaggttgt</nucleotides>
+        </sequence>
+    </component>
+    <component description="BM3R1 repressor" name="BM3R1 repressor" displayId="BM3R1 repressor" uri="http://clotho.org/Part:BM3R1_repressor">
+        <sequence uri="bdf8bdda61794660884d8c45365b9aa2">
+            <nucleotides>ctatggactatgttttcacacaggaaaggcctcgatggaaagcaccccgaccaaacagaaagcaatttttagcgcaagcctgctgctgtttgcagaacgtggttttgatgcaaccaccatgccgatgattgcagaaaatgcaaaagttggtgcaggcaccatttatcgctatttcaaaaacaaagaaagcctggtgaacgaactgtttcagcagcatgttaatgaatttctgcagtgtattgaaagcggtctggcaaatgaacgtgatggttatcgtgatggctttcatcacatttttgaaggtatggtgacctttaccaaaaatcatccgcgtgcactgggttttatcaaaacccatagccagggcacctttctgaccgaagaaagccgtctggcatatcagaaactggttgaatttgtgtgcaccttttttcgtgaaggtcagaaacagggtgtgattcgtaatctgccggaaaatgcactgattgcaattctgtttggcagctttatggaagtgtatgaaatgatcgagaacgattatctgagcctgaccgatgaactgctgaccggtgttgaagaaagcctgtgggcagcactgagccgtcagagctaactagggcccataccc</nucleotides>
+        </sequence>
+    </component>
+    <component description="pBad I0500" name="promoterA" displayId="promoterA" uri="http://clotho.org/Part:promoterA">
+        <sequence uri="09a060a35597443e9195b980ba4401e2">
+            <nucleotides>gtttctccatacccgtttttttgggctagc</nucleotides>
+        </sequence>
+    </component>
+    <component description="BetI repressor" name="BetI repressor" displayId="BetI repressor" uri="http://clotho.org/Part:BetI_repressor">
+        <sequence uri="b17e576e6be1447cb38f10fc13d0f2a3">
+            <nucleotides>gctacgacttgctcatactagagaaagaggagaaatactagatgccgaaactgggtatgcagagcattcgtcgtcgtcagctgattgatgcaaccctggaagcaattaatgaagttggtatgcatgatgcaaccattgcacagattgcacgtcgtgccggtgttagcaccggtattattagccattatttccgcgataaaaacggtctgctggaagcaaccatgcgtgatattaccagccagctgcgtgatgcagttctgaatcgtctgcatgcactgccgcagggtagcgcagaacagcgtctgcaggcaattgttggtggtaattttgatgaaacccaggttagcagcgcagcaatgaaagcatggctggcattttgggcaagcagcatgcatcagccgatgctgtatcgtctgcagcaggttagcagtcgtcgtctgctgagcaatctggttagcgaatttcgtcgtgaactgcctcgtgaacaggcacaagaggcaggttatggtctggcagcactgattgatggtctgtggctgcgtgcagcactgagcggtaaaccgctggataaaacccgtgcaaatagcctgacccgtcattttatcacccagcatctgccgaccgattaatcgtaaggcgagccc</nucleotides>
+        </sequence>
+    </component>
+    <component description="AmtR repressor" name="AmtR repressor" displayId="AmtR repressor" uri="http://clotho.org/Part:AmtR_repressor">
+        <sequence uri="32cc4c0736984f8cacfffe3ec373f8be">
+            <nucleotides>ctatggactatgtttgaaagagagaatactagatggcaggcgcagttggtcgtccgcgtcgtagtgcaccgcgtcgtgcaggtaaaaatccgcgtgaagaaattctggatgcaagcgcagaactgtttacccgtcagggttttgcaaccaccagtacccatcagattgcagatgcagttggtattcgtcaggcaagcctgtattatcattttccgagcaaaaccgaaatctttctgaccctgctgaaaagcaccgttgaaccgagcaccgttctggcagaagatctgagcaccctggatgcaggtccggaaatgcgtctgtgggcaattgttgcaagcgaagttcgtctgctgctgagcaccaaatggaatgttggtcgtctgtatcagctgccgattgttggtagcgaagaatttgcagaatatcatagccagcgtgaagcactgaccaatgtttttcgtgatctggcaaccgaaattgttggtgatgatccgcgtgcagaactgccgtttcatattaccatgagcgttattgaaatgcgtcgcaatgatggtaaaattccgagtccgctgagcgcagatagcctgccggaaaccgcaattatgctggcagatgcaagcctggcagttctgggtgcaccgctgcctgcagatcgtgttgaaaaaaccctggaactgattaaacaggcagatgcaaaataactagggcccataccc</nucleotides>
+        </sequence>
+    </component>
+    <component description="pMtrR" name="pMtrR" displayId="pMtrR" uri="http://clotho.org/Part:pMtrR">
+        <sequence uri="c07dcea1379d4564bc772914de458cf0">
+            <nucleotides>gctagttcaccgttaccaattgacagctagctcagtcctatatacatacatgcttgtttgtttgtaaac</nucleotides>
+        </sequence>
+    </component>
+    <component description="GFP" name="GFP" displayId="GFP" uri="http://clotho.org/Part:GFP">
+        <sequence uri="333149e902844d589ebb3bdb58df1640">
+            <nucleotides>atgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaaaggcctgctgcaaacgacgaaaactacgctttagtagcttaa</nucleotides>
+        </sequence>
+    </component>
+    <component description="pBM3R1.pMcbR" name="voigt_ckt_69_2" displayId="voigt_ckt_69_2" uri="http://clotho.org/Part:voigt_ckt_69_2">
+        <sequence uri="25dcf496d3744bf0843da2dc7e1bf4e1">
+            <nucleotides>cgacgtacggtggaatctgattcgttaccaattgacggaatgaacgttcattccgataatgctagccgacgtacggtggaagattcgttaccaattgacagcttgaacagcttggtctataatgctagcgccatgccattggcttactagagaaagaggagaaatactagatatggcacagcaggatcgtgcagttcgtacccgtcgtgcagttctgcgtgcagcagcagcagtttttgcagaacgtggttatgcagcagcaaccattagcgaaattctgaaacgtgccggtgttaccaaaggtgcactgtattttcactttgatagcaaagcagcactggcacagggtgttctgcaagaacagctgacaccggaatatcatctgcctcgtgaactgaaactgcaagaatgggttgatgcaggtatgaccctggcacgtcgtctgccacgtgaaccgtttctgctggcaggcgttcgtattagcgcagatcgtccgggtcgtgaagttctgggtagcgcatggcctgcatggtcacgtctgaccagccatgttctgaccgaagcaaaaaaacgtggtgaagttctgccgcatgttgttccggaagaaaccgcacaggtttttctgggtgcatgggttggtgcacagtttgttagccagaccctggcaggttgggaagatctggatgatcgtaccgcagcactgtatagccatctgctgggtgcaattgcagcaccgcctgttctgacccgtctggataccgcaccggatcgtggtgcacgtgttattgcagaagcacgtcgtcgtagcggtgatctgagcggtattgcatgttaaaacatacaagtggacccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttatacgacgtacggtggaagattcgttaccaattgacagcttgaacagcttggtctataatgctagcataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcctatggactatgtttgaaagggagaaatactagatggcacgtaccccgagccgtagcagcattggtagcctgcgtagtccgcatacccataaagcaattctgaccagcaccattgaaatcctgaaagaatgtggttatagcggtctgagcattgaaagcgttgcacgtcgtgccggtgcaagcaaaccgaccatttatcgttggtggaccaataaagcagcactgattgccgaagtgtatgaaaatgaaagcgaacaggtgcgtaaatttccggatctgggtagctttaaagccgatctggattttctgctgcgtaatctgtggaaagtttggcgtgaaaccatttgtggtgaagcatttcgttgtgttattgcagaagcacagctggaccctgcaaccctgacccagctgaaagatcagtttatggaacgtcgtcgtgagatgccgaaaaaactggttgaaaatgccattagcaatggtgaactgccgaaagataccaatcgtgaactgctgctggatatgatttttggtttttgttggtatcgcctgctgaccgaacagctgaccgttgaacaggatattgaagaatttaccttcctgctgattaatggtgtttgtccgggtacacagcgttaactagggcccatacccccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttatacgacgtacggtggaatctgattcgttaccaattgacatgatacgaaacgtaccgtatcgttaaggttctgattcgttaccaattgacaactggtggtcgaatcaagataatagaccagtcactatatttgccatgccattggcttactagagaaagaggagaaatactagatatgcgtaaaaccaaaaccgaagccctgaaaaccaaagaacatctgatgctggcagcactggaaaccttttatcgtaaaggtattgcacgtaccagcctgaatgaaattgcacaggcagccggtgttacccgtggtgcactgtattggcactttaaaaacaaagaggacctgtttgacgcactgtttcagcgtatttgtgatgatatcgaaaactgtattgcacaggatgcagcagatgcagaaggtggtagctggaccgtttttcgtcataccctgctgcatttttttgaacgtctgcagagcaacgacatccactataaattccacaacatcctgtttctgaaatgcgaacacaccgaacagaatgcagcagttattgcaattgcacgtaaacatcaggcaatttggcgtgaaaaaatcaccgcagttctgaccgaagcagttgaaaatcaggatctggcagatgatctggataaagaaaccgcagtgatctttatcaaaagcaccctggatggtctgatttggcgttggtttagcagcggtgaatcatttgatctgggtaaaaccgcaccgcgtattattggtattatgatggataacctggaaaatcatccgtgtctgcgtcgtaaataaaacatacaagtggacccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttatacgacgtacggtggaagattcgttaccaattgacagtttctatcgatctatagataatgctagccgacgtacggtggaatgattcgttaccaattgacagctatcaccgcgggtgatataatgctagcctatggactatgtaggagaaatactagatggcagcaagcgcaagcggtaaaagcaaaaccagtgccggtgcaaatcgtcgtcgtaatcgtccgagtccgcgtcagcgtctgctggatagcgcaaccaacctgtttaccaccgaaggtattcgtgtgattggtattgatcgtattctgcgtgaagcagatgttgcaaaagcaagcctgtatagcctgtttggtagcaaagatgcactggttattgcctatctggaaaatctggatcagctgtggcgtgaagcatggcgtgaacgtaccgttggtatgaaagatccggaagataaaatcattgcgttctttgatcagtgcatcgaagaagaaccggaaaaagattttcgcggtagccattttcagaatgcagcaagcgaatatccgcgtccggaaaccgatagcgaaaaaggtattgttgcagcagttctggaacatcgtgaatggtgtcataaaaccctgaccgatctgctgaccgaaaaaaatggttatccgggtacaacccaggcaaatcagctgctggtttttctggatggtggtctggcaggtagccgtctggttcataacattagtccgctggaaaccgcacgtgatctggcacgtcagctgctgagcgcaccgcctgcagattatagcatttaactagggcccatacccccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttataccgaggtccttgttgcgaagattgatgacaatgtgagtgcttcccttgaaaccctgaaactgatccccataataagcgaagttagcgagatgaatgcggcctctaatacatccgattcgttaccaattgacatcaaaagaaccggttggtatgtatctagcctatggactatgttttcacacaggaaagggctcgatgagctatggtgatagccgtgaaaaaattctgagcgcagcaacccgtctgtttcagctgcagggttattatggcaccggtctgaatcagattatcaaagaaagcggtgcaccgaaaggtagcctgtattatcattttccgggtggtaaagaacagctggcaattgaagcagtgaacgaaatgaaagaatatatccgccagaaaatcgccgattgtatggaagcatgtaccgatccggcagaaggtattcaggcatttctgaaagaactgagctgtcagtttagctgtaccgaagatattgaaggtctgccggttggtctgctggcagcagaaaccagcctgaaaagcgaaccgctgcgtgaagcatgtcatgaagcatataaagaatgggccagcgtgtatgaagaaaaactgcgtcagaccggttgtagcgaaagccgtgcaaaagaagcaagcaccgttgttaatgcaatgattgaaggtggtattctgctgagcctgaccgcaaaaaatagcacaccgctgctgcatattagcagctgtattccggatctgctgaaacgttaactagggcccatacccccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttataataccgtcattcatggattcgttaccaattgacaattgattggacgttcaatataatgctagcccgaggtccttgttgcgaagattgatgacaatgtgagtgcttcccttgaaaccctgaaactgatccccataataagcgaagttagcgagatgaatgcggcgtcaggtaggctatactagagaaagaggagaaatactagatgaaagacaaaattatcgataacgccatcaccctgtttagcgaaaaaggttatgacggcaccaccctggatgatattagcaaaagcgtgaacatcaaaaaagccagcctgtattatcactacgataacaaagaagagatctaccgtaaaagcgtggaaaactgcttcaactactttatcgattttctgctgcgcaaccacgatgataactatagcattgatggcctgtatcagttcctgttcaaatttatcttcgatgtggatgagcgctatatcaaactgtatgttcagctgagcagcgcaccggaagcactgaatagcgaaattaaacatcatctgcaagagattaacaccacgctgcatgatgaactgatcaaatattacgatccgacccatattgccctgaacaaagaagatttcatcaacctgatcctgctgtttctggaaacctggtattttcgtgccagctttagccagaaatttggtgttatcgaggatagcaaaaaccgctttaaagatcaggtttatagcctgctgaacgtgttcctgaagaaataaagccagtctcgcagtccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttataacctgtaggatcgtacaggtttaatcaagaaaatggtttgttatagtcgaataaagcctctaatacatccgattcgttaccaattgacatcaaaagaaccggttggtatgtatctagcctatggactatgttttcacacaggaaaggcctcgatgagcacaaaaaagaaaccattaacacaagagcagcttgaggacgcacgtcgccttaaagcaatttatgaaaaaaagaaaaatgaacttggcttatcccaggaatctgtcgcagacaagatggggatggggcagtcaggcgttggtgctttatttaatggcatcaatgcattaaatgcttataacgccgcattgcttgcaaaaattctcaaagttagcgttgaagaatttagcccttcaatcgccagagaaatctacgagatgtatgaagcggttagtatgcagccgtcacttagaagtgagtatgagtaccctgttttttctcatgttcaggcagggatgttctcacctgagcttagaacctttaccaaaggtgatgcggagagatgggtaagcacaaccaaaaaagccagtgattctgcattctggcttgaggttgaaggtaattccatgaccgcaccaacaggctccaagccaagctttcctgacggaatgttaattctcgttgaccctgagcaggctgttgagccaggtgatttctgcatagccagacttgggggtgatgagtttaccttcaagaaactgatcagggatagcggtcaggtgtttttacaaccactaaacccacagtacccaatgatcccatgcaatgagagttgttccgttgtggggaaagttatcgctagtcagtggcctgaagagacgtttggcgctgcaaacgacgaaaactacgctttagtagcttaactagggcccatacccccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttataaacgctcatcagctatctgattcgttaccaattgacaattcacctacctttcgttaggttaggttgtgcctctaatacatccgattcgttaccaattgacatcaaaagaaccggttggtatgtatctagcctatggactatgttttcacacaggaaaggcctcgatggaaagcaccccgaccaaacagaaagcaatttttagcgcaagcctgctgctgtttgcagaacgtggttttgatgcaaccaccatgccgatgattgcagaaaatgcaaaagttggtgcaggcaccatttatcgctatttcaaaaacaaagaaagcctggtgaacgaactgtttcagcagcatgttaatgaatttctgcagtgtattgaaagcggtctggcaaatgaacgtgatggttatcgtgatggctttcatcacatttttgaaggtatggtgacctttaccaaaaatcatccgcgtgcactgggttttatcaaaacccatagccagggcacctttctgaccgaagaaagccgtctggcatatcagaaactggttgaatttgtgtgcaccttttttcgtgaaggtcagaaacagggtgtgattcgtaatctgccggaaaatgcactgattgcaattctgtttggcagctttatggaagtgtatgaaatgatcgagaacgattatctgagcctgaccgatgaactgctgaccggtgttgaagaaagcctgtgggcagcactgagccgtcagagctaactagggcccatacccccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttatagtttctccatacccgtttttttgggctagcacctgtaggatcgtacaggtttaatcaagaaaatggtttgttatagtcgaataaagctacgacttgctcatactagagaaagaggagaaatactagatgccgaaactgggtatgcagagcattcgtcgtcgtcagctgattgatgcaaccctggaagcaattaatgaagttggtatgcatgatgcaaccattgcacagattgcacgtcgtgccggtgttagcaccggtattattagccattatttccgcgataaaaacggtctgctggaagcaaccatgcgtgatattaccagccagctgcgtgatgcagttctgaatcgtctgcatgcactgccgcagggtagcgcagaacagcgtctgcaggcaattgttggtggtaattttgatgaaacccaggttagcagcgcagcaatgaaagcatggctggcattttgggcaagcagcatgcatcagccgatgctgtatcgtctgcagcaggttagcagtcgtcgtctgctgagcaatctggttagcgaatttcgtcgtgaactgcctcgtgaacaggcacaagaggcaggttatggtctggcagcactgattgatggtctgtggctgcgtgcagcactgagcggtaaaccgctggataaaacccgtgcaaatagcctgacccgtcattttatcacccagcatctgccgaccgattaatcgtaaggcgagcccccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttatagtttctccatacccgtttttttgggctagcgcctctaatacatccgattcgttaccaattgacatcaaaagaaccggttggtatgtatctagcctatggactatgtttgaaagagagaatactagatggcaggcgcagttggtcgtccgcgtcgtagtgcaccgcgtcgtgcaggtaaaaatccgcgtgaagaaattctggatgcaagcgcagaactgtttacccgtcagggttttgcaaccaccagtacccatcagattgcagatgcagttggtattcgtcaggcaagcctgtattatcattttccgagcaaaaccgaaatctttctgaccctgctgaaaagcaccgttgaaccgagcaccgttctggcagaagatctgagcaccctggatgcaggtccggaaatgcgtctgtgggcaattgttgcaagcgaagttcgtctgctgctgagcaccaaatggaatgttggtcgtctgtatcagctgccgattgttggtagcgaagaatttgcagaatatcatagccagcgtgaagcactgaccaatgtttttcgtgatctggcaaccgaaattgttggtgatgatccgcgtgcagaactgccgtttcatattaccatgagcgttattgaaatgcgtcgcaatgatggtaaaattccgagtccgctgagcgcagatagcctgccggaaaccgcaattatgctggcagatgcaagcctggcagttctgggtgcaccgctgcctgcagatcgtgttgaaaaaaccctggaactgattaaacaggcagatgcaaaataactagggcccatacccccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttatagctagttcaccgttaccaattgacagctagctcagtcctatatacatacatgcttgtttgtttgtaaacatgcgtaaaggagaagaacttttcactggagttgtcccaattcttgttgaattagatggtgatgttaatgggcacaaattttctgtcagtggagagggtgaaggtgatgcaacatacggaaaacttacccttaaatttatttgcactactggaaaactacctgttccatggccaacacttgtcactactttcggttatggtgttcaatgctttgcgagatacccagatcatatgaaacagcatgactttttcaagagtgccatgcccgaaggttatgtacaggaaagaactatatttttcaaagatgacgggaactacaagacacgtgctgaagtcaagtttgaaggtgatacccttgttaatagaatcgagttaaaaggtattgattttaaagaagatggaaacattcttggacacaaattggaatacaactataactcacacaatgtatacatcatggcagacaaacaaaagaatggaatcaaagttaacttcaaaattagacacaacattgaagatggaagcgttcaactagcagaccattatcaacaaaatactccaattggcgatggccctgtccttttaccagacaaccattacctgtccacacaatctgccctttcgaaagatcccaacgaaaagagagaccacatggtccttcttgagtttgtaacagctgctgggattacacatggcatggatgaactatacaaaaggcctgctgcaaacgacgaaaactacgctttagtagcttaaccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata</nucleotides>
+        </sequence>
+        <annotation subComponentURI="http://clotho.org/Part:pBM3R1" bioEnd="66" bioStart="1" uri="Sequence_Annotation_0"/>
+        <annotation subComponentURI="http://clotho.org/Part:pMcbR" bioEnd="129" bioStart="67" uri="Sequence_Annotation_1"/>
+        <annotation subComponentURI="http://clotho.org/Part:TarA_repressor" bioEnd="850" bioStart="130" uri="Sequence_Annotation_2"/>
+        <annotation subComponentURI="http://clotho.org/Part:Term_BBa_B0015" bioEnd="979" bioStart="851" uri="Sequence_Annotation_3"/>
+        <annotation subComponentURI="http://clotho.org/Part:pMcbR" bioEnd="1042" bioStart="980" uri="Sequence_Annotation_4"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="1105" bioStart="1043" uri="Sequence_Annotation_5"/>
+        <annotation subComponentURI="http://clotho.org/Part:PhlF_repressor" bioEnd="1756" bioStart="1106" uri="Sequence_Annotation_6"/>
+        <annotation subComponentURI="http://clotho.org/Part:Term_BBa_B0015" bioEnd="1885" bioStart="1757" uri="Sequence_Annotation_7"/>
+        <annotation subComponentURI="http://clotho.org/Part:pPhlF" bioEnd="1951" bioStart="1886" uri="Sequence_Annotation_8"/>
+        <annotation subComponentURI="http://clotho.org/Part:pLmrA" bioEnd="2014" bioStart="1952" uri="Sequence_Annotation_9"/>
+        <annotation subComponentURI="http://clotho.org/Part:MtrR_repressor" bioEnd="2705" bioStart="2015" uri="Sequence_Annotation_10"/>
+        <annotation subComponentURI="http://clotho.org/Part:Term_BBa_B0015" bioEnd="2834" bioStart="2706" uri="Sequence_Annotation_11"/>
+        <annotation subComponentURI="http://clotho.org/Part:pAmtR" bioEnd="2897" bioStart="2835" uri="Sequence_Annotation_12"/>
+        <annotation subComponentURI="http://clotho.org/Part:pcI" bioEnd="2961" bioStart="2898" uri="Sequence_Annotation_13"/>
+        <annotation subComponentURI="http://clotho.org/Part:McbR_repressor" bioEnd="3645" bioStart="2962" uri="Sequence_Annotation_14"/>
+        <annotation subComponentURI="http://clotho.org/Part:Term_BBa_B0015" bioEnd="3774" bioStart="3646" uri="Sequence_Annotation_15"/>
+        <annotation subComponentURI="http://clotho.org/Part:promoterC" bioEnd="3872" bioStart="3775" uri="Sequence_Annotation_16"/>
+        <annotation subComponentURI="http://clotho.org/Part:pTarA" bioEnd="3935" bioStart="3873" uri="Sequence_Annotation_17"/>
+        <annotation subComponentURI="http://clotho.org/Part:LmrA_repressor" bioEnd="4551" bioStart="3936" uri="Sequence_Annotation_18"/>
+        <annotation subComponentURI="http://clotho.org/Part:Term_BBa_B0015" bioEnd="4680" bioStart="4552" uri="Sequence_Annotation_19"/>
+        <annotation subComponentURI="http://clotho.org/Part:pBetI" bioEnd="4743" bioStart="4681" uri="Sequence_Annotation_20"/>
+        <annotation subComponentURI="http://clotho.org/Part:promoterC" bioEnd="4841" bioStart="4744" uri="Sequence_Annotation_21"/>
+        <annotation subComponentURI="http://clotho.org/Part:IcaRE_repressor" bioEnd="5455" bioStart="4842" uri="Sequence_Annotation_22"/>
+        <annotation subComponentURI="http://clotho.org/Part:Term_BBa_B0015" bioEnd="5584" bioStart="5456" uri="Sequence_Annotation_23"/>
+        <annotation subComponentURI="http://clotho.org/Part:promoterB" bioEnd="5639" bioStart="5585" uri="Sequence_Annotation_24"/>
+        <annotation subComponentURI="http://clotho.org/Part:pTarA" bioEnd="5702" bioStart="5640" uri="Sequence_Annotation_25"/>
+        <annotation subComponentURI="http://clotho.org/Part:cI_repressor" bioEnd="6498" bioStart="5703" uri="Sequence_Annotation_26"/>
+        <annotation subComponentURI="http://clotho.org/Part:Term_BBa_B0015" bioEnd="6627" bioStart="6499" uri="Sequence_Annotation_27"/>
+        <annotation subComponentURI="http://clotho.org/Part:pIcaRE" bioEnd="6694" bioStart="6628" uri="Sequence_Annotation_28"/>
+        <annotation subComponentURI="http://clotho.org/Part:pTarA" bioEnd="6757" bioStart="6695" uri="Sequence_Annotation_29"/>
+        <annotation subComponentURI="http://clotho.org/Part:BM3R1_repressor" bioEnd="7385" bioStart="6758" uri="Sequence_Annotation_30"/>
+        <annotation subComponentURI="http://clotho.org/Part:Term_BBa_B0015" bioEnd="7514" bioStart="7386" uri="Sequence_Annotation_31"/>
+        <annotation subComponentURI="http://clotho.org/Part:promoterA" bioEnd="7544" bioStart="7515" uri="Sequence_Annotation_32"/>
+        <annotation subComponentURI="http://clotho.org/Part:promoterB" bioEnd="7599" bioStart="7545" uri="Sequence_Annotation_33"/>
+        <annotation subComponentURI="http://clotho.org/Part:BetI_repressor" bioEnd="8243" bioStart="7600" uri="Sequence_Annotation_34"/>
+        <annotation subComponentURI="http://clotho.org/Part:Term_BBa_B0015" bioEnd="8372" bioStart="8244" uri="Sequence_Annotation_35"/>
+        <annotation subComponentURI="http://clotho.org/Part:promoterA" bioEnd="8402" bioStart="8373" uri="Sequence_Annotation_36"/>
+        <annotation subComponentURI="http://clotho.org/Part:pTarA" bioEnd="8465" bioStart="8403" uri="Sequence_Annotation_37"/>
+        <annotation subComponentURI="http://clotho.org/Part:AmtR_repressor" bioEnd="9181" bioStart="8466" uri="Sequence_Annotation_38"/>
+        <annotation subComponentURI="http://clotho.org/Part:Term_BBa_B0015" bioEnd="9310" bioStart="9182" uri="Sequence_Annotation_39"/>
+        <annotation subComponentURI="http://clotho.org/Part:pMtrR" bioEnd="9379" bioStart="9311" uri="Sequence_Annotation_40"/>
+        <annotation subComponentURI="http://clotho.org/Part:GFP" bioEnd="10135" bioStart="9380" uri="Sequence_Annotation_41"/>
+        <annotation subComponentURI="http://clotho.org/Part:Term_BBa_B0015" bioEnd="10264" bioStart="10136" uri="Sequence_Annotation_42"/>
+    </component>
+</Collection>

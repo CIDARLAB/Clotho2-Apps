@@ -26,7 +26,6 @@ package org.clothocad.tool.eugenescripter;
 import java.awt.Window;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import jsyntaxpane.DefaultSyntaxKit;
 import org.clothocore.api.data.ObjBase;
 import org.clothocore.api.plugin.ClothoTool;
 
@@ -36,15 +35,8 @@ import org.clothocore.api.plugin.ClothoTool;
  */
 public class eugeneTool implements ClothoTool {
 
-       public void launch() {
-
-        /*if(!Collector.isConnected()) {
-            JOptionPane.showMessageDialog( null, "Database connection required to launch Eugene Scripter!",
-                                           "Clotho: Eugene Scripter", JOptionPane.ERROR_MESSAGE );
-           return;
-        }
-*/
-        eugeneFrame frame = new eugeneFrame();
+ public void launch() {
+        eugeneIDEFrame frame = new eugeneIDEFrame();
         guis.add(new WeakReference<Window>(frame));
     }
 
@@ -53,6 +45,7 @@ public class eugeneTool implements ClothoTool {
     }
 
     public void close() {
+        eugeneIDEFrame.cleanUp();
         for(WeakReference<Window> wrw: guis) {
             Window w = wrw.get();
             if(w!=null) {
@@ -62,7 +55,6 @@ public class eugeneTool implements ClothoTool {
     }
 
     public void init() {
-        DefaultSyntaxKit.initKit();
     }
 
     ///////////////////////////////////////////////////////////////////

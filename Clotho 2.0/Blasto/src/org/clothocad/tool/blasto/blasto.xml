@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+<type>ClothoTool</type>
+<version>1.0</version>
+<classname>org-clothocad-tool-blasto-blasto</classname>
+<description>Sequence Alignment Tool</description>
+<displayname>Blasto</displayname>
+<uuid>org.clothocad.tool.blasto</uuid>
+<!--<screenshotpath>none</screenshotpath>-->
+<author>Douglas Densmore</author>
+<iconpath>org/clothocad/tool/blasto/logo.png</iconpath>
+<!--<dependency>none2</dependency>-->
+    <help>
+        <helpurl>none</helpurl>
+        <helpdescription>For more information please see the help url</helpdescription>
+        <!--<helpcommand>Command1</helpcommand>-->
+        <!--<helpcommand>Command2</helpcommand>-->
+    </help>
+</plugin>
