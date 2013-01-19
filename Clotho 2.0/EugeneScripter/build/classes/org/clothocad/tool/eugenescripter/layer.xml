@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
 <!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
 <filesystem>
-    <folder name="plugins">
+        <folder name="plugins">
         <folder name="tools">
             <file name="org-clothocad-tool-eugenescripter-eugeneTool.instance">
                 <attr name="instanceOf" stringvalue="org.clothocore.api.plugin.ClothoTool"/>
