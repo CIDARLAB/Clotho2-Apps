@@ -1,0 +1,469 @@
+<html><head>
+        <title>Trumpet Help</title>
+        <meta name="keyword" content="html, tag, text, webpage,  homepage, tutorial, basic, browser, reference, anchor, list, font, header, separator">
+
+    </head>
+    <body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#cc3299" alink="#FFFF00">
+        <basefont="3">
+            <center>
+            <b>
+                <a name="TOC"><h1>Trumpet User Manual</h1></a>
+            </b>
+            <hr size="1">
+            <center>
+                <font size="4">~~~ <u><b>Table of Contents</b></u> ~~~</font>
+            </center>
+            <p>
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tbody><tr>
+                        <th align="LEFT" valign="TOP" nowrap="">
+                            <ol>
+                                <li><a href="#purpose">Purpose</a>
+                                </li><li><a href="#gui">GUI Layout</a>
+                                </li><li><a href="#design">Designing a Plasmid</a>
+                                </li><li><a href="#results">Interpreting Results</a>
+                                </li><li><a href="#algorithms">Algorithms</a>
+                                </li><li><a href="#info">More Information</a>
+                                </li></ol>
+                        </th>
+                    </tr>
+                </tbody></table>
+
+
+            <!-- //\\//\\//\\//\\//\\//\\//\\ Purpose \\//\\//\\//\\//\\//\\//\\//\\//-->
+
+            <p>
+                <a name="purpose"></a></p><hr size="1">
+        </center>
+        <font size="5"><i><b>1.  Purpose</b></i></font>
+        <hr size="1">
+        <p>The purpose of this program is to help the user design a reconfigurable circuit
+            plasmid (which is sometimes referred to as a "construct") which contains a set of
+            permutable parts defined by the user.  This circuit plasmid utilizes the inversion
+            capabilites of invertases to reconfigure the set of parts into any permutation.</p>
+        <p>To do this, the user defines
+            a set of parts which will be permuted.  Then, the user selects a set of permutations of these parts.
+            With this information, Trumpet uses a set of algorithms to return a circuit plasmid to the user.
+            which contains all of the parts of interest as well as all of the invertase sites necessary for
+            flipping sections of the plasmid so that the desired permutations can be achieved.  Trumpet
+            also returns a table of desired permutations and their respective "invertase keys".  These keys are
+            the sequence of invertases which must be added to the circuit plasmid so that the circuit plasmid will reconfigure
+            to the corresponding permutation.</p>
+        <p>The algorithms used by Trumpet are by no means completely optimized.  I hope that this app can act as
+            a stepping stone to further invertase inversion algorithm development.
+        </p>
+        This user manual begins by describing Trumpet's user interface.  It also steps the
+        user through the plasmid design process by explaining each step in detail.  Finally,
+        this document helps the user find more information regarding Clotho and app development.</p>
+    <br><br>
+    <i><a href="#TOC">To the Table of Contents</a></i>
+
+
+
+    <!-- //\\//\\//\\//\\//\\//\\//\\ GUI LAYOUT \\//\\//\\//\\//\\//\\//\\//\\//-->
+
+
+    <p>
+        <a name="gui"></a></p><hr size="1">
+    <font size="5"><i><b>2.  GUI Layout</b></i></font>
+    <hr size="1">
+    <p>
+        This section of the user manual will describe the basic GUI components of Trumpet.
+        Hopefully by reading this portion, you will become familiar with Trumpet's
+        interface, which will make the next section of this manual, "Designing a Plasmid"
+        easier to follow.</p>
+
+    <br>
+    <b>Menu Bar</b>
+    <p>Located at the top of the Trumpet GUI is the menu bar.  This consist of four
+        drop down menus.  The first is the File Menu: </p>
+    <br>
+    <center>
+        <img border="0" src="FileMenu.png" alt="File Menu"  />
+    </center>
+    <p>This menu only contains the option to exit the program.  The second item in
+        the menu bar is the Windows Menu:</p>
+    <br>
+    <center>
+        <img border="0" src="WindowsMenu.png" alt="Windows Menu"  />
+    </center>
+    <p>This menu contains three options.  All three of these options toggle certain
+        tabs on and off within the Work Space.  The option is titled "Simulate Designs".
+        This allows you to open and close the Simulate Designs tab of the work space.
+        Unfortunately, for the first version of Trumpet, the design simulator has not been
+        implemented, so this feature merely opens and closes a tab which holds no value.</p>
+    <p>The other two options, Show Trees and Show Key Tables, toggle the Invertase Key
+        Trees and Key Tables on and off.  These will be explained in greater detail later in
+        this user manual.</p>
+    <p>The next menu is the Views menu:
+        <br>
+    <center>
+        <img border="0" src="ViewsMenu.png" alt="Views Menu"  />
+    </center>
+    <p>The only item in this menu, Switch Views, allows you to move Trumpet between it's
+        own window and the FabDash IDE.  Lastly, there is the Help menu.</p>
+    <br>
+    <center>
+        <img border="0" src="HelpMenu.png" alt="Help Menu"  />
+    </center>
+    <p>This menu has two options.  The first enables you to view this document, which means you must have already
+        explored this menu.  The second informs you of the version of Trumpet that you are using.</p>
+    <br>
+    <b>Part Toolbar</b>
+    <br>
+    <p>
+        Located at to the left of the Trumpet GUI is your Part Toolbar:</p>
+    <br>
+    <center>
+        <img border="0" src="PartToolbar.png" alt="Part Toolbar"  />
+    </center>
+    <p>The Part Toolbar allows you to choose your part format and set of parts.
+        It also shows you what invertases are available by updating the "Available Invertases"
+        list by referencing your current database.  Currently, the invertases are hard-coded; however,
+        soon Clotho will allow for recombinase families.  When this occurs, this list will be fixed.</p>
+    <br>
+    <b>Work Space</b>
+    <p>Below is an image of the Trumpet work space:</p>
+    <br>
+    <center>
+        <img border="0" src="WorkSpaceResized.png" alt="Work Space"/>
+    </center>
+
+    <p>The Work Space allows the user to choose a set of desired permutations, given
+        the part set defined in the Part Toolbar.  The work space also contains the set
+        of algorithms from which the user can choose from.  These algorithms determine how
+        the invertases are placed within the plasmid construct.  They will be discussed in further
+        detail in Section 4 of this user manual.</p>
+    <p>It is also important to note that the Work Space will house all of the generated
+        results.  These will be added as separate tabs within the Work Space.  Result tabs
+        will be further explored in the following section.</p>
+    <br>
+    <i><a href="#TOC">To the Table of Contents</a></i>
+
+
+
+
+    <!-- //\\//\\//\\//\\//\\//\ Designing a Plasmid \//\\//\\//\\//\\//\\//\\//-->
+
+
+    <p>
+        <a name="design"></a></p><hr size="3">
+    <font size="5"><i><b>3.  Designing a Plasmid</b></i></font>
+    <hr size="3">
+    <p>This portion of the user manual thoroughly describes how to use Trumpet
+        for it's intended purpose.  This section will guide you through each step of the
+        circuit plasmid design process.  Hopefully by reading this tutorial, you'll
+        not only understand how to use Trumpet, but you'll be able to use Trumpet to it's
+        full design capability.</p>
+
+    <ol>
+        <b><li>Choose a Format</li></b>
+        <p>At the end of the day, Trumpet will create a composite part in Clotho, which
+            you will be able to save to your database connection.  In order to make a composite
+            part, all of the parts within the composite part must be of the same format.  Due
+            to this, the first thing you must do while using Trumpet is choose the part format
+            that you will work with.  In the top left corner of Trumpet's GUI, you should see
+            the following drop down menu: </p>
+        <br>
+        <center>
+            <img border="0" src="ChoosingFormat.png" alt="Choose a Format"  />
+        </center>
+        <p>For this step of the design process, all you need to do is choose a format from
+            this drop down menu.  This will be your current working format for the rest of the manual. </p>
+        <b><li>Choose Your Set of Parts</li></b>
+        <p>Next, you need to define your set of parts.  These will be the parts that you
+            are interested in permuting.  To add a part, simply click on the part of interest
+            in the FabDash's workspace pictured below:</p>
+        <br>
+        <center>
+            <img border="0" src="DragAndDropResized.png" alt="Choose your parts"  />
+        </center>
+        <p>After clicking on your part, just drag and drop this part into the Current
+            Part Set of Trumpet, which can be found in the Part Toolbar.  When you drag a
+            part into the Current Part Set, Trumpet will check to see whether this part
+            agrees with your current format.  If it does not, Trumpet will let you know that
+            this is the case, and the part will not be added.  When a part does get added,
+            it will be added to the Current Part Set and it will be indexed in this list
+            with "P#: " where the P simply stand for part.  This indexing will make more sense
+            when you define your desired set of permutations.  For now, it is not very important.
+            Below is an example of the Current Part Set which contains 4 parts: </p>
+        <br>
+        <center>
+            <img border="0" src="PartSet.png" alt="Choose your parts"  />
+        </center>
+        <p>Once parts have been added to your Current Part Set, they can be deleted at
+            any time.  Simply click on the part in your part set so that it is highlighted.
+            Then click the delete button located directly below the list of current parts.  When
+            you click this delete button, any parts highlighted in your Current Part Set will
+            be deleted.</p>
+        <br>
+        <b><li>Choose Whether to Differentiate Inversions</li></b>
+        Once you have your set of parts, the next step (which may not be very intuitive)
+        is to determine whether you want Trumpet to distinguish between inverted parts
+        and non-inverted parts.  The check box for this option is located in the lower right
+        corner of Trumpet near the Go button:
+        <center>
+            <br>
+            <img border="0" src="Inversions.png" alt="Inversions"  />
+        </center>
+        <p>When parts of a construct are inverted using invertases, the parts will end up being flipped.
+            If you are only interested in permuting parts, and you do not care whether the
+            permutation contains parts which are flipped, then you should deselect this check box.
+            If you are interested in permutations where certain parts are flipped and others are not, then
+            leave this box checked.  This is the default option, since most users will be
+            interested in flipping parts on and off.</p>
+        <br>
+        <b><li>Choose Your Permutations</li></b>
+        <p>You are finally ready to choose your set of desired permutations!  As you add
+            parts to your Current Part Set, the list of Possible Permutations is updated.  Below
+            is an example of the Possible Permutations list with a Current Part Set containing
+            four parts:</p>
+        <br>
+        <center>
+            <img border="0" src="PossiblePermsInv.png" alt="Choose your permutations"  />
+        </center>
+        <p>Looking at this figure, you can see that each part is now referenced by its
+            index "P#".  The list of Possible Permutations contains all possible permutations of
+            the four parts.  In the example above, the "Include Inverted Parts" check box has
+            been checked.  Because of this, the Possible Permutations list also includes all
+            permutations with each part turned flipped and not flipped.  This is indicated using
+            the "'" character after the part index.  For example, the first permutation in the list
+            is "P1' P2 P3 P4".  This permutation simply inverts only the first part of your Current
+            Part Set.  If this check box was not checked, the Possible Permutation list would
+            look like the following:</p>
+        <br>
+        <center>
+            <img border="0" src="PossiblePermsNonInv.png" alt="Possible Permutations"  />
+        </center>
+        <p>At this point, your Desired Permutation list should be empty.  Your work space
+            should look like the following:</p>
+        <br>
+        <center>
+            <img border="0" src="ChoosePermutationsResized.png" alt="ChoosePermutations"  />
+        </center>
+        <p>To add a permutation to your list of Desired Permutations, simply click on
+            one or more (use Shift or Ctrl to highlight more than one) permutations in the
+            Possible Permutations list.  Then, click the Add button located between the
+            Possible Permutations and Desired Permutations list.  If you attempt to add
+            the same permutation more than once, Trumpet will not add this permutation,
+            however, it will also not let you know that you have tried to add the same
+            permutation.  This is done so as to avoid bringing up annoying dialogs for such
+            a small mistake made by the user.</p>
+        <br>
+        <b><li>Choose an Algorithm</li></b>
+        <p>With your set of Desired Permutations defined, you are ready to choose your
+            algorithm.  So far, Trumpet contains two different algorithms called LinkSort
+            and Pancake.  Both of these algorithms attempt to place invertase sites in your
+            construct, so that only the permutations you desire will be hit.  These algorithms
+            are by no means the optimal solutions to invertase site placement.  If you are
+            interested in how these algorithms determine where to place invertase sites,
+            please refer to section 5 titled "Algorithms".</p>
+        <p>To choose which algorithm you would like to use, select one of them from the
+            radio buttons located at the bottom of the Trumpet GUI: </p>
+        <br>
+        <center>
+            <img border="0" src="ChooseAlgorithm.png" alt="Choose an algorithm"  />
+        </center>
+        <p>Since these two algorithms operate differently, it may be beneficial to
+            the user to try using both for the same set of desired permutations.  They will
+            most likely generate different results with different properties.  Depending on
+            what properties of the construct you are interested in, each one may have it's
+            ups and downs.</p>
+        <br>
+        <b><li>Generate Results</li></b>
+        <p>Finally, you are ready to generate your construct, or composite part.  To do this,
+            simply press the Go button located in the lower right corner of the Trumpet GUI: </p>
+        <br>
+        <center>
+            <img border="0" src="Go.png" alt="Click Go!"  />
+        </center>
+        <p>After pressing this button, a Result tab is generated in your work space.
+            The following section of this user manual will describe how to interpret all of
+            the different pieces of a Result tab.</p>
+    </ol>
+    <br>
+
+    <i><a href="#TOC">To the Table of Contents</a></i>
+
+
+
+    <!-- //\\//\\//\\//\\//\\//\\//\\ Results \\//\\//\\//\\//\\//\\//\\//\\//-->
+
+
+    <p>
+        <a name="results"></a></p><hr size="3">
+    <font size="5"><i><b>4.  Interpreting Results</b></i></font>
+    <hr size="3">
+    <p>When a Result tab is generated, after following the steps outlined above,
+        it will contain four of it's own tabs.  Each of these tabs contains information
+        pertaining the construct which Trumpet has designed.  This section will explain
+        all of this information, piece by piece.</p>
+    <ol>
+        <b><li>Quick Summary</li></b>
+        <p>The Quick Summary will be the first thing that you see when a Result tab is
+            generated.  It is located at the top of the Result tab and is visible from any
+            of the result's inner tabs.  The Quick Summary is meant to be a quick reference
+            when looking at many different result tabs in your work space.  It reminds you
+            what algorithm was used to create the circuit plasmid, the number of total permutations
+            that can be achieved with the construct, and the total number of invertases necessary
+            to make the construct.</p>
+        <br>
+        <b><li>Design Summary</li></b>
+        <p>The first tab, within the Result tab, is a simple summary of the plasmid that
+            has been designed.  An example using four parts is shown below: </p>
+        <br>
+        <center>
+            <img border="0" src="DesignSummaryResized.png" alt="Design Summary"  />
+        </center>
+        <p>This tab is split up into three sections: Construct Summary, Permutation Summary,
+            and Parts Summary.</p>
+        <ul>
+            <li>Construct Summary</li>
+            <p>The construct summary contains three valuable pieces of information.  The first
+                is simply the algorithm that was used.  The second is the total number of invertases
+                required to hit all of the desired permutations.  The final piece of information, the String Design, in this
+                section is a little more complicated. The String Design represents the composite part which Trumpet
+                has created.  Each substring within this long string represents a part of the design.  Any of the
+                strings that begin with "I" are an invertase site.  The number that follows this "I" is the identifier for
+                that invertase site, as well as it's corresponding invertase inputs.  Any of the strings that begin with "P" represent
+                a part (this is again referring to the indexing of the Current Part Set).  Any string which ends with
+                the "'" indicates that this part has been flipped.  For example each invertase site must contain a
+                complementary invertase site.  The complementary sites are simply flipped, so they are represented
+                using this "'" character.  If the construct contained flipped parts, they would also have a "'" concatenated
+                at the end of the "P#".  This will come up again later in this section of the user manual. </p>
+            <li>Permutation Summary</li>
+            <p>The permutation summary begins with the Number of Levels required by this design. This number corresponds to the
+                length of the longest invertase key generated for this design.  The term level corresponds to the Invertase Tree
+                described later in this section.  The Permutation Summary also includes the number of desired permutations
+                as well as the total number of permutations hit.  These two numbers may differ to the nature of the
+                algorithms.  Sometimes, on the way to a desired permutation, the construct may reconfigure into an intermediate
+                permutation that was not desired.  Finally, this section includes the starting permutation of the
+                parts within the circuit plasmid.  This is base configuration of the plasmid before it undergoes
+                any inversions.</p>
+            <li>Parts Summary</li>
+            <p>The Parts Summary specifies the format of all parts involved in the plasmid.  It
+                also displays the indexing for the parts being permuted.</p>
+        </ul>
+        <b><li>Invertase Key Table</li></b>
+        <p>The second tab within the Result tab is the Invertase Key Table shown below:</p>
+        <br>
+        <center>
+            <img border="0" src="KeyTableResized.png" alt="Table of keys"  />
+        </center>
+        <p>The left column of this table contains the set of desired permutation that you chose
+            earlier.  The right column of this table shows the invertase key for each permutation.  This
+            invertase key represents the sequence of invertases that, when added to the base circuit
+            plasmid, will reconfigure the circuit plasmid into the corresponding permutation.</p>
+        <b><li>Invertase Tree</li></b>
+        <p>The third Result tab contains the same information as the invertase key table; however,
+            it displays these keys in a tree format.  Each node in the tree represents a permutation, and
+            each edge represents an invertase input.  The root of the tree is the circuit plasmid's base
+            permutation of parts.  By traversing the tree, you can see what permutations are hit on the
+            way to a desire permutation.  Below is an example of this tree: </p>
+        <br>
+        <center>
+            <img border="0" src="KeyTreeResized.png" alt="Invertase Tree"  />
+        </center>
+        <p>The tree is color coded.  Desired permutations are blue nodes.  Intermediate permutations
+            are orange nodes.  You can use the mouse wheel to zoom.  There is also a set of controls located
+            at the bottom of the tree display.  There are plus/minus zoom buttons in the center.  On the left
+            is the Radial button.  This converts the natural tree layout into a concentric radial tree layout.  In this
+            format, the center circle represents the base construct.  All permutations that lie a single inversion
+            away from the base circuit plasmid, are placed on the next largest of the circles, and so on and so forth.
+            This view helps visualize how many inversions away certain desired permutations may be from the circuit plasmid
+            (which again, is equivalent to the Number of Levels from the Design Summary).</p>
+        <p>To the right of the zoom buttons, there is a combo box with two viewing modes: Transforming and Picking.
+            Each mode has a set of associated controls.  In the Transforming mode, which is the default mode, you can
+            move the graph around the screen by simply clicking and dragging.  In conjunction with this, by holding control at
+            the same time, you are able to skew the graph.  Similarly, holding shift will rotate the graph.  In the Picking
+            mode, you can click on individual nodes and drag them around to different areas.  You are also able to
+            highlight many nodes at once by clicking and dragging, from corner to corner, a square around the set of nodes.
+            Once these nodes are selected, they can be moved around as a group by clicking on one of them.  Both the
+            Picking and Transforming modes are available in the tree and radial layouts.</p>
+        <b><li>Save and Export</li></b>
+        <p>The last tab within the Result Tab is allows you to save your design to your Clotho database.
+            The figure below shows a an example of the Save and Export tab:</p>
+        <br>
+        <center>
+            <img border="0" src="SaveAndExportResized.png" alt="Save your construct"  />
+        </center>
+        <p>The top of this tab allows you to enter the name of your construct as well as a
+            description of this construct.  Below this is the invertase assignment panel.  This panel
+            is split into two columns.  The left column is a list of the invertases used in your design.
+            These invertases can be found in the String Design on the Design Summary tab.
+            Each of these invertases has a corresponding combo box in the right column of the panel.  These drop down
+            boxes are populated with a list of invertase sites in your Clotho database.  All of these possible sites
+            can also be found in the Part Toolbar underneath the Current Part Set.</p>
+        <p>If you attempt to save a the circuit plasmid without filling in the name or description,
+            a dialog box will inform you that this is not possible.  Also, if you assign the same invertase to more
+            than one invertase name, Trumpet will warn you.  If all of the fields are filled in properly and
+            you save the construct, the saving process will run in the background.  When the part is finally saved, a
+            dialog box will pop up and inform you.</p>
+        <b><li>Create Construct from a Tree</li></b>
+        <p>When Trumpet generates a construct, it may require large Number of Levels which
+            might make the construct unappealing to the user.  Below is an example of this problem:</p>
+        <br>
+        <center>
+            <img border="0" src="LongTreeResized.png" alt="too long!"  />
+        </center>
+        <p>In order to hit "P4 P2 P3 P1", 8 inversions are required.  If instead, we started at permutation
+            "P4' P2' P3' P1'", 7 separate desired permutations could be achieved with only 4 levels of inversion.
+            By right clicking this node, a pop up appears with the option "Create Construct":</p>
+        <br>
+        <center>
+            <img border="0" src="CreateConstruct.png" alt="create a construct!"  />
+        </center>
+        <p>By clicking this option, a new circuit plasmid is generated with this permutation
+            as the circuit plasmid's base configuration.  This plasmid can be reconfigured to any of
+            the permutations that were underneath that node from the original construct's tree.  Imagine that the
+            original tree is cut at the selected node (permutation).  The subtree extending from this node is the
+            newly generated construct:</p>
+        <br>
+        <center>
+            <img border="0" src="NewTree.png" alt="new tree"  />
+        </center>
+        <p>The picture above shows the Invertase Key Tree of the newly created circuit plasmid</p>
+        <p>That's it!  Have fun designing!</p>
+    </ol>
+
+    <br>
+
+    <i><a href="#TOC">To the Table of Contents</a></i>
+
+
+
+    <!-- //\\//\\//\\//\\//\\//\\//\\ Algorithms \\//\\//\\//\\//\\//\\//\\//\\//-->
+
+
+    <p>
+        <a name="algorithms"></a></p><hr size="3">
+    <font size="5"><i><b>4.  Algorithms</b></i></font>
+    <hr size="3">
+    <br>  When these algorithms are published, this section will be updated to
+    describe how the algorithms work.
+    <br>
+    <br>
+    <i><a href="#TOC">To the Table of Contents</a></i>
+
+
+
+    <!-- //\\//\\//\\//\\//\\//\\//\\ References \\//\\//\\//\\//\\//\\//\\//\\//-->
+
+
+
+    <p>
+        <a name="info"></a></p><hr size="3">
+    <font size="5"><i><b>6. More Information</b></i></font>
+    <hr size="3">
+    For more information regarding Cotho, please visit:<br>
+    http://www.clothocad.org/<br><br>
+    For more information regarding Clotho App Development, please visit the Clotho wiki
+    at:<br>
+    http://wiki.bu.edu/ece-clotho/index.php/Main_Page
+    <br>
+    <br>
+
+    <i><a href="#TOC">To the Table of Contents</a></i>
+
+
+    </basefont="3"></body></html>
