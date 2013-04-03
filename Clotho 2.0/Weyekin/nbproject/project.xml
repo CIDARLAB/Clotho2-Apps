@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.apisupport.project</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/nb-module-project/3">
+            <code-name-base>org.clothocad.tool.weyekin</code-name-base>
+            <standalone/>
+            <module-dependencies/>
+            <public-packages>
+                <package>org.clothocad.tool.weyekin</package>
+            </public-packages>
+            <class-path-extension>
+                <runtime-relative-path>ext/fluent-hc-4.2.1.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/fluent-hc-4.2.1.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/commons-logging-1.1.1.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/commons-logging-1.1.1.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/httpclient-4.2.1.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/httpclient-4.2.1.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/httpclient-cache-4.2.1.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/httpclient-cache-4.2.1.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/commons-codec-1.6.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/commons-codec-1.6.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/httpcore-4.2.1.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/httpcore-4.2.1.jar</binary-origin>
+            </class-path-extension>
+            <class-path-extension>
+                <runtime-relative-path>ext/httpmime-4.2.1.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/httpmime-4.2.1.jar</binary-origin>
+            </class-path-extension>
+        </data>
+    </configuration>
+</project>
