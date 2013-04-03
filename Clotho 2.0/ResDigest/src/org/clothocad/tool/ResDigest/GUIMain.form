@@ -1,0 +1,603 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jCheckBox1.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupConfirmation">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="cc" red="cc" type="rgb"/>
+    </Property>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jRadioButtonCircular" max="32767" attributes="1"/>
+                      <Component id="jLabel6" alignment="0" max="32767" attributes="1"/>
+                  </Group>
+                  <Component id="jRadioButtonLinear" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jScrollPane2" pref="130" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane3" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPaneEnzymeList" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
+                                  <Component id="jButtonAddEnzyme" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jButtonRun" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jButtonFindOpt" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldlowerBound" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="905" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jLabel6" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jRadioButtonCircular" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jRadioButtonLinear" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="61" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jButtonAddEnzyme" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButtonRun" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jScrollPane2" alignment="0" max="32767" attributes="1"/>
+                              <Component id="jScrollPane3" alignment="0" pref="297" max="32767" attributes="1"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPaneEnzymeList" min="-2" pref="218" max="-2" attributes="1"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jTextFieldlowerBound" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jButtonFindOpt" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="94" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextAreaPlasmidText">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="lineWrap" type="boolean" value="true"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JList" name="jListPlasmid">
+          <Properties>
+            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+              <StringArray count="0"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jLabel1.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPaneEnzymeList">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JList" name="jListRestrictionEnzymes">
+          <Properties>
+            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+              <StringArray count="237">
+                <StringItem index="0" value="AatII"/>
+                <StringItem index="1" value="Acc65I"/>
+                <StringItem index="2" value="AccI"/>
+                <StringItem index="3" value="AciI"/>
+                <StringItem index="4" value="AclI"/>
+                <StringItem index="5" value="AcuI"/>
+                <StringItem index="6" value="AfeI"/>
+                <StringItem index="7" value="AflII"/>
+                <StringItem index="8" value="AflIII"/>
+                <StringItem index="9" value="AgeI"/>
+                <StringItem index="10" value="AhdI"/>
+                <StringItem index="11" value="AleI"/>
+                <StringItem index="12" value="AluI"/>
+                <StringItem index="13" value="AlwI"/>
+                <StringItem index="14" value="AlwNI"/>
+                <StringItem index="15" value="ApaI"/>
+                <StringItem index="16" value="ApaLI"/>
+                <StringItem index="17" value="ApeKI"/>
+                <StringItem index="18" value="ApoI"/>
+                <StringItem index="19" value="AscI"/>
+                <StringItem index="20" value="AseI"/>
+                <StringItem index="21" value="AsiSI"/>
+                <StringItem index="22" value="AvaI"/>
+                <StringItem index="23" value="AvaII"/>
+                <StringItem index="24" value="AvrII"/>
+                <StringItem index="25" value="BaeGI"/>
+                <StringItem index="26" value="BaeI"/>
+                <StringItem index="27" value="BamHI"/>
+                <StringItem index="28" value="BanI"/>
+                <StringItem index="29" value="BanII"/>
+                <StringItem index="30" value="BbsI"/>
+                <StringItem index="31" value="BbvCI"/>
+                <StringItem index="32" value="BbvI"/>
+                <StringItem index="33" value="BccI"/>
+                <StringItem index="34" value="BceAI"/>
+                <StringItem index="35" value="BcgI"/>
+                <StringItem index="36" value="BciVI"/>
+                <StringItem index="37" value="BclI"/>
+                <StringItem index="38" value="BcoDI"/>
+                <StringItem index="39" value="BfaI"/>
+                <StringItem index="40" value="BfuAI"/>
+                <StringItem index="41" value="BfuCI"/>
+                <StringItem index="42" value="BglI"/>
+                <StringItem index="43" value="BglII"/>
+                <StringItem index="44" value="BlpI"/>
+                <StringItem index="45" value="BmgBI"/>
+                <StringItem index="46" value="BmrI"/>
+                <StringItem index="47" value="BmtI"/>
+                <StringItem index="48" value="BpmI"/>
+                <StringItem index="49" value="Bpu10I"/>
+                <StringItem index="50" value="BpuEI"/>
+                <StringItem index="51" value="BsaAI"/>
+                <StringItem index="52" value="BsaBI"/>
+                <StringItem index="53" value="BsaHI"/>
+                <StringItem index="54" value="BsaI"/>
+                <StringItem index="55" value="BsaJI"/>
+                <StringItem index="56" value="BsaWI"/>
+                <StringItem index="57" value="BsaXI"/>
+                <StringItem index="58" value="BseRI"/>
+                <StringItem index="59" value="BseYI"/>
+                <StringItem index="60" value="BsgI"/>
+                <StringItem index="61" value="BsiEI"/>
+                <StringItem index="62" value="BsiHKAI"/>
+                <StringItem index="63" value="BsiWI"/>
+                <StringItem index="64" value="BslI"/>
+                <StringItem index="65" value="BsmAI"/>
+                <StringItem index="66" value="BsmBI"/>
+                <StringItem index="67" value="BsmFI"/>
+                <StringItem index="68" value="BsmI"/>
+                <StringItem index="69" value="BsoBI"/>
+                <StringItem index="70" value="Bsp1286I"/>
+                <StringItem index="71" value="BspCNI"/>
+                <StringItem index="72" value="BspDI"/>
+                <StringItem index="73" value="BspEI"/>
+                <StringItem index="74" value="BspHI"/>
+                <StringItem index="75" value="BspMI"/>
+                <StringItem index="76" value="BspQI"/>
+                <StringItem index="77" value="BsrBI"/>
+                <StringItem index="78" value="BsrDI"/>
+                <StringItem index="79" value="BsrFI"/>
+                <StringItem index="80" value="BsrGI"/>
+                <StringItem index="81" value="BsrI"/>
+                <StringItem index="82" value="BssHII"/>
+                <StringItem index="83" value="BssKI"/>
+                <StringItem index="84" value="BssSI"/>
+                <StringItem index="85" value="BstAPI"/>
+                <StringItem index="86" value="BstBI"/>
+                <StringItem index="87" value="BstEII"/>
+                <StringItem index="88" value="BstNI"/>
+                <StringItem index="89" value="BstUI"/>
+                <StringItem index="90" value="BstXI"/>
+                <StringItem index="91" value="BstYI"/>
+                <StringItem index="92" value="BstZ17I"/>
+                <StringItem index="93" value="Bsu36I"/>
+                <StringItem index="94" value="BtgI"/>
+                <StringItem index="95" value="BtgZI"/>
+                <StringItem index="96" value="BtsCI"/>
+                <StringItem index="97" value="BtsI"/>
+                <StringItem index="98" value="BtsIMutI"/>
+                <StringItem index="99" value="Cac8I"/>
+                <StringItem index="100" value="ClaI"/>
+                <StringItem index="101" value="CspCI"/>
+                <StringItem index="102" value="CviAII"/>
+                <StringItem index="103" value="CviKI-1"/>
+                <StringItem index="104" value="CviQI"/>
+                <StringItem index="105" value="DdeI"/>
+                <StringItem index="106" value="DpnI"/>
+                <StringItem index="107" value="DpnII"/>
+                <StringItem index="108" value="DraI"/>
+                <StringItem index="109" value="DraIII"/>
+                <StringItem index="110" value="DrdI"/>
+                <StringItem index="111" value="EaeI"/>
+                <StringItem index="112" value="EagI"/>
+                <StringItem index="113" value="EarI"/>
+                <StringItem index="114" value="EciI"/>
+                <StringItem index="115" value="Eco53kI"/>
+                <StringItem index="116" value="EcoNI"/>
+                <StringItem index="117" value="EcoO109I"/>
+                <StringItem index="118" value="EcoRI"/>
+                <StringItem index="119" value="EcoRV"/>
+                <StringItem index="120" value="FatI"/>
+                <StringItem index="121" value="FauI"/>
+                <StringItem index="122" value="Fnu4HI"/>
+                <StringItem index="123" value="FokI"/>
+                <StringItem index="124" value="FseI"/>
+                <StringItem index="125" value="FspEI"/>
+                <StringItem index="126" value="FspI"/>
+                <StringItem index="127" value="HaeII"/>
+                <StringItem index="128" value="HaeIII"/>
+                <StringItem index="129" value="HgaI"/>
+                <StringItem index="130" value="HhaI"/>
+                <StringItem index="131" value="HincII"/>
+                <StringItem index="132" value="HindIII"/>
+                <StringItem index="133" value="HinfI"/>
+                <StringItem index="134" value="HinP1I"/>
+                <StringItem index="135" value="HpaI"/>
+                <StringItem index="136" value="HpaII"/>
+                <StringItem index="137" value="HphI"/>
+                <StringItem index="138" value="Hpy166II"/>
+                <StringItem index="139" value="Hpy188I"/>
+                <StringItem index="140" value="Hpy188III"/>
+                <StringItem index="141" value="Hpy99I"/>
+                <StringItem index="142" value="HpyAV"/>
+                <StringItem index="143" value="HpyCH4III"/>
+                <StringItem index="144" value="HpyCH4IV"/>
+                <StringItem index="145" value="HpyCH4V"/>
+                <StringItem index="146" value="KasI"/>
+                <StringItem index="147" value="KpnI"/>
+                <StringItem index="148" value="LpnPI"/>
+                <StringItem index="149" value="MboI"/>
+                <StringItem index="150" value="MboII"/>
+                <StringItem index="151" value="MfeI"/>
+                <StringItem index="152" value="MluCI"/>
+                <StringItem index="153" value="MluI"/>
+                <StringItem index="154" value="MlyI"/>
+                <StringItem index="155" value="MmeI"/>
+                <StringItem index="156" value="MnlI"/>
+                <StringItem index="157" value="MscI"/>
+                <StringItem index="158" value="MseI"/>
+                <StringItem index="159" value="MslI"/>
+                <StringItem index="160" value="MspA1I"/>
+                <StringItem index="161" value="MspI"/>
+                <StringItem index="162" value="MspJI"/>
+                <StringItem index="163" value="MwoI"/>
+                <StringItem index="164" value="NaeI"/>
+                <StringItem index="165" value="NarI"/>
+                <StringItem index="166" value="NciI"/>
+                <StringItem index="167" value="NcoI"/>
+                <StringItem index="168" value="NdeI"/>
+                <StringItem index="169" value="NgoMIV"/>
+                <StringItem index="170" value="NheI"/>
+                <StringItem index="171" value="NlaIII"/>
+                <StringItem index="172" value="NlaIV"/>
+                <StringItem index="173" value="NmeAIII"/>
+                <StringItem index="174" value="NotI"/>
+                <StringItem index="175" value="NruI"/>
+                <StringItem index="176" value="NsiI"/>
+                <StringItem index="177" value="NspI"/>
+                <StringItem index="178" value="PacI"/>
+                <StringItem index="179" value="PaeR7I"/>
+                <StringItem index="180" value="PciI"/>
+                <StringItem index="181" value="PflFI"/>
+                <StringItem index="182" value="PflMI"/>
+                <StringItem index="183" value="PhoI"/>
+                <StringItem index="184" value="PleI"/>
+                <StringItem index="185" value="PluTI"/>
+                <StringItem index="186" value="PmeI"/>
+                <StringItem index="187" value="PmlI"/>
+                <StringItem index="188" value="PpuMI"/>
+                <StringItem index="189" value="PshAI"/>
+                <StringItem index="190" value="PsiI"/>
+                <StringItem index="191" value="PspGI"/>
+                <StringItem index="192" value="PspOMI"/>
+                <StringItem index="193" value="PspXI"/>
+                <StringItem index="194" value="PstI"/>
+                <StringItem index="195" value="PvuI"/>
+                <StringItem index="196" value="PvuII"/>
+                <StringItem index="197" value="RsaI"/>
+                <StringItem index="198" value="RsrII"/>
+                <StringItem index="199" value="SacI"/>
+                <StringItem index="200" value="SacII"/>
+                <StringItem index="201" value="SalI"/>
+                <StringItem index="202" value="SapI"/>
+                <StringItem index="203" value="Sau3AI"/>
+                <StringItem index="204" value="Sau96I"/>
+                <StringItem index="205" value="SbfI"/>
+                <StringItem index="206" value="ScaI"/>
+                <StringItem index="207" value="ScrFI"/>
+                <StringItem index="208" value="SexAI"/>
+                <StringItem index="209" value="SfaNI"/>
+                <StringItem index="210" value="SfcI"/>
+                <StringItem index="211" value="SfiI"/>
+                <StringItem index="212" value="SfoI"/>
+                <StringItem index="213" value="SgrAI"/>
+                <StringItem index="214" value="SmaI"/>
+                <StringItem index="215" value="SmlI"/>
+                <StringItem index="216" value="SnaBI"/>
+                <StringItem index="217" value="SpeI"/>
+                <StringItem index="218" value="SphI"/>
+                <StringItem index="219" value="SspI"/>
+                <StringItem index="220" value="StuI"/>
+                <StringItem index="221" value="StyD4I"/>
+                <StringItem index="222" value="StyI"/>
+                <StringItem index="223" value="SwaI"/>
+                <StringItem index="224" value="TaqI"/>
+                <StringItem index="225" value="TfiI"/>
+                <StringItem index="226" value="TseI"/>
+                <StringItem index="227" value="Tsp45I"/>
+                <StringItem index="228" value="TspMI"/>
+                <StringItem index="229" value="TspRI"/>
+                <StringItem index="230" value="Tth111I"/>
+                <StringItem index="231" value="XcmI"/>
+                <StringItem index="232" value="XhoI"/>
+                <StringItem index="233" value="XmaI"/>
+                <StringItem index="234" value="XmnI"/>
+                <StringItem index="235" value="ZraI"/>
+                <StringItem index="236" value=" "/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jLabel2.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextPane" name="jTextPane1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+              <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jTextPane1.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JTextField" name="jTextFieldlowerBound">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jTextFieldlowerBound.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldlowerBoundActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jLabel3.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonFindOpt">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jButtonFindOpt.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonFindOptActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jLabel4.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonRun">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jButtonRun.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRunActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonAddEnzyme">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jButtonAddEnzyme.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAddEnzymeActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JList" name="jListParts">
+          <Properties>
+            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+              <StringArray count="0"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jLabel5.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel6">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jLabel6.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRadioButtonCircular">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroupConfirmation"/>
+        </Property>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jRadioButtonCircular.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonCircularActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRadioButtonLinear">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroupConfirmation"/>
+        </Property>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
+          <ResourceString bundle="org/clothocad/tool/ResDigest/Bundle.properties" key="GUIMain.jRadioButtonLinear.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
+        </Property>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
