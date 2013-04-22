@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+<type>ClothoFormat</type>
+<version>1.0</version>
+<classname>org-clothocad-format-moclo-connect</classname>
+<description>MoClo is a format tailored for the modular cloning assembly technique</description>
+<displayname>MoClo</displayname>
+<uuid>org-clothocad-format-moclo-connect</uuid>
+<screenshotpath>org/clothocad/format/moclo/screenshot.png</screenshotpath>
+<author>Ernst Oberortner</author>
+<!--<dependency>org.clothocad.tool.helloworld</dependency>-->
+<iconpath>org/clothocad/format/moclo/logo.png</iconpath>
+    <help>
+        <helpurl>http://wiki.bu.edu/ece-clotho/index.php/Format:_MoClo</helpurl>
+        <helpdescription>For more information please see the help url</helpdescription>
+        <!--<helpcommand>Command1</helpcommand>-->
+        <!--<helpcommand>Command2</helpcommand>-->
+    </help>
+</plugin>

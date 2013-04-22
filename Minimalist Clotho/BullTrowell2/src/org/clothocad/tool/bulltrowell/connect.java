@@ -37,21 +37,27 @@ import org.clothocad.tool.bulltrowell.view.hub;
  *
  * @author J. Christopher Anderson
  */
-public class connect implements ClothoTool{
+public class connect implements ClothoTool {
 
     public connect() {
         _prefs = Preferences.userNodeForPackage( connect.class );
+        /**
         if(!_prefs.get("playBullSound", "true").equals("true")) {
             playBullSound = false;
         }
+        **/
     }
 
 
     @Override
     public void launch() {
+        
+        /**
         if(playBullSound) {
             new AePlayWave("org/clothocad/tool/bulltrowell/bull.wav").start();
         }
+        **/
+        
         if (!Collector.isConnected()) {
             JOptionPane.showMessageDialog( null, "Database connection required to launch bullTrowell's hub!",
                                            "Clotho: bullTrowell", JOptionPane.ERROR_MESSAGE );

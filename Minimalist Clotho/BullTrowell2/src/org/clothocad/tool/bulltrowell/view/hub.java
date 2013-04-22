@@ -34,6 +34,7 @@ import java.util.prefs.Preferences;
 import org.clothocad.tool.bulltrowell.connect;
 import org.clothocad.tool.bulltrowell.interpreters.addComposite;
 import org.clothocad.tool.bulltrowell.interpreters.addFeature;
+import org.clothocad.tool.bulltrowell.interpreters.addMoCloComposite;
 import org.clothocad.tool.bulltrowell.interpreters.addOligos;
 import org.clothocad.tool.bulltrowell.interpreters.addPart;
 import org.clothocad.tool.bulltrowell.interpreters.addPlasmid;
@@ -82,6 +83,7 @@ public class hub extends javax.swing.JFrame {
         numRowField = new javax.swing.JTextField();
         addSampleButton = new javax.swing.JButton();
         addPlateButton = new javax.swing.JButton();
+        compositeButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -159,6 +161,13 @@ public class hub extends javax.swing.JFrame {
             }
         });
 
+        compositeButton1.setText("Composite MoClo Parts");
+        compositeButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compositeButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -166,11 +175,6 @@ public class hub extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addOligosButton)
-                            .addComponent(addFeatures))
-                        .addContainerGap(128, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(addParts)
@@ -181,19 +185,21 @@ public class hub extends javax.swing.JFrame {
                                     .addComponent(jLabel1)
                                     .addGap(13, 13, 13)
                                     .addComponent(numRowField, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(compositeButton, javax.swing.GroupLayout.Alignment.LEADING)))
+                                .addComponent(compositeButton, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(compositeButton1, javax.swing.GroupLayout.Alignment.LEADING)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(helpButton)
                         .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(addSampleButton)
-                        .addContainerGap(139, Short.MAX_VALUE))
+                        .addComponent(bullSounds, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(addPlateButton)
-                        .addContainerGap(154, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(bullSounds, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                        .addContainerGap())))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addOligosButton)
+                            .addComponent(addFeatures)
+                            .addComponent(addSampleButton)
+                            .addComponent(addPlateButton))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,6 +215,8 @@ public class hub extends javax.swing.JFrame {
                 .addComponent(addVectorsButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(compositeButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(compositeButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(addPlasmidButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -281,6 +289,11 @@ public class hub extends javax.swing.JFrame {
         new addPlate();
     }//GEN-LAST:event_addPlateButtonActionPerformed
 
+    private void compositeButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compositeButton1ActionPerformed
+        new addMoCloComposite();        
+    }//GEN-LAST:event_compositeButton1ActionPerformed
+
+    
     private void calcNumRows() {
         try {
             String sval = numRowField.getText().trim();
@@ -325,6 +338,7 @@ public class hub extends javax.swing.JFrame {
     private javax.swing.JButton addVectorsButton;
     private javax.swing.JButton bullSounds;
     private javax.swing.JButton compositeButton;
+    private javax.swing.JButton compositeButton1;
     private javax.swing.JButton helpButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField numRowField;

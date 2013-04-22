@@ -119,7 +119,8 @@ public class addPlate implements Interpreter {
 
     @Override
     public void receiveData(Object[][] data) {
-        _data = (Object[][]) data;
+        _data = data;
+        
         //Create a new Collection to store everything
         if (_outCollection == null) {
             _outCollection = new Collection();
@@ -142,7 +143,7 @@ public class addPlate implements Interpreter {
         ObjLink link = (ObjLink) _mySheet.getComboField2();
         _defaultAuthor = Collector.getPerson(link.uuid);
 
-        _data = (Object[][]) data;
+        _data = data;
 
         for (int i = 0; i < _data.length; i++) {
             try {

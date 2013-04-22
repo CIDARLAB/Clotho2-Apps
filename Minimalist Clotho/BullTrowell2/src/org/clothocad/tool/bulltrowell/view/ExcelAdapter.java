@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * ExcelAdapter enables Copy-Paste Clipboard functionality on JTables.
  * The clipboard data format used by the adapter is compatible with
- * the clipboard format used by Excel. This sprovides for clipboard
+ * the clipboard format used by Excel. This provides for clipboard
  * interoperability between enabled JTables and Excel.
  */
 public class ExcelAdapter implements ActionListener
@@ -97,7 +97,7 @@ sbf.append(jTable1.getValueAt(rowsselected[i],colsselected[j]));
                 StringTokenizer st2=new StringTokenizer(rowstring,"\t");
                 for(int j=0;st2.hasMoreTokens();j++)
                 {
-                   value=(String)st2.nextToken();
+                   value=st2.nextToken();
                    if (startRow+i< jTable1.getRowCount()  &&
                        startCol+j< jTable1.getColumnCount())
                       jTable1.setValueAt(value,startRow+i,startCol+j);
