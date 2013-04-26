@@ -288,7 +288,6 @@ public class connect implements ClothoFormat {
         return true;
     }
 
-    @Override
     public NucSeq generateBasicPartSequence(Part objPart) {
 
         return objPart.getSeq();
