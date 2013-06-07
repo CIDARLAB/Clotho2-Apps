@@ -30,6 +30,7 @@
 package org.clothocad.tool.bulltrowell.view;
 
 import java.awt.Color;
+import java.awt.event.ItemEvent;
 import java.lang.Object;
 import javax.swing.table.TableModel;
 import org.clothocad.tool.bulltrowell.interpreters.Interpreter;
@@ -59,6 +60,7 @@ public class spreadsheet extends javax.swing.JFrame {
     private void initComponents() {
 
         cancelButton = new javax.swing.JButton();
+        loadSequenceButton = new javax.swing.JButton();
         tableScroll = new javax.swing.JScrollPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         theTable = new JXTable();
@@ -94,6 +96,13 @@ public class spreadsheet extends javax.swing.JFrame {
                 cancelPerformed();
             }});
 
+        loadSequenceButton.setText("load sequences");
+        loadSequenceButton.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loadSequences();
+            }});
+
         clearButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +123,14 @@ public class spreadsheet extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jComboBox3.addItemListener(new java.awt.event.ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent ie) {
+                //System.out.println("[ItemStateChanged] "+getComboField3());
+            }
+        });
+        
+        
         submitButton.setText("submit");
         submitButton.addActionListener(new java.awt.event.ActionListener() {
             @Override
@@ -178,6 +195,8 @@ public class spreadsheet extends javax.swing.JFrame {
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                        .addComponent(loadSequenceButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
                         .addComponent(clearButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -215,6 +234,7 @@ public class spreadsheet extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4)
+                    .addComponent(loadSequenceButton)
                     .addComponent(cancelButton)
                     .addComponent(submitButton)
                     .addComponent(clearButton)))
@@ -298,7 +318,7 @@ public class spreadsheet extends javax.swing.JFrame {
         comboLabel5.setVisible(true);
 
         jTextField1.setVisible(true);
-        jTextField1.setText((String)selected);
+        jTextField1.setText(selected);
     }
 
     public String getTextField1() {
@@ -320,19 +340,41 @@ public class spreadsheet extends javax.swing.JFrame {
 
     private void returnData() {
         for(int i=0; i< _data.length; i++) {
-            for(int j=0; j<_data[0].length; j++) {
-                Object cellValue = theTable.getModel().getValueAt(i, j);
-                _data[i][j] = cellValue;
+            for(int j=0; j<_data[i].length; j++) {
+                String cellValue = (String)theTable.getModel().getValueAt(i, j);
+                if(null != cellValue && !cellValue.isEmpty()) {
+                    _data[i][j] = cellValue;
+                }
             }
         }
+        
         _interpreter.receiveData(_data);
     }
 
     private void cancelPerformed() {
         _interpreter = null;
-        System.out.println("Cancel button pressed");
+        //System.out.println("Cancel button pressed");
         this.dispose();
     }
+
+    private void loadSequences() {
+        for(int i=0; i< _data.length; i++) {
+            String sId = (String)theTable.getModel().getValueAt(i, 0);
+            if(null!=sId && !sId.isEmpty()) {
+                // load the sequence of the ID
+                
+                // first, check if the ID is in the Clotho DB already
+                
+                // if yes, load the ID's sequence from the Clotho DB
+                
+                
+                // if not, load the ID's sequence from the partsregistry
+                _data[i][0] = sId;
+                _data[i][2] = "ATCTAGATACCTATAG";
+            }
+        }
+        this.refreshData(_data);
+    }    
 
     public void refreshData(Object[][] data) {
         _data = data;
@@ -340,10 +382,9 @@ public class spreadsheet extends javax.swing.JFrame {
         theTable.repaint();
     }
     public void setDataModel (Object[][] data, TableModel tm) {
-        _data =data;
+        _data = data;
         theTable.setModel(tm);
-        theTable.repaint();
-       
+        theTable.repaint();       
     }
 
 
@@ -352,6 +393,7 @@ public class spreadsheet extends javax.swing.JFrame {
     /**
     * @param args the command line arguments
     */
+    /**
     public static void main(String args[]) {
         String[][] data = new String [][] {
                 {null, null, null, null, null, null},
@@ -397,13 +439,17 @@ public class spreadsheet extends javax.swing.JFrame {
         String[] titles = { "Nickname", "Short Description", "Sequence", "Family", "Format", "Author" };
         new spreadsheet(data, titles, null);
     }
-
+    ***/
+    
 /**-----------------
      variables
  -----------------*/
     // Variables declaration - do not modify
     private javax.swing.JButton cancelButton;
     private javax.swing.JButton clearButton;
+    
+    private javax.swing.JButton loadSequenceButton;
+    
     private javax.swing.JLabel comboLabel1;
     private javax.swing.JLabel comboLabel2;
     private javax.swing.JLabel comboLabel3;

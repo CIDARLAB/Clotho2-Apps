@@ -27,6 +27,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import org.clothocore.api.core.Collector;
 import org.clothocore.api.data.Collection;
@@ -45,8 +46,10 @@ import org.clothocad.tool.bulltrowell.view.spreadsheet;
 public class addPart implements Interpreter {
 
     public addPart() {
-        String[] titles = { "Nickname", "Short Description", "Sequence", "Format", "Author"};
+        //String[] titles = { "Nickname", "Short Description", "Sequence", "Format", "Author"};
+        String[] titles = { "Nickname", "Short Description", "Sequence" };
         _numCols = titles.length;
+        
         _numRows = hub.numrows;
         _data = new String[_numRows][_numCols];
         for(int i=0; i<_numRows; i++) {
@@ -54,10 +57,29 @@ public class addPart implements Interpreter {
                 _data[i][j] = "";
             }
         }
+
+
+        // VALID DATA...
+        _data[0][0] = "pTetR";
+        _data[0][1] = "R0040";
+        _data[0][2] = "GGAGtccctatcagtgatagagattgacatccctatcagtgatagagatactgagcacTACT";
+                
+        _data[1][0] = "RBS";
+        _data[1][1] = "B0034";
+        _data[1][2] = "TACTaaagaggagaaaAATG";
+
+        _data[2][0] = "tetR";
+        _data[2][1] = "C0040";
+        _data[2][2] = "AATGatgtccagattagataaaagtaaagtgattaacagcgcattagagctgcttaatgaggtcggaatcgaaggtttaacaacccgtaaactcgcccagaagctaggtgtagagcagcctacattgtattggcatgtaaaaaataagcgggctttgctcgacgccttagccattgagatgttagataggcaccatactcacttttgccctttagaaggggaaagctggcaagattttttacgtaataacgctaaaagttttagatgtgctttactaagtcatcgcgatggagcaaaagtacatttaggtacacggcctacagaaaaacagtatgaaactctcgaaaatcaattagcctttttatgccaacaaggtttttcactagagaatgcattatatgcactcagcgctgtggggcattttactttaggttgcgtattggaagatcaagagcatcaagtcgctaaagaagaaagggaaacacctactactgatagtatgccgccattattacgacaagctatcgaattatttgatcaccaaggtgcagagccagccttcttattcggccttgaattgatcatatgcggattagaaaaacaacttaaatgtgaaagtgggtccgctgcaaacgacgaaaactacgctttagtagcttaataaAGGT";
+
+        _data[3][0] = "Terminator";
+        _data[3][1] = "B0015";
+        _data[3][2] = "AGGTccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttataGCTT";
+
+        
         _mySheet = new spreadsheet(_data, titles, this);
         _mySheet.setTitle("Add Parts");
         _mySheet.setTitleArea("Add parts from Excel by Copy and Paste<br>You must supply Nickname, Short Description, and Sequence.<br>Other fields will be set to defaults below.");
-
 
         if(Collector.isConnected()) {
             loadingthread = new Thread() {
@@ -103,23 +125,25 @@ public class addPart implements Interpreter {
                     } catch (InvocationTargetException ex) {
                         Logger.getLogger(addPart.class.getName()).log(Level.SEVERE, null, ex);
                     }
-
                 }
             };
+            
             loadingthread.start();
         }
     }
 
     @Override
     public void receiveData(Object[][] data) {
-        _data = (String[][]) data;
+
+        /**
         for(int i=0; i<_data.length; i++) {
             for(int j=0; j<_data[0].length; j++) {
                 System.out.print(_data[i][j] + "");
             }
             System.out.println("");
         }
-
+        **/
+        
         //Create a new Collection to store everything
         if(_outCollection==null) {
             _outCollection = new Collection();
@@ -144,73 +168,98 @@ public class addPart implements Interpreter {
         link = (ObjLink) _mySheet.getComboField3();
         _defaultFormat = Collector.getFormat(link.uuid);
         hub.putPreference("addPart_setFormat", link.name);
-
+        
         _data = (String[][]) data;
 
         for(int i=0; i<_data.length; i++) {
+            //Retrieve the data in the current line
+            String name = _data[i][0];
+            String desc = _data[i][1];
+            String seq = _data[i][2];
+
+            // Name and Sequence must be provided...
+            if(null == seq  || seq.isEmpty() || 
+               null == name || name.isEmpty()) {
+                /**
+                JOptionPane.showMessageDialog( 
+                        null, 
+                        "Invalid Information provided in row "+(i+1),
+                        "Clotho: bullTrowell", 
+                        JOptionPane.ERROR_MESSAGE);
+                        * */
+                continue;
+            }
+
+            /** AUTHOR/PERSON INFORMATION **/
+            Person partAuthor = null;
             try {
-                //Retrieve the data in the current line
-                String name = _data[i][0];
-                String desc = _data[i][1];
-                String seq = _data[i][2];
-
-                //If any of the 3 required fields weren't entered, abort this line
-                if(desc.equals("") || seq.equals("") || name.equals("")) {
-                    System.out.println("Insufficient info provided");
-                    continue;
-                }
-
                 //Retrieve any additional lines entered
-                String formatInputString = _data[i][3];
                 String authorInputString = _data[i][4];
 
                 //If an authorInputString was typed in, search for that Person
-                Person partAuthor;
-                if(authorInputString.equals("")) {
+                if(authorInputString.isEmpty()) {
                     partAuthor = _defaultAuthor;
                 } else {
                     partAuthor = Person.retrieveByName(authorInputString);
                     if(partAuthor==null) {
                         System.out.println("person is null");
-                        continue;
                     }
                 }
+            } catch(Exception e) {
+                partAuthor = _defaultAuthor;
+            }
+            
+            /** FORMAT INFORMATION **/
+            Format partFormat = null;
+            try {
+                
+                String formatInputString = _data[i][3];
 
                 //If an formatInputString was typed in, search for that Person
-                Format partFormat;
-                if(formatInputString.equals("")) {
+                if(formatInputString.isEmpty()) {
                     partFormat = _defaultFormat;
                 } else {
                     partFormat = Format.retrieveByName(formatInputString);
                     if(partFormat==null) {
                         System.out.println("format is null");
-                        continue;
                     }
                 }
+            } catch(Exception e) {
+                partFormat = _defaultFormat;
+            }
 
-                Part newPart = Part.generateBasic( name,  desc,  seq,  partFormat,  partAuthor);
-                if(newPart == null) {
-                    System.out.println("newPart was null");
-                    continue;
-                }
-                _outCollection.addObject(newPart);
+            try {
+                Part newPart = Part.generateBasic(
+                        name,  
+                        desc,  
+                        seq,  
+                        partFormat,  
+                        partAuthor);
 
-                if(true) {
+                if(null != newPart) {
+                    _outCollection.addObject(newPart);
+
                     //Notify user that the Part was created
                     _mySheet.appendLogMessage(newPart.getName() + "\n");
-                    System.out.println("I created part " + newPart.getName());
 
                     //Clear the data in the data table
                     for(int col=0; col<_numCols; col++) {
                         _data[i][col] = "";
                     }
+                } else {
+                    // how can I get 
                 }
             } catch(Exception e) {
-                continue;
+                e.printStackTrace();
+                JOptionPane.showMessageDialog( 
+                        null, 
+                        "[BullTrowel.addPart.receiveData] "+e.getMessage(),
+                        "Clotho: bullTrowell", 
+                        JOptionPane.ERROR_MESSAGE);
             }
         }
+        
         _mySheet.refreshData(_data);
-
     }
 
 

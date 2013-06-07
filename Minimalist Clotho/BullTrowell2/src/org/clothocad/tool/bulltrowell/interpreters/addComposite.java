@@ -46,8 +46,12 @@ import org.clothocad.tool.bulltrowell.view.spreadsheet;
  */
 public class addComposite implements Interpreter {
 
+    //old:
+    //private String[] titles = { "(Vector Name)", "Part Name", "Lefty Part",  "Righty Part", "(Format)", "(Author)", "(Description)" };
+    
+    private String[] titles = { "Part Name", "Lefty Part",  "Righty Part", "(Description)" };
+    
     public addComposite() {
-        String[] titles = { "(Vector Name)", "Part Name", "Lefty Part",  "Righty Part", "(Format)", "(Author)", "(Description)" };
         _numCols = titles.length;
         _numRows = hub.numrows;
         _data = new String[_numRows][_numCols];
@@ -58,7 +62,7 @@ public class addComposite implements Interpreter {
         }
         _mySheet = new spreadsheet(_data, titles, this);
         _mySheet.setTitle("Add Composite Parts");
-       _mySheet.setTitleArea("Add composite parts by Copy and Paste<br>You must supply Part Name,  Lefty and Righty parts.<br>Other fields are optional.  If a vector is added, a plasmid will also be generated.");
+       _mySheet.setTitleArea("Add composite parts by Copy and Paste<br/>You must supply Part Name, Lefty and Righty parts.<br/>Other fields are optional.<br/>If a vector is added, a plasmid will also be generated.");
 
         if(Collector.isConnected()) {
             loadingthread = new Thread() {
@@ -113,13 +117,16 @@ public class addComposite implements Interpreter {
     @Override
     public void receiveData(Object[][] data) {
         _data = (String[][]) data;
+        
+        /***
         for(int i=0; i<_data.length; i++) {
             for(int j=0; j<_data[0].length; j++) {
                 System.out.print(_data[i][j] + "");
             }
             System.out.println("");
         }
-
+        ***/
+        
 
         //If it's still loading wait for it to finish loading
         try {
@@ -147,8 +154,6 @@ public class addComposite implements Interpreter {
                 //If any of the 3 required fields weren't entered, abort this line
                 if(righty.equals("") || lefty.equals("") || partname.equals("")) {
                     continue;
-                } else {
-                    System.out.println("Info is sufficient to add composite part");
                 }
 
                 //Retrieve any additional lines entered

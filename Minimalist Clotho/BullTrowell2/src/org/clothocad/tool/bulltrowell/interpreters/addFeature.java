@@ -28,6 +28,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import org.clothocad.tool.bulltrowell.view.hub;
 import org.clothocore.api.core.Collector;
@@ -38,6 +39,7 @@ import org.clothocore.api.data.ObjLink;
 import org.clothocore.api.data.ObjType;
 import org.clothocore.api.data.Person;
 import org.clothocad.tool.bulltrowell.view.spreadsheet;
+import org.clothocore.api.data.Family;
 
 /**
  *
@@ -57,7 +59,9 @@ public class addFeature implements Interpreter {
         }
         _mySheet = new spreadsheet(_data, titles, this);
         _mySheet.setTitle("Add Features");
-        _mySheet.setTitleArea("Add features from Excel by Copy and Paste<br>You must supply name and sequence.  Other fields are optional.<br>  For coding sequences, enter sequence as ATG...TAA, Feature Type is CDS (or ORF).");
+        _mySheet.setTitleArea("Add features from Excel by Copy and Paste<br/>"+
+                "You must supply name and sequence. Other fields are optional.<br/>"+
+                "For coding sequences, enter sequence as ATG...TAA, Feature Type is CDS (or ORF).");
 
         if(Collector.isConnected()) {
             loadingthread = new Thread() {
@@ -91,12 +95,14 @@ public class addFeature implements Interpreter {
     @Override
     public void receiveData(Object[][] data) {
         _data = (String[][]) data;
+        /**
         for(int i=0; i<_data.length; i++) {
             for(int j=0; j<_data[0].length; j++) {
                 System.out.print(_data[i][j] + "");
             }
             System.out.println("");
         }
+        **/
 
         //Create a new Collection to store everything
         if(_outCollection==null) {
@@ -156,7 +162,22 @@ public class addFeature implements Interpreter {
                 }
                 Feature newfeature = Feature.generateFeature(name, seq, featureAuthor, isCDS);
                 newfeature.changeAuthor(featureAuthor);
-
+                
+                // add the family to the feature
+                if(null != familyString && !familyString.isEmpty()) {
+                    Family family = Family.retrieveByName(familyString);
+                    if(null != family) {
+                        newfeature.getFamilies().add(family);
+                    } else {
+                        JOptionPane.showMessageDialog( 
+                            null, 
+                            familyString+" is an invalid Feature Family!",
+                            "Clotho: MoCloFormat", 
+                            JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+                }
+                
                 Color forwardColor = null;
                 Color reverseColor = null;
                 if(newfeature!=null) {
@@ -233,6 +254,7 @@ public class addFeature implements Interpreter {
                     _data[i][col] = "";
                 }
             } catch(Exception e) {
+                e.printStackTrace();
                 continue;
             }
         }

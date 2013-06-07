@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+<type>ClothoTool</type>
+<version>1.0</version>
+<classname>org-clothocad-tool-ResDigest-StartRes</classname>
+<description>Restriction Digest Mapper</description>
+<displayname>ResDigest Mapper</displayname>
+<uuid>org.clothocad.tool.ResDigest</uuid>
+<!--<screenshotpath>none</screenshotpath>-->
+<author>Rishi Ganguly</author>
+<author>Douglas Densmore</author>
+<iconpath>org/clothocad/tool/ResDigest/logo_plasmid.gif</iconpath>
+
+
+</plugin>

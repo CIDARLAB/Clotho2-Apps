@@ -1,13 +1,5 @@
-/Clotho 2.0/EugeneScripter/build/
-/Clotho 2.0/PersonEditor/nbproject/private/
-/Clotho 2.0/WikiEditorPanel/nbproject/private/
-/Clotho 2.0/Freeform/build/
-/Clotho 2.0/ConfigurableConnection/build/
-/Clotho 2.0/ConnectionConfigTool/build/
-/Clotho 2.0/LocalConnection/build/
-/ClothoFabApps/ToolAppBrowser/build/
-/Clotho 2.0/Swingx/build/
-/Clotho 2.0/CollectorBrowser/build/
-/Minimalist Clotho/BullTrowell2/build/
-/Minimalist Clotho/CollectionViewTool/build/
-/Minimalist Clotho/SearchAlgorithms/build/
+*/*/build/
+*/*/nbproject/private/
+
+*.class
+
